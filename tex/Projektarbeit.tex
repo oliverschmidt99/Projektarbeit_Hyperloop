@@ -1,0 +1,63 @@
+\documentclass[oneside,a4paper,11pt]{book}      
+% \documentclass[twoside,a4paper,11pt]{book}
+
+\usepackage[pdftex,
+            pdfauthor={Name, Vorname},
+            pdftitle={Überschrift},
+            pdfsubject={Projektarbeit},
+            pdfkeywords={Unterschrift}
+            ]{hyperref}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[dvips]{graphicx}
+\usepackage{calc}
+\usepackage{makeidx}
+\usepackage{xcolor}
+\usepackage[hang,small,scriptsize,bf]{caption}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{seqsplit}
+\usepackage[normalem]{ulem}
+\usepackage[
+  style=numeric,
+  sorting=none,
+  backend=biber
+]{biblatex}
+\addbibresource{myliterature.bib}
+
+\usepackage{hsel-thesis2020}
+\input{listingstyle}
+
+% Kombination von \textit und \textbf
+\newcommand{\textbfit}[1]{\textbf{\textit{#1}}}
+
+\begin{document}
+
+\AddToShipoutPicture{\BackgroundWave}
+\pagenumbering{Roman}
+
+\include{source/title}
+\linespread{1.2}
+\noitemsep
+\include{source/declaration}
+\include{source/lists}
+
+\cleardoublepage
+\pagenumbering{arabic}
+\ClearShipoutPicture
+
+
+\include{source/introduction}
+\include{source/stateoftheart}
+\include{source/implementation}
+\include{source/conclusion}
+
+\appendix
+\include{source/anhang}
+
+\printbibliography
+
+\end{document}

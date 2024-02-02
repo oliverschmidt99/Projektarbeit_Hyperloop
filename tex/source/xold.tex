@@ -1,0 +1,27 @@
+
+% \lstinputlisting[language=python, firstline=41, firstnumber=41, lastline=63, caption={ Class Robot }, label={lst:Data1}]{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}
+% \lstinputlisting[language=python, firstline=94, firstnumber=94, lastline=107, caption={ Robot.Enable }, label={lst:Data1}]{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}
+% \lstinputlisting[language=python, firstline=124, firstnumber=124, lastline=153, caption={ Robot: Reference }, label={lst:Data1}]{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}
+% \lstinputlisting[language=python, firstline=333, firstnumber=333, lastline=342, caption={ Class Robot }, label={lst:Data1}]{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}
+% \lstinputlisting[language=python, firstline=366, firstnumber=366, lastline=377]{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}
+
+% \lstinputlisting[language=python, firstline=41, firstnumber=41, lastline=63, caption={ Class Robot }, label={lst:Data1}]{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}
+% \lstinputlisting[language=python, firstline=41, firstnumber=41, lastline=63, caption={ Class Robot }, label={lst:Data1}]{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}
+
+
+
+
+
+% Die TinyCtrl Robotersteuerungssoftware bietet einen Modbus-TCP-Server, um mit der integrierten Robotersteuerungen zu kommunizieren, den Roboter zu steuern und Informationen aus dem Roboter zu lesen.\\
+%
+% Die Abbildung \ref{fig:irc-modbus} zeigt, wie der Modbus-Server aktiviert werden. Dazu muss die iRC Software verwendet werden. Nach der Aktivierung kann die iRC abschlossen, da der Servor über die integrierte Robotersteuerungen läuft ~\cite{ircuserguide}.
+
+% Die iRC (igus Robot Control) Software ermöglicht den Modbus-TCP-Server zu aktiviren, welcher auf die TinyCtrl Robotersteuerungssoftware läuft, und somit kann den integrierten Computer als Steuerrechner verwendet.
+% Nun ist es möglich, die Verbindung mit der Robotersteuerungen zu initialisieren und Informationen senden und empfangen. Dafür wurde die Programmiersprache Python~\cite{python} als Basis für die Programmierschnittstelle ausgewählt. Aufgrund ihre Einfachheit und ihre Übersichtlichkeit, lässt sich diese Programmiersprache gut für APIs und GUIs eignen, welche in Zukunft noch von anderen Studierenden der Hochschule Emden/Leer erweitert werden sollen.\\
+%
+% Außerdem Python bietet die Bibliothek pyModbusTCP \cite{pymodbus}, mit der ist möglich, die Kommunikation zu starten, aus der Registern und Coils zu lesen bzw. darauf zu schreiben.
+% Diese Bibliothek wurde verwendet, um eine Klasse zu erstellen (Listing~\ref{lst:Data1}). In dieser Klasse sind alle Methoden 
+% \pythonexternal[language=python, firstline=41, lastline=55, caption={ Class Robot }, label={src:Data2}]{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}
+% \inputpython{~/Git/IGUS_Delta_Robot/Modbus/src/igus_modbus.py}{41}{55}
+
+% Ein weiterer Bestandteil dieser Bibliothek ist es, die Möglichkeit zu ergeben, den Roboter zur Bewegung zu bringen. Dazu unterscheidet man zwischen zwei Bewegungsarten axiale und kartesische Bewegung. Die Zielpositionen können relativ oder absolut sein. Da es auf die Registern und natürliche Zahlen geschrieben werden, müssen die Position mit dem Faktor 100 multipliziert werden, dann werden die einzeln Positionen a auf zwei 16-Bit Register getrennt, indem die position und die hexadezimale Zahl 0x0000FFFF mit logische UND kombiniert werden und auf dem ersten Register geschrieben wird, daraus folgt das nur die niedrigste 16 Bits aufgeschrieben. Die Position wird um 16 Bits nach Links verschoben, um die weitere 16 Bits auf die zweite Register zu schreiben.
