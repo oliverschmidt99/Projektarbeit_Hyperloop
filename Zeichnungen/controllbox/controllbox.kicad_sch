@@ -1,0 +1,71 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 32d0d360-2c81-4c08-a861-efcbffe03167)
+
+  (paper "A4")
+
+  (title_block
+    (title "Hyperloop 48V")
+    (date "2024-02-15")
+    (company "Hoschule Emden Leer")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 25.4 38.1) (size 38.1 50.8) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 00b57318-ed4f-42a1-8608-27c066222e23)
+    (property "Sheetname" "Battery" (at 25.4 37.3884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Battery.kicad_sch" (at 25.4 89.4846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "controllbox"
+        (path "/32d0d360-2c81-4c08-a861-efcbffe03167" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 152.4 38.1) (size 38.1 50.8) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 15f97537-1847-4ea1-9323-e59fd879c7f4)
+    (property "Sheetname" "BLDC_Motor" (at 152.4 37.3884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "BLDC_Motor.kicad_sch" (at 152.4 89.4846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "controllbox"
+        (path "/32d0d360-2c81-4c08-a861-efcbffe03167" (page "4"))
+      )
+    )
+  )
+
+  (sheet (at 88.9 38.1) (size 39.37 50.8) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid ecf86fc5-77d2-4a32-a8af-3358dadfcf63)
+    (property "Sheetname" "Sine_Wave_Controller" (at 88.9 37.3884 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Sine_Wave_Controller.kicad_sch" (at 88.9 89.4846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "controllbox"
+        (path "/32d0d360-2c81-4c08-a861-efcbffe03167" (page "3"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
