@@ -1,12 +1,15 @@
 \documentclass[oneside,a4paper,11pt]{book}      
 % \documentclass[twoside,a4paper,11pt]{book}
 
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
 \usepackage[pdftex,
-            pdfauthor={Name, Vorname},
-            pdftitle={Überschrift},
-            pdfsubject={Projektarbeit},
-            pdfkeywords={Unterschrift}
-            ]{hyperref}
+pdfauthor={Name, Vorname},
+pdftitle={Überschrift},
+pdfsubject={Projektarbeit},
+pdfkeywords={Unterschrift}
+]{hyperref}
 \usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -25,8 +28,11 @@
   style=numeric,
   sorting=none,
   backend=biber
-]{biblatex}
-\addbibresource{myliterature.bib}
+  ]{biblatex}
+  \addbibresource{Literaturverzeichnis.bib}
+
+\usepackage{csquotes}
+
 
 \usepackage{hsel-thesis2020}
 %\input{listingstyle}
@@ -39,24 +45,24 @@
 \AddToShipoutPicture{\BackgroundWave}
 \pagenumbering{Roman}
 
-\include{source/title}
+\include{source/0_0_Titelseite}
 \linespread{1.2}
 \noitemsep
-\include{source/declaration}
-\include{source/lists}
+\include{source/0_1_RechtlicheErklärung}
+\include{source/0_2_Verzeichnis}
 
 \cleardoublepage
 \pagenumbering{arabic}
 \ClearShipoutPicture
 
 
-\include{source/introduction}
-\include{source/stateoftheart}
-\include{source/implementation}
-\include{source/conclusion}
+\include{source/1_Einleitung}
+\include{source/2_StandDerTechnik}
+\include{source/3_Impentierung}
+\include{source/4_Konklusion}
 
 \appendix
-\include{source/anhang}
+\include{source/Literaturverzeichnis}
 
 \printbibliography
 

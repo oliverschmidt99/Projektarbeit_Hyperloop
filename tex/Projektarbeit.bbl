@@ -16,5 +16,35 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{laser4.0}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=60e6f6be5e7a9c371f054e539b382289}{%
+           family={Kanaan},
+           familyi={K\bibinitperiod},
+           given={Khedr},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Hochschule Emden/Leer, University of Applied Sciences}%
+      }
+      \strng{namehash}{60e6f6be5e7a9c371f054e539b382289}
+      \strng{fullhash}{60e6f6be5e7a9c371f054e539b382289}
+      \strng{bibnamehash}{60e6f6be5e7a9c371f054e539b382289}
+      \strng{authorbibnamehash}{60e6f6be5e7a9c371f054e539b382289}
+      \strng{authornamehash}{60e6f6be5e7a9c371f054e539b382289}
+      \strng{authorfullhash}{60e6f6be5e7a9c371f054e539b382289}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Development and implementation of industry 4.0 laser cutter module (Construction and Electronics)}
+      \field{type}{mathesis}
+      \field{year}{2022}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
