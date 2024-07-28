@@ -2,10 +2,10 @@
 
 \section{Motivation}
 
-Die Motivation des Projektes liegt im Rahmen der Realisierung eines Fahrzeuges für den Hyperloop, dass mit einer Batterie und einem Motor betrieben werden soll, die Steuerung soll mittels Simulink.
+Die Motivation des Projekts liegt in der Realisierung eines Fahrzeugs für den Hyperloop, das mit einer Batterie und einem Motor betrieben werden soll. Die Steuerung soll mittels Simulink erfolgen.
 
 \subsection{Konzept von Hyperloop}
-Der Hyperloop ist ein Konzept für ein Hochgeschwindigkeitstransportsystem, das von Elon Musk populär gemacht wurde. Es besteht im Wesentlichen aus einer oder mehreren Kapseln, die sich durch fast luftleere Röhren bewegen. Die Idee ist, Reibung und Luftwiderstand, die zwei größten Hindernisse für hohe Geschwindigkeiten, zu minimieren.
+Der Hyperloop ist ein Konzept für ein Hochgeschwindigkeitstransportsystem, das von Elon Musk \cite{Wikipedia:Hyperloop_impact} populär gemacht wurde. Es besteht im Wesentlichen aus einer oder mehreren Kapseln, die sich durch fast luftleere Röhren bewegen. Die Idee ist, Reibung und Luftwiderstand, die zwei größten Hindernisse für hohe Geschwindigkeiten, zu minimieren.
 
 Durch die Reduzierung von Luft- und Rollwiderstand können Hyperloop-Kapseln Geschwindigkeiten von über 1000 km/h erreichen. Dies ermöglicht extrem schnelle Reisen zwischen Städten, die weit voneinander entfernt sind.
 
@@ -16,21 +16,16 @@ Angesichts der globalen Bemühungen zur Reduzierung der CO2-Emissionen und zur B
 
 
 \section{Aufgabenstellung}
+Im Rahmen dieses Projekts soll ein Pod für den Hyperloop mit einer Bordspannung von 48 V ausgelegt werden. Ziel ist es, die Machbarkeit dieser Spannung zu überprüfen und umzusetzen. Dazu gehören die Realisierung der Verdrahtung und der Sensorik sowie die Beschaffung der erforderlichen Bauteile. Die Logik- und Signalverarbeitung wird mithilfe von Simulink auf einem Speedgoat-System durchgeführt.
 
-Im Rahmen dieses Projekts soll ein Pod für den Hyperloop auf 48 V dimensioniert werden.
+\subsection{Steuerung}
+Die Steuerung erfolgt über Simulink, ein Bestandteil von Matlab. Position und Beschleunigung des Pods sollen erfasst werden, während der Motor über ein zusätzliches Steuergerät angesteuert wird. Motor und Steuergerät stammen von dem englischen Unternehmen Golden Motor. Die Steuerung soll als eine Automatensteuerung umgesetzt werden.
 
-\begin{itemize}
-	\item Steuerung
-	      \subitem Speedgoat
-	      \subitem Matlab -> Simulink
-	\item Positionsermittlung
-	\item Verdrahtung
-	\item Bauteile beschaffung
-\end{itemize}
+\subsection{Verdrahtung}
+Die Verdrahtung des Pods muss entsprechend der Bordspannung von 48 V realisiert werden. Dazu muss ein Schaltplan erstellt werden das mit der Software QElectroTech erstellt wird.
 
-Die Aufgabe besteht darin, die Umsetzbarkeit einer Boardspannung von 48 V zu überprüfen. Darüber hinaus sollen die Verdrahtung und die Sensorik realisiert werden. Die Logik und die Signalverarbeitung sollen über den Speedgoat mittels Simulink durchgeführt werden.
-
-\section{Aufbau der Arbeit}
+\subsection{Bauteilbeschaffung}
+Es müssen alle erforderlichen Bauteile für die Umsetzung der Bordspannung, Verdrahtung und Sensorik beschafft werden.
 
 \section{Verwandte Arbeiten}
 

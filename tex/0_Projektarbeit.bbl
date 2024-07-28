@@ -16,5 +16,36 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Wikipedia:Hyperloop_impact}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=535bebf06af273c7e2d9ff9d7fc43470}{%
+           family={{Wikipedia Contributors}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{535bebf06af273c7e2d9ff9d7fc43470}
+      \strng{fullhash}{535bebf06af273c7e2d9ff9d7fc43470}
+      \strng{bibnamehash}{535bebf06af273c7e2d9ff9d7fc43470}
+      \strng{authorbibnamehash}{535bebf06af273c7e2d9ff9d7fc43470}
+      \strng{authornamehash}{535bebf06af273c7e2d9ff9d7fc43470}
+      \strng{authorfullhash}{535bebf06af273c7e2d9ff9d7fc43470}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Abschnitt: Hyperloop;Online; abgerufen am 28-Juli-2024]}
+      \field{title}{{Hyperloop}}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://de.wikipedia.org/wiki/Hyperloop
+      \endverb
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/Hyperloop
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
