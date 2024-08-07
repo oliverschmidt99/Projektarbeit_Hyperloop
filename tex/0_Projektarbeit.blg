@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is '0_Projektarbeit.blg'
+[58] biber:340> INFO - === Mi Aug  7, 2024, 12:55:22
+[70] Biber.pm:419> INFO - Reading '0_Projektarbeit.bcf'
+[120] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
+[132] Biber.pm:4419> INFO - Processing section 0
+[140] Biber.pm:4610> INFO - Looking for bibtex file 'Literaturverzeichnis.bib' for section 0
+[140] bibtex.pm:1713> INFO - LaTeX decoding ...
+[142] bibtex.pm:1519> INFO - Found BibTeX data source 'Literaturverzeichnis.bib'
+[168] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[168] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[168] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'de-DE'
+[168] Biber.pm:4245> INFO - No sort tailoring available for locale 'de-DE'
+[172] bbl.pm:660> INFO - Writing '0_Projektarbeit.bbl' with encoding 'UTF-8'
+[173] bbl.pm:763> INFO - Output to 0_Projektarbeit.bbl
