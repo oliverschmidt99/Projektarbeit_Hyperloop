@@ -1,1 +1,5 @@
 *.aux
+*.pdf
+*.bbl
+*.gz
+*.bib
