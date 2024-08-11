@@ -3,7 +3,8 @@ Das ist eine Projektarbeit der Hoschschule Emden Leer. Projektthema ist Hyperloo
 
 ## Todo:
 ### Projektbericht    
-- [x] Einleitung
+- Einleitung
     - [ ] Motivation
     - [ ] Aufgabenstellung
-- 
+- Konzept
+    - [ ]
