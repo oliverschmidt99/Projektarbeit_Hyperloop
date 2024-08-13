@@ -114,7 +114,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; Zugriff 12-August-2024]}
-      \field{title}{Configurable I/O Module - IO397}
+      \field{title}{FPGA I/O Module - IO397}
       \verb{urlraw}
       \verb https://www.speedgoat.com/products/simulink-programmable-fpgas-fpga-i-o-modules-io397
       \endverb
@@ -140,7 +140,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; Zugriff 12-August-2024]}
-      \field{title}{CAN - IO691}
+      \field{title}{CAN and CAN FD I/O Module - IO691}
       \verb{urlraw}
       \verb https://www.speedgoat.com/products/communication-protocols-can-fd-io691
       \endverb

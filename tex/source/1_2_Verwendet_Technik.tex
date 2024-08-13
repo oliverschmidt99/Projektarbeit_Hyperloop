@@ -109,35 +109,112 @@ Das IO397 I/O-Modul ist ein mPCIe-kompatibles, in Simulink programmierbares FPGA
 
 Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen, die sowohl flexible Datenrate CAN (CAN FD) als auch High-Speed CAN (CAN HS) unterstützen. Es ist kompatibel mit CAN 2.0A/B-Netzwerken und unterstützt SAE J1939 sowie ASAM XCP für Bypassing. Alle Signale sind über 9-polige D-Sub-Front-CAN-Anschlüsse zugänglich. Das Modul ist ideal für geschlossene Regelkreise, Hardware-in-the-Loop-Simulationen und Restbussimulationen mit MATLAB und Simulink \cite{speedgoat:IO691}.
 
-\subsection{Verdrahtung des Speedgoats}
+\subsection{Pin Mapping der Module}
+Das Modul IO397-50k kann über ein Sensor-Aktor-Kabel von Phoenix Contact extern angeschlossen werden, wie in Abbildung \ref{img_2_2:steuerung_goat:2} dargestellt.
+Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers (männlich) angeschlossen.
 
-\begin{figure}
+\begin{figure}[ht]
 	\begin{center}
-		\begin{minipage}{0.8\textwidth}
-			\includegraphics[width=\textwidth]{img/2_steuerung/goat_2.png}
-			\caption{Speedgoat – Ansicht der Modulanschlüsse}
-			\label{img_2_2:steuerung_goat:2}
-		\end{minipage}
-		\begin{minipage}{0.8\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{img/2_steuerung/goat_3.png}
-			\caption{Speedgoat – Ansicht der Kommunikationsschnittstellen}
-			\label{img_2_2:steuerung_goat:3}
-		\end{minipage}
+		\includegraphics[width=\textwidth]{img/2_steuerung/goat_2.png}
+		\caption{Speedgoat – Ansicht der Modulanschlüsse}
+		\label{img_2_2:steuerung_goat:2}
 	\end{center}
 \end{figure}
 
-Um mit den IO397 eine Verbingung herzustellen, muss an dem Speedgaot das Kabel *** an den Anschluss 'IO-Modul 1' siehe Abbildung \ref{img_2_2:steuerung_goat:2} angeschlossen werden.
+%\begin{figure}[ht]
+%	\begin{center}
+%		\includegraphics[width=\textwidth]{img/2_steuerung/goat_3.png}
+%		\caption{Speedgoat – Ansicht der Kommunikationsschnittstellen}
+%		\label{img_2_2:steuerung_goat:3}
+%	\end{center}
+%\end{figure}
 
-\begin{itemize}
-	\item Module anschließen, also wie schließe ich ein Sensor an oder ein Motor.
-	\item Router anschließen
-	\item mit dem Netzwerk verbinden also die Start IP und so
-\end{itemize}
+\pagebreak[4]
 
+\subsubsection{Pin Mapping – IO397-50k}
 
+Terminal Board A ist für die Verarbeitung analoger Signale ausgelegt, sowohl für Eingänge als auch für Ausgänge. Die Tabelle \ref{speedgoat:IO397A} zeigt das Pin Mapping von Terminal Board A. Dieses Board enthält Anschlüsse für insgesamt vier analoge Eingänge (Pins 1a bis 8a) und vier analoge Ausgänge (Pins 9a bis 12a). Die analogen Eingänge sind für die Messung von Spannungen zuständig, wobei die positiven und negativen Leitungen (jeweils "+" und "-") getrennt geführt werden, um eine differenzielle Signalverarbeitung zu ermöglichen. Die Ausgänge sind digitale-zu-analoge-Wandler (DAC), die analoge Signale für den Antrieb von Geräten bereitstellen. Zusätzlich sind mehrere Ground- und Spannungsanschlüsse vorhanden, um eine stabile Stromversorgung zu gewährleisten.
+\begin{table}[ht]
+	\centering
+	\caption{IO397-50k Pin Mapping – Terminal Board A: analog I/O \cite{speedgoat:IO397}}
+	\label{speedgoat:IO397A}
+	\begin{tabular}{lcl}
+		\hline
+		\textbf{Pin}             & \textbf{Funktionalität} & \textbf{Type} \\ \hline
+		\multicolumn{1}{l|}{1a}  & Analog input 01 (+)     & ADC           \\
+		\multicolumn{1}{l|}{2a}  & Analog input 01 (-)     & ADC           \\
+		\multicolumn{1}{l|}{3a}  & Analog input 02 (+)     & ADC           \\
+		\multicolumn{1}{l|}{4a}  & Analog input 02 (-)     & ADC           \\
+		\multicolumn{1}{l|}{5a}  & Analog input 03 (+)     & ADC           \\
+		\multicolumn{1}{l|}{6a}  & Analog input 03 (-)     & ADC           \\
+		\multicolumn{1}{l|}{7a}  & Analog input 04 (+)     & ADC           \\
+		\multicolumn{1}{l|}{8a}  & Analog input 04 (-)     & ADC           \\ \hline
+		\multicolumn{1}{l|}{9a}  & Analog output 01        & DAC           \\
+		\multicolumn{1}{l|}{10a} & Analog output 02        & DAC           \\
+		\multicolumn{1}{l|}{11a} & Analog output 03        & DAC           \\
+		\multicolumn{1}{l|}{12a} & Analog output 04        & DAC           \\ \hline
+		\multicolumn{1}{l|}{13a} & Ground                  &               \\
+		\multicolumn{1}{l|}{14a} & Ground                  &               \\
+		\multicolumn{1}{l|}{15a} & 0V                      &               \\
+		\multicolumn{1}{l|}{16a} & 5V                      &               \\
+		\multicolumn{1}{l|}{17a} & Ground                  &               \\
+		\multicolumn{1}{l|}{SH}  & Shielding of M12 cable  &               \\ \hline
+	\end{tabular}
+\end{table}
+
+Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- und Ausgänge. Die Tabelle \ref{speedgoat:IO397B} zeigt das Pin Mapping von Terminal Board B. Die Pins 3b bis 16b sind für konfigurierbare I/O-Funktionalitäten ausgelegt und nutzen TTL-Signale (Transistor-Transistor-Logik), was sie besonders für schnelle digitale Schaltvorgänge geeignet macht. Dieses Board ermöglicht es, die Anschlüsse flexibel zu nutzen, je nach den Anforderungen der Applikation. Auch hier gibt es mehrere Spannungs- und Ground-Anschlüsse, sowie eine Abschirmung (Shielding) für das M12-Kabel, um elektromagnetische Störungen zu minimieren.
+
+\begin{table}[ht]
+	\centering
+	\caption{IO397-50k Pin Mapping – Terminal Board B: analog I/O \cite{speedgoat:IO397}}
+	\label{speedgoat:IO397B}
+	\begin{tabular}{lcl}
+		\hline
+		\textbf{Pin}             & \textbf{Funktionalität}        & \textbf{Type} \\ \hline
+		\multicolumn{1}{l|}{1b}  & 0 V                            &               \\
+		\multicolumn{1}{l|}{2b}  & 5 V                            &               \\\hline
+		\multicolumn{1}{l|}{3b}  & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{4b}  & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{5b}  & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{6b}  & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{7b}  & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{8b}  & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{9b}  & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{10b} & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{11b} & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{12b} & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{13b} & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{14b} & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{15b} & Configurable I/O functionality & TTL           \\
+		\multicolumn{1}{l|}{16b} & Configurable I/O functionality & TTL           \\\hline
+		\multicolumn{1}{l|}{17b} & Ground                         &               \\
+		\multicolumn{1}{l|}{SH}  & Shielding of M12 cable         &               \\ \hline
+	\end{tabular}
+\end{table}
 
 \newpage
+
+\subsubsection{Pin Mapping –  IO691}
+
+
+\begin{table}[ht]
+	\centering
+	\caption{IO691 Pin Mapping}
+	\label{speedgoat:IO691}
+	\begin{tabular}{ll}
+		\hline
+		\textbf{Pin}           & \textbf{DB9 Connector A/B, Signal} \\ \hline
+		\multicolumn{1}{l|}{1} & -                                  \\
+		\multicolumn{1}{l|}{2} & CAN-low                            \\
+		\multicolumn{1}{l|}{3} & GND                                \\
+		\multicolumn{1}{l|}{4} & -                                  \\
+		\multicolumn{1}{l|}{5} & -                                  \\
+		\multicolumn{1}{l|}{6} & GND                                \\
+		\multicolumn{1}{l|}{7} & CAN-high                           \\
+		\multicolumn{1}{l|}{8} & -                                  \\
+		\multicolumn{1}{l|}{9} & -                                  \\ \hline
+	\end{tabular}
+\end{table}
 
 
 \section{Abstandsmessung}
