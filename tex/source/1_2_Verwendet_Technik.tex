@@ -17,19 +17,19 @@ Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem her
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/2_antrieb/motor_1.png}
+		\includegraphics[width=1\textwidth]{img/2_antrieb/motor_1.png}
 		\caption{Golden Motor – 10 KW BLDC Motor Liquid Cooled}
 		\label{img_2_2:antrieb_motor:1}
 	\end{center}
 \end{figure}
-\pagebreak[4]
+
 
 
 Die Anschlüsse des BLDC-Motors sind in Abbildung \ref{img_2_2:circ_bldc:1} dargestellt. Der Motor verfügt über zwei Ausgänge, die jeweils mit drei Hall-Sensoren ausgestattet sind, sowie über einen Temperatursensor. Zusätzlich werden über das Kabel ein GND und eine +5V-Versorgung benötigt. Die Spulen des Motors werden über drei Phasen angeschlossen: U, V und W.
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/2_imp/2_circ_bldc_motor.png}
+		\includegraphics[width=1\textwidth]{img/2_imp/2_circ_bldc_motor.png}
 		\caption{Golden Motor – Zeichnung: BLDC Motor}
 		\label{img_2_2:circ_bldc:1}
 	\end{center}
@@ -46,7 +46,7 @@ Sie bietet eine effiziente Steuerung von BLDC-Motoren in Anwendungen mit variabl
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/2_antrieb/sine_1.png}
+		\includegraphics[width=1\textwidth]{img/2_antrieb/sine_1.png}
 		\caption{Golden Motor – VECTOR 500 Motor Controller}
 		\label{img_2_2:antrieb_sine:1}
 	\end{center}
@@ -55,24 +55,21 @@ Sie bietet eine effiziente Steuerung von BLDC-Motoren in Anwendungen mit variabl
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/2_imp/2_circ_sine.png}
+		\includegraphics[width=1\textwidth]{img/2_imp/2_circ_sine.png}
 		\caption{Golden Motor – Zeichnung: Vector Controller}
 		\label{img_2_2:circ_sine:1}
 	\end{center}
 \end{figure}
-\newpage
 
 
-%Dafür muss der Abstand ermittelt werden, dies wird mit einem Abstandslaser gemacht.
 
-%Die Steuerung wird als Automaten umgesetzt. Dabei werden unterschiedliche Zustände durchlaufen, wie Idel, Drive, Distance und Stop.
 \section{Steuerung – Speedgoat}
 
 Speedgoat ist ein Unternehmen, das sich auf hochmoderne Echtzeitsysteme spezialisiert hat. Diese Systeme werden vor allem in der Entwicklung und dem Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt.
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/2_steuerung/goat_1.png}
+		\includegraphics[width=1\textwidth]{img/2_steuerung/goat_1.png}
 		\caption{Speedgoat – Baseline Real-Time Target Machine}
 		\label{img_2_2:steuerung_goat:1}
 	\end{center}
@@ -81,7 +78,7 @@ Speedgoat ist ein Unternehmen, das sich auf hochmoderne Echtzeitsysteme speziali
 Speedgoat-Systeme arbeiten nahtlos mit Simulink zusammen, einer Software von MathWorks, die häufig für die Modellierung und Simulation von dynamischen Systemen eingesetzt wird.
 Speedgoat bietet eine breite Palette von I/O-Modulen an, die es ermöglichen, verschiedene Sensoren und Aktuatoren an die Systeme anzuschließen. Dies macht die Systeme sehr flexibel und anpassungsfähig.
 Echtzeitsysteme von Speedgoat sind Computer, die in der Lage sind, Aufgaben innerhalb festgelegter Zeitintervalle auszuführen. Diese Systeme sind entscheidend für Anwendungen, bei denen die zeitliche Genauigkeit von großer Bedeutung ist, wie beispielsweise bei der Steuerung von Motoren, der Regelung von Prozessen oder der Simulation von physikalischen Systemen.
-\newpage
+
 
 
 \subsection{Verbaute Module}
@@ -115,7 +112,7 @@ Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers (männlich) 
 
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/2_steuerung/goat_2.png}
+		\includegraphics[width=1\textwidth]{img/2_steuerung/goat_2.png}
 		\caption{Speedgoat – Ansicht der Modulanschlüsse}
 		\label{img_2_2:steuerung_goat:2}
 	\end{center}
@@ -123,13 +120,13 @@ Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers (männlich) 
 
 %\begin{figure}[ht]
 %	\begin{center}
-%		\includegraphics[width=\textwidth]{img/2_steuerung/goat_3.png}
+%		\includegraphics[width=1\textwidth]{img/2_steuerung/goat_3.png}
 %		\caption{Speedgoat – Ansicht der Kommunikationsschnittstellen}
 %		\label{img_2_2:steuerung_goat:3}
 %	\end{center}
 %\end{figure}
 
-\pagebreak[4]
+
 
 \subsubsection{Pin Mapping – IO397-50k}
 
@@ -192,7 +189,7 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 	\end{tabular}
 \end{table}
 
-\newpage
+
 
 \subsubsection{Pin Mapping –  IO691}
 
@@ -220,7 +217,7 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 \section{Abstandsmessung}
 \begin{figure}[ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/2_sen/dis_1.png}
+		\includegraphics[width=1\textwidth]{img/2_sen/dis_1.png}
 		\caption{Pepperl+Fuchs – Distanzsensor}
 		\label{img_2_2:sen_dis:1}
 	\end{center}
@@ -234,7 +231,7 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/2_speicher/speicher.png}
+		\includegraphics[width=1\textwidth]{img/2_speicher/speicher.png}
 		\caption{DeepCPower – Lithium Batterie 50Ah | 51,2V | 2560Wh}
 		\label{img_2_2:speicher_1:1}
 	\end{center}
