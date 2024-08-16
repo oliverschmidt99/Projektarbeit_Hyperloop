@@ -1,3 +1,18 @@
 \chapter{Implementierung}
 
 
+Note
+\begin{itemize}
+	\item Anschlüsse herauszufinden vier anschlüsse gefunden.
+	\item Was für Aufgaben haben die Anschlüsse?
+	      \subitem Was für ein Kommunikationsprotokol hat der Sensor?
+	      \subitem Asynchron und seriell mit Baudrate 115200. (Ozilloskop)
+	\item Mit einem ESP32 die Sensordaten lesen.
+	\item Nachrichtdekodierung (Controller MCU)
+	      \subitem Ox24 Start (Nachricht start)
+	      \subitem 0x26 Stopp (Nachricht ende)
+	      \subitem 24 30 30 30 33 32 36 30 30 32 39 26 (Stopp signal)
+	      \subitem 24 30 30 30 33 32 36 30 31 33 30 26 (Laser an)
+	      \subitem 24 30 30 30 32 32 31 32 33 26 (Messen)
+\end{itemize}
+
