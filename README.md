@@ -3,8 +3,5 @@ Das ist eine Projektarbeit der Hoschschule Emden Leer. Projektthema ist Hyperloo
 
 ## Todo:
 ### Projektbericht    
-- Einleitung
-    - [ ] Motivation
-    - [ ] Aufgabenstellung
-- Konzept
-    - [ ]
+- Implementierung
+    - [] ESB für die Schaltung von dem PARKSIDE erstellen
