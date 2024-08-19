@@ -6,8 +6,11 @@ Der Sensor von Pepperl+Fuchs wurde ursprünglich für die Distanzmessung angesch
 Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU decodiert.
 
 \subsection{Verbindung}
-Der Sensor ist an der Hauptplatine mit einem Flachbandkabel angeschlossen wie in der Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. An der Hauptplatine sind 4 Lötlöcher die Frei sind 
-Mit dem Ozilloskop haben wir die Einzelnen Leitungen gemessen, dabei waren die.
+Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops haben wir diese Lötstellen analysiert und festgestellt, dass Leitung eins eine Spannung von 3,3 V führt und Leitung vier als GND dient. Die Leitungen zwei und drei übertragen digitale Signale und fungieren als Datenleitungen.
+Die Datenleitungen
+Wenn zwei Leitung für Datenübertragung vorhanden. Für zweiadrige kommunikation können entweder Synchron oder Asynchron kommunikation sein. Fals es Synchron ist, dann muss ein der Leitung ein Clock sein, anstonsten ist es Asynchron und eine Leitung ist der Sender und die andere ist der Empfänger (TX) (Rx). Full Dublex.
+
+
 
 
 \begin{figure}[ht]
