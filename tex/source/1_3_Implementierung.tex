@@ -6,9 +6,9 @@ Der Sensor von Pepperl+Fuchs wurde ursprünglich für die Distanzmessung angesch
 Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU decodiert.
 
 \subsection{Verbindung}
-Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops haben wir diese Lötstellen analysiert und festgestellt, dass Leitung eins eine Spannung von 3,3 V führt und Leitung vier als GND dient. Die Leitungen zwei und drei übertragen digitale Signale und fungieren als Datenleitungen.
-Die Datenleitungen
-Wenn zwei Leitung für Datenübertragung vorhanden. Für zweiadrige kommunikation können entweder Synchron oder Asynchron kommunikation sein. Fals es Synchron ist, dann muss ein der Leitung ein Clock sein, anstonsten ist es Asynchron und eine Leitung ist der Sender und die andere ist der Empfänger (TX) (Rx). Full Dublex.
+Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops haben wir diese Lötstellen analysiert und festgestellt, dass Leitung eins eine Spannung von 3,3 V führt und Leitung vier als GND dient. Die Leitungen zwei und drei übertragen digitale Signale und fungieren als Datenleitungen.\\
+Wenn zwei Leitungen für die Datenübertragung vorhanden sind, kann die Kommunikation bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Andernfalls, bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.
+Der Sensor komuniziert mit einem Bussystem. 
 
 
 
@@ -40,8 +40,8 @@ Wenn zwei Leitung für Datenübertragung vorhanden. Für zweiadrige kommunikatio
 
 
 \begin{itemize}
-	\item Anschlüsse herauszufinden vier anschlüsse gefunden.
-	\item Was für Aufgaben haben die Anschlüsse?
+	\item + Anschlüsse herauszufinden vier anschlüsse gefunden.
+	\item + Was für Aufgaben haben die Anschlüsse?
 	      \subitem Was für ein Kommunikationsprotokol hat der Sensor?
 	      \subitem Asynchron und seriell mit Baudrate 115200. (Ozilloskop)
 	\item mit einem ESP32 die Sensordaten lesen.
