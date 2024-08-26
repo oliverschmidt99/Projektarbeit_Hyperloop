@@ -1,0 +1,55 @@
+<definition link_type="simple" height="120" version="0.90" type="element" hotspot_x="5" width="860" hotspot_y="106">
+    <uuid uuid="{a87a8992-ceab-4b93-b560-26d85a2a7c9b}"/>
+    <names>
+        <name lang="en">vector_controller_2</name>
+        <name lang="de">vector_controller_2</name>
+    </names>
+    <elementInformations/>
+    <informations></informations>
+    <description>
+        <text y="-12" x="758" rotation="0" color="#000000" text="Empty" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-12" x="458" rotation="0" color="#000000" text="Empty" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="258" rotation="0" color="#000000" text="Empty" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <rect y="-100" antialias="false" x="0" height="100" rx="0" style="line-style:normal;line-weight:normal;filling:none;color:black" ry="0" width="850"/>
+        <text y="-13" x="606" rotation="0" color="#000000" text="  GND&#xa;BK-WH" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-12" x="808" rotation="0" color="#000000" text="Empty" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="50" rotation="0" color="#000000" text="+12V_Brake&#xa;    YE-WH" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="107" rotation="0" color="#000000" text=" Brake&#xa;BU-WH" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="298" rotation="0" color="#000000" text="High_Speed&#xa;        BU" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-50" x="10" rotation="0" color="#000000" text="VECTOR 500 Series Brushless" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="558" rotation="0" color="#000000" text="Empty" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="14" rotation="0" color="#000000" text="+5V&#xa; RD" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="708" rotation="0" color="#000000" text="   +5V&#xa;RD-WH" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-14" x="657" rotation="0" color="#000000" text="Throttle&#xa;GN-WH" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="157" rotation="0" color="#000000" text="Reverse&#xa;    BR" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="363" rotation="0" color="#000000" text="GND&#xa; BK" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-12" x="408" rotation="0" color="#000000" text="Empty" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-13" x="500" rotation="0" color="#000000" text="Low_Speed&#xa;       BU" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-14" x="207" rotation="0" color="#000000" text="Empty" font="Sans Serif,6,-1,5,50,0,0,0,0,0"/>
+        <text y="-60" x="10" rotation="0" color="#000000" text="Sine Wave Controller" font="Sans Serif,10,-1,5,50,0,0,0,0,0"/>
+        <text y="-55" x="155" rotation="0" color="#000000" text="Part B" font="Sans Serif,9,-1,5,50,0,0,0,0,0"/>
+        <rect y="-70" antialias="false" x="145" height="20" rx="0" style="line-style:normal;line-weight:normal;filling:none;color:black" ry="0" width="55"/>
+        <dynamic_text y="-100" Halignment="AlignLeft" text_from="CompositeText" keep_visual_rotation="true" x="-50" text_width="-1" rotation="0" Valignment="AlignTop" z="38" frame="false" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal">
+            <text></text>
+            <info_name>formula</info_name>
+            <composite_text>%{label}</composite_text>
+        </dynamic_text>
+        <terminal y="5" x="720" name="13_5v" type="Inner" uuid="{ee094554-2b8b-48fc-b5b8-abde070e0e5e}" orientation="s"/>
+        <terminal y="5" x="320" name="08_high_speed" type="Inner" uuid="{627d486f-2050-4117-afef-b070c708cedf}" orientation="s"/>
+        <terminal y="5" x="670" name="13_throttle" type="Inner" uuid="{5854c5d3-b383-4b36-85f8-c5e184dac2f2}" orientation="s"/>
+        <terminal y="5" x="770" name="13_empty" type="Inner" uuid="{45833525-1f3f-4a5f-94c2-aef7efcfeda7}" orientation="s"/>
+        <terminal y="5" x="820" name="13_empty" type="Inner" uuid="{3b415273-4e15-411e-b7ec-453ce8f907bb}" orientation="s"/>
+        <terminal y="5" x="420" name="10_empty" type="Inner" uuid="{98cc2f4d-7e99-4d3a-aad3-ca2a68616e8a}" orientation="s"/>
+        <terminal y="5" x="120" name="03_brake" type="Inner" uuid="{afe113e8-de9a-4d5e-9c12-56ab7b36769f}" orientation="s"/>
+        <terminal y="5" x="170" name="04_revers" type="Inner" uuid="{b3639bf5-7af5-4715-b0f3-96d7d3e6ba98}" orientation="s"/>
+        <terminal y="5" x="220" name="06_empty" type="Inner" uuid="{2ea9d43b-9202-488f-a901-09d47cfebc0c}" orientation="s"/>
+        <terminal y="5" x="620" name="13_gnd" type="Inner" uuid="{7c70c721-8527-4fe4-8f7b-497369e819c2}" orientation="s"/>
+        <terminal y="5" x="20" name="01_5v" type="Inner" uuid="{ac7b2d1d-d5e1-4566-a610-1d2d9ecbc40e}" orientation="s"/>
+        <terminal y="5" x="370" name="09_gnd" type="Inner" uuid="{03cf6eb6-35a6-4d79-a60c-fa9446bbc196}" orientation="s"/>
+        <terminal y="5" x="70" name="02_12v_brake" type="Inner" uuid="{0f8f2d04-899b-4bf3-9461-965f72b09ec2}" orientation="s"/>
+        <terminal y="5" x="470" name="11_empty" type="Inner" uuid="{34eba728-b67e-43be-949a-41b04a8030ed}" orientation="s"/>
+        <terminal y="5" x="570" name="13_empty" type="Inner" uuid="{847a15ee-34da-45a3-984f-2eee6f79b912}" orientation="s"/>
+        <terminal y="5" x="520" name="12_low_speed" type="Inner" uuid="{6761fdce-602e-41fc-9e14-d3e27c4f8407}" orientation="s"/>
+        <terminal y="5" x="270" name="07_empty" type="Inner" uuid="{209f8ffd-bf68-4a44-ad90-5e8d7087fd74}" orientation="s"/>
+    </description>
+</definition>

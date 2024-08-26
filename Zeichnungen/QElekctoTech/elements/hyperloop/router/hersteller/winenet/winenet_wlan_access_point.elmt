@@ -1,0 +1,26 @@
+<definition type="element" hotspot_y="56" width="50" hotspot_x="25" version="0.90" height="120" link_type="simple">
+    <uuid uuid="{03c3c363-2042-4b92-a77f-ab18c21a5f62}"/>
+    <names>
+        <name lang="de">winenet_wlan_access_point</name>
+        <name lang="en">winenet_wlan_access_point</name>
+    </names>
+    <elementInformations/>
+    <informations></informations>
+    <description>
+        <text color="#000000" rotation="0" x="9" text="-" font="Sans Serif,4,-1,5,50,0,0,0,0,0" y="47"/>
+        <rect style="line-style:normal;line-weight:normal;filling:none;color:black" x="-20.1562" width="40" ry="0" rx="0" antialias="false" height="100" y="-49.875"/>
+        <text color="#000000" rotation="0" x="-12.6874" text="PE" font="Sans Serif,4,-1,5,50,0,0,0,0,0" y="47.8438"/>
+        <rect style="line-style:normal;line-weight:normal;filling:none;color:black" x="-15.1562" width="30" ry="0" rx="0" antialias="false" height="10" y="40.125"/>
+        <rect style="line-style:normal;line-weight:normal;filling:none;color:black" x="-5.1562" width="10" ry="0" rx="0" antialias="false" height="10" y="-34.875"/>
+        <circle style="line-style:normal;line-weight:normal;filling:none;color:black" x="-5.1562" antialias="false" diameter="10" y="-4.875"/>
+        <text color="#000000" rotation="0" x="-5.7556" text="RJ-45" font="Sans Serif,4,-1,5,50,0,0,0,0,0" y="-38.3765"/>
+        <text color="#000000" rotation="0" x="-5.9603" text="SMA" font="Sans Serif,4,-1,5,50,0,0,0,0,0" y="-12.2727"/>
+        <text color="#000000" rotation="0" x="-1.5624" text="+" font="Sans Serif,4,-1,5,50,0,0,0,0,0" y="48.2656"/>
+        <circle style="line-style:normal;line-weight:normal;filling:none;color:black" x="-10.1562" antialias="false" diameter="20" y="-9.875"/>
+        <text color="#000000" rotation="0" x="-18.4406" text="WIENET APETHAA&#xa;WLAN Access Point" font="Sans Serif,3,-1,5,50,0,0,0,0,0" y="30.7566"/>
+        <terminal type="Generic" name="" orientation="s" x="9.8438" uuid="{5c779d28-4dc4-4048-ab50-941f86931e61}" y="55.125"/>
+        <terminal type="Generic" name="" orientation="e" x="-0.1562" uuid="{859325d5-917f-4dc2-b0ac-a83ee1442516}" y="-29.875"/>
+        <terminal type="Generic" name="" orientation="s" x="-10.1562" uuid="{2be2bafe-faa9-4049-bc40-cf6117537a6a}" y="55.125"/>
+        <terminal type="Generic" name="" orientation="s" x="-0.1562" uuid="{c907b1f8-44a6-4dae-8bab-03ad96905642}" y="55.125"/>
+    </description>
+</definition>

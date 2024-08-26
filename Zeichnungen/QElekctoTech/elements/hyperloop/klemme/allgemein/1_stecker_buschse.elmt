@@ -1,0 +1,43 @@
+<definition type="element" height="40" hotspot_x="5" hotspot_y="17" link_type="terminal" width="10" version="0.90">
+    <uuid uuid="{7408ed39-025c-4b31-8487-8df216db1214}"/>
+    <names>
+        <name lang="de">stecker_buchse</name>
+    </names>
+    <kindInformations>
+        <kindInformation name="type">generic</kindInformation>
+        <kindInformation name="function">generic</kindInformation>
+    </kindInformations>
+    <elementInformations>
+        <elementInformation name="manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="comment" show="1"></elementInformation>
+        <elementInformation name="description" show="1"></elementInformation>
+        <elementInformation name="unity" show="1"></elementInformation>
+        <elementInformation name="plant" show="1"></elementInformation>
+        <elementInformation name="machine_manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="supplier" show="1"></elementInformation>
+        <elementInformation name="quantity" show="1"></elementInformation>
+        <elementInformation name="manufacturer" show="1"></elementInformation>
+        <elementInformation name="label" show="1"></elementInformation>
+        <elementInformation name="designation" show="1"></elementInformation>
+    </elementInformations>
+    <informations></informations>
+    <description>
+        <line length1="1.5" x2="-1" style="line-style:normal;line-weight:normal;filling:none;color:black" y1="-1" end2="none" x1="-1" end1="none" length2="1.5" antialias="false" y2="6"/>
+        <line length1="1.5" x2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" y1="-1" end2="none" x1="0" end1="none" length2="1.5" antialias="false" y2="17"/>
+        <line length1="1.5" x2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" y1="-4" end2="none" x1="0" end1="none" length2="1.5" antialias="false" y2="-13"/>
+        <line length1="1.5" x2="1" style="line-style:normal;line-weight:normal;filling:none;color:black" y1="-1" end2="none" x1="1" end1="none" length2="1.5" antialias="false" y2="6"/>
+        <arc style="line-style:normal;line-weight:normal;filling:none;color:black" height="6" x="-3" width="6" y="-3" antialias="true" start="-180" angle="-180"/>
+        <dynamic_text Halignment="AlignLeft" font="Sans Serif,6,-1,5,0,0,0,0,0,0,normal" text_width="-1" z="7" rotation="0" text_from="UserText" x="3" keep_visual_rotation="false" uuid="{be99a913-77e7-4387-80a0-06cfc0a1f8d6}" Valignment="AlignTop" frame="false" y="-11">
+            <text>nr</text>
+            <info_name>formula</info_name>
+            <color>#0000ff</color>
+        </dynamic_text>
+        <dynamic_text Halignment="AlignLeft" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" text_width="-1" z="38" rotation="270" text_from="CompositeText" x="-30" keep_visual_rotation="true" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" Valignment="AlignTop" frame="false" y="4">
+            <text></text>
+            <info_name>formula</info_name>
+            <composite_text>%{label}</composite_text>
+        </dynamic_text>
+        <terminal orientation="n" type="Generic" name="" x="0" uuid="{65ba883b-ae93-42d3-9646-2028b483fa9e}" y="-13"/>
+        <terminal orientation="s" type="Generic" name="" x="0" uuid="{55e18198-035b-452d-b065-4746f0eeb83e}" y="17"/>
+    </description>
+</definition>

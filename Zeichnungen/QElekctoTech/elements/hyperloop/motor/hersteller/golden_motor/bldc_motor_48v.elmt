@@ -1,0 +1,54 @@
+<definition width="600" link_type="simple" hotspot_x="5" height="120" hotspot_y="109" version="0.90" type="element">
+    <uuid uuid="{ca3d798f-4970-4393-b796-d8607628d967}"/>
+    <names>
+        <name lang="en">bldc_motor_48V</name>
+        <name lang="de">bldc_motor_48V</name>
+    </names>
+    <elementInformations/>
+    <informations></informations>
+    <description>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="448" text="Temp_WH"/>
+        <text color="#000000" font="Sans Serif,5,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="400" text="Hall_C_BU"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="504" text="+5V_RD"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="348" text="Hall_B_GN"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="150" text="Temp_WH"/>
+        <text color="#000000" font="Sans Serif,5,-1,5,50,0,0,0,0,0" y="-86" rotation="0" x="122" text="W"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="550" text="GND_BK"/>
+        <text color="#000000" font="Sans Serif,5,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="302" text="Hall_A_YE"/>
+        <text color="#000000" font="Sans Serif,5,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="102" text="Hall_C_BU"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="206" text="+5V_RD"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="50" text="Hall_B_GN"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="252" text="GND_BK"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-84" rotation="0" x="72" text="V"/>
+        <text color="#000000" font="Sans Serif,5,-1,5,50,0,0,0,0,0" y="-12" rotation="0" x="4" text="Hall_A_YE"/>
+        <rect ry="0" width="590" height="100" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" y="-100" rx="0" x="0"/>
+        <text color="#000000" font="Sans Serif,6,-1,5,50,0,0,0,0,0" y="-84" rotation="0" x="22" text="U"/>
+        <text color="#000000" font="Sans Serif,8,-1,5,50,0,0,0,0,0" y="-40" rotation="0" x="10" text="10KW BLDC Motor – Liquid Coolde"/>
+        <rect ry="0" width="290" height="20" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" y="-20" rx="0" x="300"/>
+        <rect ry="0" width="290" height="20" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" y="-20" rx="0" x="0"/>
+        <rect ry="0" width="140" height="20" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" y="-100" rx="0" x="0"/>
+        <dynamic_text font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" text_from="CompositeText" y="-100" rotation="0" Valignment="AlignTop" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" text_width="-1" Halignment="AlignLeft" z="38" keep_visual_rotation="true" x="-50" frame="false">
+            <text></text>
+            <info_name>formula</info_name>
+            <composite_text>%{label}</composite_text>
+        </dynamic_text>
+        <terminal name="15_v" orientation="n" y="-105" uuid="{0a471ee7-8c6c-4d00-9b5f-f731cc6bc6c3}" x="80" type="Inner"/>
+        <terminal name="04_temp" orientation="s" y="5" uuid="{755c4d10-f1f7-495b-b26d-981ac54bc502}" x="170" type="Inner"/>
+        <terminal name="08_hall_a" orientation="s" y="5" uuid="{51a6a60b-a6db-4079-ad7d-aa4cb4d6d075}" x="320" type="Inner"/>
+        <terminal name="06_5v" orientation="s" y="5" uuid="{7d3dc5d2-3256-444b-ab2d-81259b4306bc}" x="220" type="Inner"/>
+        <terminal name="10_hall_c" orientation="s" y="5" uuid="{ed619728-24b0-4b30-9f03-24a808c0b78f}" x="420" type="Inner"/>
+        <terminal name="12_5v" orientation="s" y="5" uuid="{244f973d-2893-400a-bd64-2945cafded4d}" x="520" type="Inner"/>
+        <terminal name="03_hall_c" orientation="s" y="5" uuid="{19f530d3-49bb-4052-ba46-61de3e0e0d0e}" x="120" type="Inner"/>
+        <terminal name="15_v" orientation="n" y="-105" uuid="{b6a04a9e-971e-48e9-9e13-3581fe202ace}" x="70" type="Inner"/>
+        <terminal name="16_w" orientation="n" y="-105" uuid="{7f4a5c2e-e758-4985-98d1-fb42f182fa81}" x="120" type="Inner"/>
+        <terminal name="13_gnd" orientation="s" y="5" uuid="{730767cb-157e-475e-ae13-20354b6e30f2}" x="570" type="Inner"/>
+        <terminal name="09_hall_b" orientation="s" y="5" uuid="{5b6ce0df-d2d8-4aed-b6c9-85c4b0d7306d}" x="370" type="Inner"/>
+        <terminal name="07_gnd" orientation="s" y="5" uuid="{9d3469d1-1bbf-44e0-989f-ae598f1d833b}" x="270" type="Inner"/>
+        <terminal name="02_hall_b" orientation="s" y="5" uuid="{1bb4246c-9ed2-420b-9ce6-5194a74a68a4}" x="70" type="Inner"/>
+        <terminal name="01_hall_a" orientation="s" y="5" uuid="{8259ad98-f95c-41f5-8f1a-cb7201003616}" x="20" type="Inner"/>
+        <terminal name="11_temp" orientation="s" y="5" uuid="{34fea69f-a13c-4e64-bb9f-e993a0fb90d5}" x="470" type="Inner"/>
+        <terminal name="14_u" orientation="n" y="-105" uuid="{774081fe-afbe-4f8d-9112-bcf3b0972d7c}" x="20" type="Inner"/>
+        <terminal name="16_w" orientation="n" y="-105" uuid="{daa1c653-5bce-47df-bb4b-f57414d9c51e}" x="130" type="Inner"/>
+        <terminal name="14_u" orientation="n" y="-105" uuid="{fc970684-5404-4c24-8ba7-cbead1413c2b}" x="30" type="Inner"/>
+    </description>
+</definition>

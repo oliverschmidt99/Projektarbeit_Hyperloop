@@ -1,0 +1,17 @@
+<definition type="element" height="20" hotspot_x="4" hotspot_y="9" link_type="next_report" width="10" version="0.90">
+    <uuid uuid="{5f7636e2-b26b-4326-a0f3-308893d21aae}"/>
+    <names>
+        <name lang="de">verweis_start_bauteil</name>
+    </names>
+    <informations></informations>
+    <description>
+        <line length1="1.5" x2="-2.17604e-14" style="line-style:normal;line-weight:normal;filling:none;color:blue" y1="5" end2="none" x1="0" end1="none" length2="1.5" antialias="false" y2="-5"/>
+        <dynamic_text Halignment="AlignLeft" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" text_width="-1" z="38" rotation="0" text_from="ElementInfo" x="-15" keep_visual_rotation="true" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" Valignment="AlignTop" frame="false" y="-12">
+            <text></text>
+            <info_name>label</info_name>
+            <composite_text>%{label}</composite_text>
+            <color>#00aa00</color>
+        </dynamic_text>
+        <terminal orientation="s" type="Generic" name="" x="0" uuid="{7c38822b-4519-43e8-a086-8685055ce497}" y="5"/>
+    </description>
+</definition>
