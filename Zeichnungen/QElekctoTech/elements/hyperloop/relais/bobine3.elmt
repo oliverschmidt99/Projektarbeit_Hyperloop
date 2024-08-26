@@ -1,0 +1,57 @@
+<definition link_type="master" height="60" version="0.90" hotspot_x="20" width="40" type="element" hotspot_y="29">
+    <uuid uuid="{7e946ff3-ac88-4b23-be00-251081c86c61}"/>
+    <names>
+        <name lang="nl">Spoel</name>
+        <name lang="hu">Tekercs</name>
+        <name lang="el">Πηνίο</name>
+        <name lang="it">Bobina</name>
+        <name lang="ru">Обмотка</name>
+        <name lang="be">Relais spoel (algemeen)</name>
+        <name lang="ar">ملف</name>
+        <name lang="de">Spule</name>
+        <name lang="cs">Cívka relé</name>
+        <name lang="en">Coil</name>
+        <name lang="fr">Bobine</name>
+        <name lang="es">Bobina</name>
+        <name lang="pl">Cewka</name>
+    </names>
+    <kindInformations>
+        <kindInformation name="type">coil</kindInformation>
+    </kindInformations>
+    <elementInformations>
+        <elementInformation name="label" show="1"></elementInformation>
+        <elementInformation name="manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="machine_manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="manufacturer" show="1"></elementInformation>
+        <elementInformation name="unity" show="1"></elementInformation>
+        <elementInformation name="comment" show="1"></elementInformation>
+        <elementInformation name="supplier" show="1"></elementInformation>
+        <elementInformation name="quantity" show="1"></elementInformation>
+        <elementInformation name="plant" show="1"></elementInformation>
+        <elementInformation name="designation" show="1"></elementInformation>
+        <elementInformation name="description" show="1"></elementInformation>
+    </elementInformations>
+    <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+    <description>
+        <rect antialias="false" style="line-style:normal;line-weight:normal;filling:none;color:black" ry="0" y="-8" height="16" rx="0" width="28" x="-14"/>
+        <line end2="none" antialias="false" x1="0" x2="0" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-20" end1="none" y2="-8"/>
+        <dynamic_text text_width="-1" text_from="ElementInfo" font="Sans Serif,9,-1,5,50,0,0,0,0,0" Valignment="AlignVCenter" rotation="0" keep_visual_rotation="false" z="2" y="-12.5" Halignment="AlignRight" uuid="{164057db-e155-4845-93a4-57349474d2d7}" x="-29" frame="false">
+            <text></text>
+            <info_name>label</info_name>
+        </dynamic_text>
+        <dynamic_text text_width="-1" text_from="UserText" font="Sans Serif,4,-1,5,25,0,0,0,0,0" Valignment="AlignTop" rotation="0" keep_visual_rotation="false" z="3" y="11.3333" Halignment="AlignLeft" uuid="{802eb5b1-ff13-4cb2-a740-364bf2b29364}" x="2" frame="false">
+            <text>A2</text>
+        </dynamic_text>
+        <dynamic_text text_width="-1" text_from="UserText" font="Sans Serif,4,-1,5,25,0,0,0,0,0" Valignment="AlignTop" rotation="0" keep_visual_rotation="false" z="4" y="-24.6667" Halignment="AlignLeft" uuid="{fd163da7-4d9e-4852-86b2-578aae20f50e}" x="2" frame="false">
+            <text>A1</text>
+        </dynamic_text>
+        <line end2="none" antialias="false" x1="0" x2="0" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="8" end1="none" y2="20"/>
+        <dynamic_text text_width="-1" text_from="ElementInfo" font="Sans Serif,9,-1,5,50,0,0,0,0,0" Valignment="AlignTop" rotation="0" keep_visual_rotation="false" z="6" y="-9.1667" Halignment="AlignLeft" uuid="{d47e6c57-0ed3-427c-8e27-5c0ce1c1f17b}" x="25" frame="false">
+            <text></text>
+            <info_name>label</info_name>
+        </dynamic_text>
+        <terminal name="" y="-21" orientation="n" uuid="{1c36fec8-37fb-46e9-a292-bd2007571481}" x="0" type="Generic"/>
+        <terminal name="" y="21" orientation="s" uuid="{519274a9-c52b-42bf-8628-ca0f93d0baa1}" x="0" type="Generic"/>
+    </description>
+</definition>
