@@ -1,7 +1,4 @@
 \documentclass[oneside,a4paper,11pt]{book}      
-% \documentclass[twoside,a4paper,11pt]{book}
-
-
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
 \usepackage[pdftex,
@@ -33,17 +30,45 @@ pdfkeywords={Unterschrift}
   \addbibresource{Literaturverzeichnis.bib}
 
 \usepackage{csquotes}
-
+\usepackage{makecell}
 \usepackage{animate}
+\usepackage{eso-pic}
+\usepackage{newfloat}
 
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\newcommand{\myboxy}[3]{
+	\begin{tikzpicture}[
+			every node/.style={rectangle,rounded corners,draw=black, top color=white,very thick, inner sep=0.3em, minimum size=1em} ]
+		\node[text width=#3](main) at (0,0 ){\vspace{3pt}  #1};
+		\node[above =-2mm of main.north west, anchor=south west] (title) {#2};
+	\end{tikzpicture} }
 
 \usepackage{hsel-thesis2020}
-%\input{listingstyle}
 
-% Kombination von \textit und \textbf
 \newcommand{\textbfit}[1]{\textbf{\textit{#1}}}
 
+
+
+
+\DeclareFloatingEnvironment[
+	listname  = {Diagrammverzeichnis}, % Listenüberschrift
+	name      = Diagramm,              % Name in Beschriftungen
+]{scheme}
+
+
+\DeclareFloatingEnvironment[
+	listname  = {Oszillogrammverzeichnis}, % Listenüberschrift
+	name      = Oszillogramm,              % Name in Beschriftungen
+]{oszillo}
+
+
+
+
+
 \begin{document}
+\allsectionsfont{\sffamily}
+
 
 \AddToShipoutPicture{\BackgroundWave}
 \pagenumbering{Roman}
@@ -57,7 +82,6 @@ pdfkeywords={Unterschrift}
 \cleardoublepage
 \pagenumbering{arabic}
 \ClearShipoutPicture
-
 
 \include{source/1_0_Einleitung}
 \include{source/1_2_Verwendet_Technik}
