@@ -1,7 +1,17 @@
 \chapter{Stand der Technik}
+In dem Folgenden Abschnitten werden die verwendeten Bauteile, welche in Kapitel \ref{chapter:Konzept} dokumentiert sind näher beschrieben.
 
-\section{Konzept}
-Der Pod wird von einem BLDC-Motor angetrieben, wobei die elektrische Energie in einem Lithium-Ionen-Akku gespeichert wird. Der Motor wird durch einen Sinuswellen-Generator gesteuert. Mit dem Speedgoat-System werden die Eingangssignale des Sinuswellen-Generators sowie andere Aktoren gesteuert.
+\myboxy{
+	\begin{itemize}
+		\item Bilder neu machen aus dem Schaltplan.
+		\item Vector Controller, Funktionsweise nur kurz erklären und mehr auf die Anschlüsse eingehen.
+		\item PIN-Mapping als Tabelle erstellen, für den Motor und den Vector Controller.
+	\end{itemize}
+}{To-do}{\textwidth}
+
+
+
+
 
 \section{Antrieb – Golden Motor}
 \label{Golden_Motor}
@@ -72,11 +82,11 @@ Sie bietet eine effiziente Steuerung von BLDC-Motoren in Anwendungen mit variabl
 
 
 
-\section{Steuerung – Speedgoat}
-
+\section{Echtzeitfähige Steuerung – Speedgoat}
+\label{sec:speedgoat}
 \myboxy{
 	\begin{itemize}
-		\item PIN-Mapping \ref{speedgoat:IO397B} überprüfen
+		\item PIN-Mapping \ref{speedgoat:IO397B} überprüfen.
 		\item I/O Module 691 zuende Erklären.
 	\end{itemize}
 }{To-do}{\textwidth}
@@ -100,7 +110,7 @@ Echtzeitsysteme von Speedgoat sind Computer, die in der Lage sind, Aufgaben inne
 
 \subsection{Verbaute Module}
 
-Für das Projekt wird die Baseline Real-Time Target Machine verwendet. Die über die Module IO397 und IO691 verfügt.\\
+Für das Projekt wird die Baseline Real-Time Target Machine verwendet. Die über die Module IO397 und IO691 verfügt, welche nun näher beschrieben werden.\\
 
 \begin{figure}[!ht]
 	\begin{center}

@@ -2,7 +2,7 @@
 
 \section{Bauteile}
 
-Für das Projekt wurde der die echtzeitfähige steuerung, Batterie,  Motor und dem dazugöhrige Steuerung vorgeben.  Alle weiteren Bauteile mussten bestellt werden.
+Für das Projekt wurden die echtzeitfähige Steuerung, die Batterie, der Motor und die zugehörige Steuerung vorgegeben. Alle weiteren Bauteile mussten bestellt werden.
 
 \section{Schaltplan}
 
@@ -11,18 +11,21 @@ Für das Projekt wurde der die echtzeitfähige steuerung, Batterie,  Motor und d
 
 \myboxy{
 	\begin{itemize}
-		\item Funktion (=Anlage) und Ortskennzeichen (+Ort) definieren. Funktionlen Engineering
-		\item Bauteilbezeichnung (BMK)
+		\item Funktion (=Anlage) und Ortskennzeichen (+Ort) definieren. Funktionales Engineering.
+		\item Bauteilkennzeichnung (BMK) festlegen.
 		\item Aderfarben und Querschnitt definieren.
-		\item Ausgesuchte Bauteile in die Schaltung hinzufügen.
-		\item Bauteile, die es nicht gibt, selber erstellen.
-		      \subitem Bauteile sortiert hinzufügen. Spannungsversorung, Steuerung(In dann 0ut), Lastkreis und Sonderfunktionen.
+		\item Ausgewählte Bauteile in die Schaltung integrieren.
+		\item Nicht vorhandene Bauteile selbst erstellen.
+		      \begin{itemize}
+			      \item Bauteile sortiert hinzufügen: Spannungsversorgung, Steuerung (Eingang, dann Ausgang), Lastkreis und Sonderfunktionen.
+		      \end{itemize}
 	\end{itemize}}{To-do}{\textwidth}
 
 
 
 
-Zu Beginn der Erstellung des Schaltplans sollten die Funktions- und Ortskennzeichen festgelegt werden, ebenso die Beschriftung der Bauteile und Leitungen. Für die Verdrahtung müssen den Potenzialen entsprechende Aderfarben zugewiesen werden.
+
+Zu Beginn der Erstellung des Schaltplans sollten die Funktions- und Ortskennzeichen, sowie die Beschriftung der Bauteile und Leitungen festgelegt werden. Die Verdrahtung erfordert die Zuordnung von Aderfarben, die den jeweiligen Potenzialen entsprechen.
 
 \subsection{Betriebsmittelbezeichnung}
 
@@ -38,15 +41,15 @@ Das Funktionskennzeichen beschreibt eine bestimmte Funktion im Schaltplan, wie b
 		\hline
 		\textbf{Abkürzung}      & \textbf{Bezeichnung} \\ \hline
 		\multicolumn{1}{l|}{SV} & Spannungsversorung   \\
-		\multicolumn{1}{l|}{SE} & Steuerung eingänge   \\
-		\multicolumn{1}{l|}{SA} & Steuerung ausgänge   \\
+		\multicolumn{1}{l|}{ES} & Eingänge Steuerung   \\
+		\multicolumn{1}{l|}{AS} & Ausgänge Steuerung   \\
 		\multicolumn{1}{l|}{KO} & Kommunikation        \\
 		\multicolumn{1}{l|}{AT} & Antrieb              \\
 		\multicolumn{1}{l|}{NA} & Not-Aus              \\ \hline
 	\end{tabular}
 \end{table}
 
-Das Ortskennzeichen gibt an, an welchem Ort ein Bauteil installiert ist. Beispielsweise gibt es im Pod eine Kontrolleinheit und eine Batterieeinheit. Im Schaltplan wird dadurch deutlich, welche Verbindungen zwischen verschiedenen Orten bestehen. Das Ortskennzeichen erleichtert zudem die Wartung und Installation des Systems.
+Das Ortskennzeichen gibt an, an welchem Ort ein Bauteil installiert ist. Beispielsweise gibt es im Pod eine Steuereinheit und eine Batterieeinheit. Im Schaltplan wird dadurch deutlich, welche Verbindungen zwischen verschiedenen Orten bestehen. Das Ortskennzeichen erleichtert zudem die Wartung und Installation des Systems.
 
 \begin{table}[!ht]
 	\centering
@@ -54,10 +57,11 @@ Das Ortskennzeichen gibt an, an welchem Ort ein Bauteil installiert ist. Beispie
 	\label{bmk:ortskennzeichen}
 	\begin{tabular}{ll}
 		\hline
-		\textbf{Abkürzung}      & \textbf{Bezeichnung} \\ \hline
-		\multicolumn{1}{l|}{BE} & Batterieeinheit      \\
-		\multicolumn{1}{l|}{KE} & Kontrolleinheit      \\
-		\multicolumn{1}{l|}{AE} & Antriebseinheit      \\ \hline
+		\textbf{Abkürzung}       & \textbf{Bezeichnung} \\ \hline
+		\multicolumn{1}{l|}{POD} & Fahrzeug             \\
+		\multicolumn{1}{l|}{BE}  & Batterieeinheit      \\
+		\multicolumn{1}{l|}{SE}  & Steuereinheit        \\
+		\multicolumn{1}{l|}{AE}  & Antriebseinheit      \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -71,7 +75,9 @@ Das Ortskennzeichen gibt an, an welchem Ort ein Bauteil installiert ist. Beispie
 \end{figure}
 
 
-Das Betriebsmittelkennzeichen schließlich bezeichnet das spezifische Bauteil. Die genaue Zuordnung der Bezeichnungen ist in der DIN EN IEC 81346-2 geregelt. Die für das Projekt relevanten Betriebsmittelkennzeichen sind in Tabelle \ref{bmk:betriebsmittelkennzeichen} aufgeführt.
+Das Betriebsmittelkennzeichen bezeichnet das spezifische Bauteil. Die genaue Zuordnung der Bezeichnungen ist in der DIN EN IEC 81346-2 geregelt. Die für das Projekt relevanten Betriebsmittelkennzeichen sind in Tabelle \ref{bmk:betriebsmittelkennzeichen} aufgeführt.
+
+Bei einer vollständigen Betriebsmittelbezeichnung sieht das Kennzeichen des Betriebsmittels wie folgt aus: =SA+KE-KE101, Bei der .
 
 \begin{table}[!ht]
 	\centering
@@ -92,21 +98,6 @@ Das Betriebsmittelkennzeichen schließlich bezeichnet das spezifische Bauteil. D
 		\multicolumn{1}{|l|}{XD} & \makecell[l]{Niederspannungs-Verbindungsobjekt} & \multicolumn{1}{l|}{Klemme, Stecker oder Buchse}   \\ \hline
 	\end{tabular}
 \end{table}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -178,6 +169,6 @@ Der Sensor komuniziert mit einem Bussystem.
 
 \myboxy{
 	\begin{itemize}
-		\item 
+		\item
 	\end{itemize}
 }{To-do}{\textwidth}
