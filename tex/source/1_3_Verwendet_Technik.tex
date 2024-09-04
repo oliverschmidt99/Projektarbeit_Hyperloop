@@ -6,6 +6,7 @@ In dem Folgenden Abschnitten werden die verwendeten Bauteile, welche in Kapitel 
 		\item Bilder neu machen aus dem Schaltplan.
 		\item Vector Controller, Funktionsweise nur kurz erklären und mehr auf die Anschlüsse eingehen.
 		\item PIN-Mapping als Tabelle erstellen, für den Motor und den Vector Controller.
+		\item QElectroTeck
 	\end{itemize}
 }{To-do}{\textwidth}
 
@@ -21,6 +22,7 @@ In dem Folgenden Abschnitten werden die verwendeten Bauteile, welche in Kapitel 
 		\item Bilder neu machen aus dem Schaltplan.
 		\item Vector Controller, Funktionsweise nur kurz erklären und mehr auf die Anschlüsse eingehen.
 		\item PIN-Mapping als Tabelle erstellen, für den Motor und den Vector Controller.
+		\item Auf die PDF verweisen.
 	\end{itemize}
 }{To-do}{\textwidth}
 
@@ -157,8 +159,9 @@ Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers (männlich) 
 
 \subsubsection{Pin Mapping – IO397-50k}
 
-Terminal Board A ist für die Verarbeitung analoger Signale ausgelegt, sowohl für Eingänge als auch für Ausgänge. Die Tabelle \ref{speedgoat:IO397A} zeigt das Pin Mapping von Terminal Board A. Dieses Board enthält Anschlüsse für insgesamt vier analoge Eingänge (Pins 1a bis 8a) und vier analoge Ausgänge (Pins 9a bis 12a). Die analogen Eingänge sind für die Messung von Spannungen zuständig, wobei die positiven und negativen Leitungen (jeweils "+" und "-") getrennt geführt werden, um eine differenzielle Signalverarbeitung zu ermöglichen. Die Ausgänge sind digitale-zu-analoge-Wandler (DAC), die analoge Signale für den Antrieb von Geräten bereitstellen. Zusätzlich sind mehrere Ground- und Spannungsanschlüsse vorhanden, um eine stabile Stromversorgung zu gewährleisten.
-\begin{table}[ht]
+Terminal Board A ist für die Verarbeitung analoger Signale ausgelegt, sowohl für Eingänge als auch für Ausgänge. Die Tabelle \ref{speedgoat:IO397A} zeigt das Pin Mapping von Terminal Board A. Dieses Board enthält Anschlüsse für insgesamt vier analoge Eingänge (Pins 1a bis 8a) und vier analoge Ausgänge (Pins 9a bis 12a). Die analogen Eingänge sind für die Messung von Spannungen im Bezug auf einer physikalische Große zuständig, wobei die positiven und negativen Leitungen (jeweils '+' und '-') getrennt geführt werden, um eine differenzielle Signalverarbeitung zu ermöglichen. Die Ausgänge sind an einem digitale-zu-analoge-Wandler (DAC) angeschlossen, die analoge Signale für den Antrieb von Geräten bereitstellen. Zusätzlich sind mehrere Ground- und Spannungsanschlüsse vorhanden, um eine stabile Stromversorgung zu gewährleisten.
+\pagebreak
+\begin{table}[!h]
 	\centering
 	\caption{IO397-50k Pin   – Terminal Board A: analog I/O \cite{speedgoat:IO397}}
 	\label{speedgoat:IO397A}
@@ -187,7 +190,7 @@ Terminal Board A ist für die Verarbeitung analoger Signale ausgelegt, sowohl f�
 \end{table}
 
 Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- und Ausgänge. Die Tabelle \ref{speedgoat:IO397B} zeigt das Pin Mapping von Terminal Board B. Die Pins 3b bis 16b sind für konfigurierbare I/O-Funktionalitäten ausgelegt und nutzen TTL-Signale (Transistor-Transistor-Logik), was sie besonders für schnelle digitale Schaltvorgänge geeignet macht. Dieses Board ermöglicht es, die Anschlüsse flexibel zu nutzen, je nach den Anforderungen der Applikation. Auch hier gibt es mehrere Spannungs- und Ground-Anschlüsse, sowie eine Abschirmung (Shielding) für das M12-Kabel, um elektromagnetische Störungen zu minimieren.
-
+\pagebreak
 \begin{table}[ht]
 	\centering
 	\caption{IO397-50k Pin Mapping – Terminal Board B: analog I/O \cite{speedgoat:IO397}}
