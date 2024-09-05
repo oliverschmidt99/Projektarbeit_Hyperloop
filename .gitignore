@@ -2,4 +2,8 @@
 *.pdf
 *.bbl
 *.gz
+*.synctex
+
+
+tex/0_Projektarbeit.synctex.gz
 

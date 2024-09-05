@@ -1,42 +1,35 @@
 \chapter{Stand der Technik}
-In dem Folgenden Abschnitten werden die verwendeten Bauteile, welche in Kapitel \ref{chapter:Konzept} dokumentiert sind näher beschrieben.
-
+\label{chapter:Stand_der_Technik}
 \myboxy{
 	\begin{itemize}
 		\item Bilder neu machen aus dem Schaltplan.
 		\item Vector Controller, Funktionsweise nur kurz erklären und mehr auf die Anschlüsse eingehen.
 		\item PIN-Mapping als Tabelle erstellen, für den Motor und den Vector Controller.
-		\item QElectroTeck
-	\end{itemize}
-}{To-do}{\textwidth}
-
-
-
-
-
-\section{Antrieb – Golden Motor}
-\label{Golden_Motor}
-
-\myboxy{
-	\begin{itemize}
-		\item Bilder neu machen aus dem Schaltplan.
-		\item Vector Controller, Funktionsweise nur kurz erklären und mehr auf die Anschlüsse eingehen.
+		\item QElectroTeck.
 		\item PIN-Mapping als Tabelle erstellen, für den Motor und den Vector Controller.
 		\item Auf die PDF verweisen.
 	\end{itemize}
 }{To-do}{\textwidth}
 
-Golden Motor ist ein Anbieter von Elektromotoren und elektrischen Antriebssystemen. Das Unternehmen bietet eine breite Palette von Produkten an, darunter:
-Motoren und Komplettsysteme für Elektrofahrräder, Industrielle BLDC-Motoren, Elektrische Antriebe für Boote.
+
+
+In dem folgenden Abschnitt werden die verwendeten Bauteile, welche in Kapitel \ref{chapter:Konzept} dargestellt worden sind, näher beschrieben.
+
+
+\section{Antrieb – Golden Motor}
+\label{section:Antrieb}
+
+Golden Motor bietet eine Gesamtlösung bestehend aus einem BLDC-Motor und einem Vektor-Controller an. Der Motor wird dabei mit dem Controller verbunden, der eine Schnittstelle mit allen notwendigen Steuer- und Kontrollsignalen bereitstellt, um den Motor anzutreiben. Die Anschlüsse sowie die grundlegende Funktionsweise werden in den Abschnitten \ref{section:BLDC_Motor} und \ref{section:Vector_Controller} näher erläutert.
+
 
 
 \subsection{BLDC Motor}
-\label{BLDC_Motor}
+\label{section:BLDC_Motor}
 
 
-Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem herkömmlichen Gleichstrommotor. Während bei einem traditionellen DC-Motor die Polumschaltung (Kommutierung) mechanisch über Kohlebürsten erfolgt, übernimmt beim BLDC-Motor eine elektronische Steuerung diese Aufgabe. Dadurch entfällt die Notwendigkeit von Kohlebürsten, was den Motor effizienter und langlebiger macht\cite{mathworks:bldc_motor}.
-
-\begin{figure}[ht]
+Der in Abbildung \ref{img_2_2:antrieb_motor:1} dargestellte BLDC-Motor verfügt über eine Leistung von 10 kW und kann optional durch eine Ölkühlung gekühlt werden, was jedoch für das Fahrzeug derzeit nicht relevant ist. Die Drehzahl ist variabel und kann zwischen 2.000 und 6.000 U/min eingestellt werden, mittels dem Vector Controller der in Abschnitt \ref{section:Vector_Controller} erklärt wird. Das Nenndrehmoment beträgt 26 Nm, während das maximale Drehmoment bei 85 Nm liegt. Der Wirkungsgrad des Motors beträgt 91 \%.
+\pagebreak[1]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=1\textwidth]{img/2_antrieb/motor_1.png}
 		\caption{Golden Motor – 10 KW BLDC Motor Liquid Cooled}
@@ -45,19 +38,50 @@ Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem her
 \end{figure}
 
 
+Die Anschlüsse des Motors sind in Tabelle \ref{BLDC_Motor:pinmapping} aufgelistet. Der Motor verfügt über zwei Hall-Sensor-Kabel, die jeweils drei Hall-Sensoren sowie einen Temperatursensor enthalten. Zusätzlich sind ein GND- und ein +5V-Versorgungsanschluss in den Hall-Sensor-Kabeln integriert. Die Spulen des Motors werden über sechs separate Kabel angeschlossen: U, V und W.
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Pin Mapping – BLDC-Motor}
+	\label{BLDC_Motor:pinmapping}
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Anschluss}          & \textbf{Funktionalität} & \textbf{Farbe} \\ \hline
+		\multicolumn{3}{c}{\textbf{Anschluss Adern Motor}}                     \\ \hline
+		\multicolumn{1}{l|}{U1}     & Spule 1                 & Gelb           \\
+		\multicolumn{1}{l|}{V1}     & Spule 2                 & Grün           \\
+		\multicolumn{1}{l|}{W1}     & Spule 3                 & Blau           \\
+		\multicolumn{1}{l|}{U2}     & Spule 1                 & Gelb           \\
+		\multicolumn{1}{l|}{V2}     & Spule 2                 & Grün           \\
+		\multicolumn{1}{l|}{W2}     & Spule 3                 & Blau           \\ \hline
+		\multicolumn{3}{c}{\textbf{Motor Hall Kabel 1}}                        \\ \hline
+		\multicolumn{1}{l|}{Hall A} & Hall Sensor             & Gelb           \\
+		\multicolumn{1}{l|}{Hall B} & Hall Sensor             & Grün           \\
+		\multicolumn{1}{l|}{Hall C} & Hall Sensor             & Blau           \\
+		\multicolumn{1}{l|}{Temp}   & Temperatur Sensor       & Weiß           \\
+		\multicolumn{1}{l|}{+5V}    & Spannungsversorgung     & Rot            \\
+		\multicolumn{1}{l|}{GND}    & Masse                   & Schwarz        \\ \hline
+		\multicolumn{3}{c}{\textbf{Motor Hall Kabel 2}}                        \\ \hline
+		\multicolumn{1}{l|}{Hall A} & Hall Sensor             & Gelb           \\
+		\multicolumn{1}{l|}{Hall B} & Hall Sensor             & Grün           \\
+		\multicolumn{1}{l|}{Hall C} & Hall Sensor             & Blau           \\
+		\multicolumn{1}{l|}{Temp}   & Temperatur Sensor       & Weiß           \\
+		\multicolumn{1}{l|}{+5V}    & Spannungsversorgung     & Rot            \\
+		\multicolumn{1}{l|}{GND}    & Masse                   & Schwarz        \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[4]
 
-Die Anschlüsse des BLDC-Motors sind in Abbildung \ref{img_2_2:circ_bldc:1} dargestellt. Der Motor verfügt über zwei Ausgänge, die jeweils mit drei Hall-Sensoren ausgestattet sind, sowie über einen Temperatursensor. Zusätzlich werden über das Kabel ein GND und eine +5V-Versorgung benötigt. Die Spulen des Motors werden über drei Phasen angeschlossen: U, V und W.
 
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=1\textwidth]{img/2_imp/2_circ_bldc_motor.png}
-		\caption{Golden Motor – Zeichnung: BLDC Motor}
-		\label{img_2_2:circ_bldc:1}
-	\end{center}
-\end{figure}
+
+\subsubsection{Funktionsweise}
+Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem herkömmlichen Gleichstrommotor. Während bei einem traditionellen DC-Motor die Polumschaltung (Kommutierung) mechanisch über Kohlebürsten erfolgt, übernimmt beim BLDC-Motor eine elektronische Steuerung diese Aufgabe. Dadurch entfällt die Notwendigkeit von Kohlebürsten, was den Motor effizienter und langlebiger macht\cite{mathworks:bldc_motor}.
+
+
 
 
 \subsection{Vector Controller}
+\label{section:Vector_Controller}
 Der Vector Controller verwendet die Motorsteuerungstechnologie feldorientierte Regelung (Field-Oriented Control - FOC), dass bedeutet das der Controller mittels den Hallsensoren, einem Rückgekoppelten Regelkreis bildet und somit die Lage des Polrades ermittelt.
 
 \cite{schroeder:elektische_antriebe}
@@ -85,7 +109,7 @@ Sie bietet eine effiziente Steuerung von BLDC-Motoren in Anwendungen mit variabl
 
 
 \section{Echtzeitfähige Steuerung – Speedgoat}
-\label{sec:speedgoat}
+\label{section:speedgoat}
 \myboxy{
 	\begin{itemize}
 		\item PIN-Mapping \ref{speedgoat:IO397B} überprüfen.
@@ -125,7 +149,7 @@ Für das Projekt wird die Baseline Real-Time Target Machine verwendet. Die über
 Das IO397 I/O-Modul ist ein mPCIe-kompatibles, in Simulink programmierbares FPGA-Modul mit 50k Logikzellen, 4 ADC-Eingangs- und 4 DAC-Ausgangskanälen, sowie 14 ESD-geschützten TTL-I/O-Leitungen. Es unterstützt eine 16-Bit-Auflösung, softwareseitig auswählbare Spannungen und ist ideal für geschlossene Regelkreise und Hardware-in-the-Loop (HIL)-Simulationen mit MATLAB und Simulink \cite{speedgoat:IO397}.
 
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{img/2_steuerung/goat_io691.png}
 		\caption{Speedgoat – I/O Module 691 \cite{speedgoat:IO691}}
@@ -139,7 +163,7 @@ Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen
 Das Modul IO397-50k kann über ein Sensor-Aktor-Kabel von Phoenix Contact extern angeschlossen werden, wie in Abbildung \ref{img_2_2:steuerung_goat:2} dargestellt.
 Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers (männlich) angeschlossen.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=1\textwidth]{img/2_steuerung/goat_2.png}
 		\caption{Speedgoat – Ansicht der Modulanschlüsse}
@@ -147,7 +171,7 @@ Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers (männlich) 
 	\end{center}
 \end{figure}
 
-%\begin{figure}[ht]
+%\begin{figure}[!ht]
 %	\begin{center}
 %		\includegraphics[width=1\textwidth]{img/2_steuerung/goat_3.png}
 %		\caption{Speedgoat – Ansicht der Kommunikationsschnittstellen}
@@ -159,9 +183,9 @@ Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers (männlich) 
 
 \subsubsection{Pin Mapping – IO397-50k}
 
-Terminal Board A ist für die Verarbeitung analoger Signale ausgelegt, sowohl für Eingänge als auch für Ausgänge. Die Tabelle \ref{speedgoat:IO397A} zeigt das Pin Mapping von Terminal Board A. Dieses Board enthält Anschlüsse für insgesamt vier analoge Eingänge (Pins 1a bis 8a) und vier analoge Ausgänge (Pins 9a bis 12a). Die analogen Eingänge sind für die Messung von Spannungen im Bezug auf einer physikalische Große zuständig, wobei die positiven und negativen Leitungen (jeweils '+' und '-') getrennt geführt werden, um eine differenzielle Signalverarbeitung zu ermöglichen. Die Ausgänge sind an einem digitale-zu-analoge-Wandler (DAC) angeschlossen, die analoge Signale für den Antrieb von Geräten bereitstellen. Zusätzlich sind mehrere Ground- und Spannungsanschlüsse vorhanden, um eine stabile Stromversorgung zu gewährleisten.
+Terminal Board A ist für die Verarbeitung analoger Signale ausgelegt, sowohl für Eingänge als auch für Ausgänge. Die Tabelle \ref{speedgoat:IO397A} zeigt das Pin Mapping von Terminal Board A. Dieses Board enthält Anschlüsse für insgesamt vier analoge Eingänge (Pins 1a bis 8a) und vier analoge Ausgänge (Pins 9a bis 12a). Die analogen Eingänge sind für die Messung von Spannungen in Bezug auf eine physikalische Große zuständig, wobei die positiven und negativen Leitungen (jeweils '+' und '-') getrennt geführt werden, um eine differenzielle Signalverarbeitung zu ermöglichen. Die Ausgänge sind an einem digitale-zu-analoge-Wandler (DAC) angeschlossen, die analoge Signale für den Antrieb von Geräten bereitstellen. Zusätzlich sind mehrere Ground- und Spannungsanschlüsse vorhanden, um eine stabile Stromversorgung zu gewährleisten.
 \pagebreak
-\begin{table}[!h]
+\begin{table}[!ht]
 	\centering
 	\caption{IO397-50k Pin   – Terminal Board A: analog I/O \cite{speedgoat:IO397}}
 	\label{speedgoat:IO397A}
@@ -191,31 +215,30 @@ Terminal Board A ist für die Verarbeitung analoger Signale ausgelegt, sowohl f�
 
 Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- und Ausgänge. Die Tabelle \ref{speedgoat:IO397B} zeigt das Pin Mapping von Terminal Board B. Die Pins 3b bis 16b sind für konfigurierbare I/O-Funktionalitäten ausgelegt und nutzen TTL-Signale (Transistor-Transistor-Logik), was sie besonders für schnelle digitale Schaltvorgänge geeignet macht. Dieses Board ermöglicht es, die Anschlüsse flexibel zu nutzen, je nach den Anforderungen der Applikation. Auch hier gibt es mehrere Spannungs- und Ground-Anschlüsse, sowie eine Abschirmung (Shielding) für das M12-Kabel, um elektromagnetische Störungen zu minimieren.
 \pagebreak
-\begin{table}[ht]
+\begin{table}[!ht]
 	\centering
 	\caption{IO397-50k Pin Mapping – Terminal Board B: analog I/O \cite{speedgoat:IO397}}
 	\label{speedgoat:IO397B}
-	\begin{tabular}{lcl}
+	\begin{tabular}{lll}
 		\hline
-		\textbf{Pin}             & \textbf{Funktionalität}        & \textbf{Type} \\ \hline
-		\multicolumn{1}{l|}{1b}  & 0 V                            &               \\
-		\multicolumn{1}{l|}{2b}  & 5 V                            &               \\\hline
-		\multicolumn{1}{l|}{3b}  & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{4b}  & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{5b}  & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{6b}  & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{7b}  & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{8b}  & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{9b}  & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{10b} & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{11b} & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{12b} & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{13b} & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{14b} & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{15b} & Configurable I/O functionality & TTL           \\
-		\multicolumn{1}{l|}{16b} & Configurable I/O functionality & TTL           \\\hline
-		\multicolumn{1}{l|}{17b} & Ground                         &               \\
-		\multicolumn{1}{l|}{SH}  & Shielding of M12 cable         &               \\ \hline
+		Pin                      & Funktionalität  & Type   \\ \hline
+		\multicolumn{1}{l|}{1b}  & 0 V             &        \\
+		\multicolumn{1}{l|}{2b}  & 5 V             &        \\ \hline
+		\multicolumn{1}{l|}{3b}  & CAP             & IN     \\
+		\multicolumn{1}{l|}{4b}  & CAP             & IN     \\
+		\multicolumn{1}{l|}{5b}  & CAP             & IN     \\
+		\multicolumn{1}{l|}{6b}  & CAP             & IN     \\
+		\multicolumn{1}{l|}{7b}  & CAP             & IN     \\
+		\multicolumn{1}{l|}{8b}  & CAP             & IN     \\
+		\multicolumn{1}{l|}{9b}  & CAP – Trigger   & IN     \\ \hline
+		\multicolumn{1}{l|}{10b} & QAE – A         & OUT    \\
+		\multicolumn{1}{l|}{11b} & QAE – A         & OUT    \\
+		\multicolumn{1}{l|}{12b} & QAE – C/Index   & OUT    \\ \hline
+		\multicolumn{1}{l|}{13b} & DIO             & IN/OUT \\
+		\multicolumn{1}{l|}{14b} & DIO             & IN/OUT \\
+		\multicolumn{1}{l|}{15b} & DIO             & IN/OUT \\
+		\multicolumn{1}{l|}{16b} & Interrupt input & IN     \\
+		\multicolumn{1}{l|}{17b} & GND             &        \\ \hline
 	\end{tabular}
 \end{table}
 
@@ -224,7 +247,7 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 \subsubsection{Pin Mapping –  IO691}
 
 
-\begin{table}[ht]
+\begin{table}[!ht]
 	\centering
 	\caption{IO691 Pin Mapping}
 	\label{speedgoat:IO691}
@@ -245,7 +268,7 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 
 
 \section{Abstandsmessung}
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=1\textwidth]{img/2_sen/dis_pepperl+fuchs_1.png}
 		\caption{Pepperl+Fuchs – Distanzsensor}

@@ -19,31 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{tesla:Hyperloop_impact}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=4e521a8dfd32766a4fb9b0272c16cb78}{%
-           family={{Elon Musk}},
-           familyi={E\bibinitperiod}}}%
-      }
-      \strng{namehash}{4e521a8dfd32766a4fb9b0272c16cb78}
-      \strng{fullhash}{4e521a8dfd32766a4fb9b0272c16cb78}
-      \strng{bibnamehash}{4e521a8dfd32766a4fb9b0272c16cb78}
-      \strng{authorbibnamehash}{4e521a8dfd32766a4fb9b0272c16cb78}
-      \strng{authornamehash}{4e521a8dfd32766a4fb9b0272c16cb78}
-      \strng{authorfullhash}{4e521a8dfd32766a4fb9b0272c16cb78}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{{Hyperloop Alpha}}
-      \field{year}{2013}
-      \verb{urlraw}
-      \verb https://www.tesla.com/sites/default/files/blog_images/hyperloop-alpha.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.tesla.com/sites/default/files/blog_images/hyperloop-alpha.pdf
-      \endverb
-    \endentry
     \entry{mathworks:bldc_motor}{misc}{}
       \name{author}{1}{}{%
         {{hash=27cbd58848db322664a3a4ad88af3dac}{%
@@ -56,8 +31,8 @@
       \strng{authorbibnamehash}{27cbd58848db322664a3a4ad88af3dac}
       \strng{authornamehash}{27cbd58848db322664a3a4ad88af3dac}
       \strng{authorfullhash}{27cbd58848db322664a3a4ad88af3dac}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Abschnitt: Types of DC Motors; abgerufen am 11-08-2024}
@@ -90,8 +65,8 @@
       \strng{authorbibnamehash}{0b4d8fcb0667d477f50e6f20a3c1cc46}
       \strng{authornamehash}{0b4d8fcb0667d477f50e6f20a3c1cc46}
       \strng{authorfullhash}{0b4d8fcb0667d477f50e6f20a3c1cc46}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{edition}{2}
       \field{year}{2000}
@@ -109,8 +84,8 @@
       \strng{authornamehash}{bbab6804dc337003bedac3597796e556}
       \strng{authorfullhash}{bbab6804dc337003bedac3597796e556}
       \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; Zugriff 12-August-2024]}
