@@ -27,7 +27,7 @@ Golden Motor bietet eine Gesamtlösung bestehend aus einem BLDC-Motor und einem 
 \label{section:BLDC_Motor}
 
 
-Der in Abbildung \ref{img_2_2:antrieb_motor:1} dargestellte BLDC-Motor verfügt über eine Leistung von 10 kW und kann optional durch eine Ölkühlung gekühlt werden, was jedoch für das Fahrzeug derzeit nicht relevant ist. Die Drehzahl ist variabel und kann zwischen 2.000 und 6.000 U/min eingestellt werden, mittels dem Vector Controller der in Abschnitt \ref{section:Vector_Controller} erklärt wird. Das Nenndrehmoment beträgt 26 Nm, während das maximale Drehmoment bei 85 Nm liegt. Der Wirkungsgrad des Motors beträgt 91 \%.
+Der in Abbildung \ref{img_2_2:antrieb_motor:1} dargestellte BLDC-Motor verfügt über eine Leistung von 10 kW und kann optional durch eine Ölkühlung gekühlt werden, was jedoch für das Fahrzeug derzeit nicht relevant ist. Die Drehzahl ist variabel und kann zwischen 2.000 und 6.000 U/min eingestellt werden, mittls dem Vector Controller der in Abschnitt \ref{section:Vector_Controller} erklärt wird. Das Nenndrehmoment beträgt 26 Nm, während das maximale Drehmoment bei 85 Nm liegt. Der Wirkungsgrad des Motors beträgt 91 \% \cite{Golden_Motor:bldc_motor}.
 \pagebreak[1]
 \begin{figure}[!ht]
 	\begin{center}
@@ -76,18 +76,14 @@ Die Anschlüsse des Motors sind in Tabelle \ref{BLDC_Motor:pinmapping} aufgelist
 
 \subsubsection{Funktionsweise}
 Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem herkömmlichen Gleichstrommotor. Während bei einem traditionellen DC-Motor die Polumschaltung (Kommutierung) mechanisch über Kohlebürsten erfolgt, übernimmt beim BLDC-Motor eine elektronische Steuerung diese Aufgabe. Dadurch entfällt die Notwendigkeit von Kohlebürsten, was den Motor effizienter und langlebiger macht\cite{mathworks:bldc_motor}.
-
+\newpage
 
 
 
 \subsection{Vector Controller}
 \label{section:Vector_Controller}
-Der Vector Controller verwendet die Motorsteuerungstechnologie feldorientierte Regelung (Field-Oriented Control - FOC), dass bedeutet das der Controller mittels den Hallsensoren, einem Rückgekoppelten Regelkreis bildet und somit die Lage des Polrades ermittelt.
 
-\cite{schroeder:elektische_antriebe}
-
-Sie bietet eine effiziente Steuerung von BLDC-Motoren in Anwendungen mit variabler Drehzahl und schnell wechselnden Lasten und verbessert die Energieeffizienz von Asynchronmotoren, vor allem bei niedrigen Drehzahlen.
-
+Der Motor wird über einen Vektor-Controller angesteuert, wie in Abbildung \ref{img_2_2:antrieb_sine:1} dargestellt. Der Bemessungsstrom des DC-Busses liegt zwischen 30 A und 200 A, während die maximale Ausgangsleistung bei 10.000 W liegt.
 
 \begin{figure}[!ht]
 	\begin{center}
@@ -97,15 +93,47 @@ Sie bietet eine effiziente Steuerung von BLDC-Motoren in Anwendungen mit variabl
 	\end{center}
 \end{figure}
 
+\begin{table}[!ht]
+	\centering
+	\caption{Pin Mapping – Vector Controller}
+	\label{Vector_Controller:pinmapping}
+	\begin{tabular}{llll}
+		\hline
+		\textbf{Anschluss}           & \textbf{Funktionalität}  & \textbf{Farbe} & \textbf{U in V} \\ \hline
+		\multicolumn{4}{c}{\textbf{Batterie Eingang}}                                              \\ \hline
+		\multicolumn{1}{l|}{B+}      & 48 V                     & RT             & 48 V            \\
+		\multicolumn{1}{l|}{B-}      & Masse                    & SW             & 0 V             \\ \hline
+		\multicolumn{4}{c}{\textbf{Motor Ausgnag}}                                                 \\ \hline
+		\multicolumn{1}{l|}{U}       & Spule 1                  & GE             &                 \\
+		\multicolumn{1}{l|}{V}       & Spule 2                  & GN             &                 \\
+		\multicolumn{1}{l|}{W}       & Spule 3                  & BL             &                 \\ \hline
+		\multicolumn{4}{c}{\textbf{Steuerungskabel}}                                               \\ \hline
+		\multicolumn{1}{l|}{1}       & CANL - CAN-Bus           &                &                 \\
+		\multicolumn{1}{l|}{2}       & CANH – CAN-Bus           &                &                 \\
+		\multicolumn{1}{l|}{3}       & Motor Temperatur         & BL             &                 \\
+		\multicolumn{1}{l|}{4, 5, 6} & Masse                    & SW             & 0 V             \\
+		\multicolumn{1}{l|}{7}       & Tempomat                 & Gr             &                 \\
+		\multicolumn{1}{l|}{10}      & Elektronisches Schloss   & OR             & 0 V - 5 V       \\
+		\multicolumn{1}{l|}{11}      & Hall C – Sensor          & BL             &                 \\
+		\multicolumn{1}{l|}{12}      & Hall B – Sensor          & GN             &                 \\
+		\multicolumn{1}{l|}{13}      & Hall A – Sensor          & GE             &                 \\
+		\multicolumn{1}{l|}{14}      & +5 V                     & RT             & 5 V             \\
+		\multicolumn{1}{l|}{15}      & +12V Bremse              & GN\&WS         &                 \\
+		\multicolumn{1}{l|}{16}      & Bremse                   & BL\&WS         & 1 V - 5 V       \\
+		\multicolumn{1}{l|}{20}      & Hohe Geschwindigkeit     & BL             &                 \\
+		\multicolumn{1}{l|}{21}      & Masse                    & SW             & 0 V             \\
+		\multicolumn{1}{l|}{24}      & Niedrige Geschwindigkeit & BL             &                 \\
+		\multicolumn{1}{l|}{25}      & Masse                    & SW\&WS         & 0 V             \\
+		\multicolumn{1}{l|}{26}      & Gaspedal                 & GN\&WS         & 1 V - 5 V       \\
+		\multicolumn{1}{l|}{27}      & Masse                    & SW             & 0 V             \\ \hline
+	\end{tabular}
+\end{table}
 
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=1\textwidth]{img/2_imp/2_circ_sine.png}
-		\caption{Golden Motor – Zeichnung: Vector Controller}
-		\label{img_2_2:circ_sine:1}
-	\end{center}
-\end{figure}
+\subsubsection{Funktionsweise}
+Der Vector Controller verwendet die Motorsteuerungstechnologie feldorientierte Regelung (Field-Oriented Control - FOC), dass bedeutet das der Controller mittels den Hall-Sensoren, einem Rückgekoppelten Regelkreis bildet und somit die Lage des Polrades ermittelt.
 
+Sie bietet eine effiziente Steuerung von BLDC-Motoren in Anwendungen mit variabler Drehzahl und schnell wechselnden Lasten und verbessert die Energieeffizienz von Asynchronmotoren, vor allem bei niedrigen Drehzahlen.
+\newpage
 
 
 \section{Echtzeitfähige Steuerung – Speedgoat}
