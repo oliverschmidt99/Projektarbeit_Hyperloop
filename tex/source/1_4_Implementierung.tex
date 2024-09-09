@@ -1,12 +1,13 @@
 \chapter{Implementierung}
+\label{chapter:Implementierung}
 
 \section{Auswahl der Bauteile}
+\label{section:Auswahl_der_Bauteile}
 
 Für das Projekt wurden die echtzeitfähige Steuerung, die Batterie, der Motor und die zugehörige Steuerung vorgegeben. Alle weiteren Bauteile mussten bestellt werden.
 
 \section{Schaltplan}
-
-
+\label{section:Schaltplan}
 
 
 \myboxy{
@@ -23,20 +24,21 @@ Für das Projekt wurden die echtzeitfähige Steuerung, die Batterie, der Motor u
 
 
 
-
-
-Zu Beginn der Erstellung des Schaltplans sollten die Funktions- und Ortskennzeichen, sowie die Beschriftung der Bauteile und Leitungen festgelegt werden. Die Verdrahtung erfordert die Zuordnung von Aderfarben, die den jeweiligen Potenzialen entsprechen.
+Zu Beginn der Erstellung des Schaltplans sollten die Funktions- und Ortskennzeichen sowie die Beschriftung der Bauteile und Leitungen festgelegt werden. Bei der Verdrahtung ist es erforderlich, die Aderfarben den entsprechenden Spannungspotenzialen zuzuordnen.
 
 \subsection{Betriebsmittelbezeichnung}
+\label{Schaltplan:BMK}
 
 Ein Betriebsmittel besteht aus verschiedenen Kennzeichen: dem Funktionskennzeichen (=), dem Ortskennzeichen (+) und dem Betriebsmittelkennzeichen (-). Früher wurde das Funktionskennzeichen als „Anlage“ bezeichnet. In der neuen DIN EN IEC 81346-2 \cite{DIN_EN_IEC_81346-2} wurde diese Bezeichnung jedoch auf „Funktion“ geändert.
 
-Das Funktionskennzeichen beschreibt eine bestimmte Funktion im Schaltplan, wie beispielsweise die Spannungsversorgung oder die Steuerung (siehe Tabelle \ref{bmk:funktionskennzeichen}).
+\subsubsection{Funktionskennzeichen}
+Das Funktionskennzeichen beschreibt eine bestimmte Funktion im Schaltplan, wie beispielsweise die Spannungsversorgung oder die Steuerung (siehe Tabelle \ref{BMK:tab:funktionskennzeichen}).
 
+\pagebreak[1]
 \begin{table}[!ht]
 	\centering
 	\caption{Schaltplan – Funktionskennzeichen (=)}
-	\label{bmk:funktionskennzeichen}
+	\label{BMK:tab:funktionskennzeichen}
 	\begin{tabular}{ll}
 		\hline
 		\textbf{Abkürzung}      & \textbf{Bezeichnung} \\ \hline
@@ -48,13 +50,16 @@ Das Funktionskennzeichen beschreibt eine bestimmte Funktion im Schaltplan, wie b
 		\multicolumn{1}{l|}{NA} & Not-Aus              \\ \hline
 	\end{tabular}
 \end{table}
+\pagebreak[1]
 
-Das Ortskennzeichen gibt an, an welchem Ort ein Bauteil installiert ist. Beispielsweise gibt es im Pod eine Steuereinheit und eine Batterieeinheit. Im Schaltplan wird dadurch deutlich, welche Verbindungen zwischen verschiedenen Orten bestehen. Das Ortskennzeichen erleichtert zudem die Wartung und Installation des Systems.
+\subsubsection{Ortskennzeichen}
+Das Ortskennzeichen gibt an, an welchem Ort ein Bauteil installiert ist. Beispielsweise gibt es im Fahrzeug eine Steuereinheit und eine Batterieeinheit. Im Schaltplan wird dadurch deutlich, welche Verbindungen zwischen verschiedenen Orten bestehen. Das Ortskennzeichen erleichtert zudem die Wartung und Installation des Systems.
 
+\pagebreak[1]
 \begin{table}[!ht]
 	\centering
 	\caption{Schaltplan – Ortskennzeichen (+)}
-	\label{bmk:ortskennzeichen}
+	\label{bmk:tab:ortskennzeichen}
 	\begin{tabular}{ll}
 		\hline
 		\textbf{Abkürzung}       & \textbf{Bezeichnung} \\ \hline
@@ -64,25 +69,18 @@ Das Ortskennzeichen gibt an, an welchem Ort ein Bauteil installiert ist. Beispie
 		\multicolumn{1}{l|}{AE}  & Antriebseinheit      \\ \hline
 	\end{tabular}
 \end{table}
+\pagebreak[1]
+
+\subsubsection{Betriebsmittelkennzeichen}
+Das Betriebsmittelkennzeichen bezeichnet das spezifische Bauteil. Die genaue Zuordnung der Bezeichnungen ist in der DIN EN IEC 81346-2 geregelt. Die für das Projekt relevanten Betriebsmittelkennzeichen sind in Tabelle \ref{bmk:tab:betriebsmittelkennzeichen} aufgeführt.
 
 
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=1\textwidth]{img/3_schaltplan/sp_aufbauplan_1.png}
-		\caption{Schaltplan – Aufbauplan}
-		\label{img_3_2:aufbauplan:1}
-	\end{center}
-\end{figure}
 
-
-Das Betriebsmittelkennzeichen bezeichnet das spezifische Bauteil. Die genaue Zuordnung der Bezeichnungen ist in der DIN EN IEC 81346-2 geregelt. Die für das Projekt relevanten Betriebsmittelkennzeichen sind in Tabelle \ref{bmk:betriebsmittelkennzeichen} aufgeführt.
-
-Bei einer vollständigen Betriebsmittelbezeichnung sieht das Kennzeichen des Betriebsmittels wie folgt aus: =SA+KE-KE101, Bei der .
-
+\pagebreak[1]
 \begin{table}[!ht]
 	\centering
 	\caption{Schaltplan – Betriebsmittelkennzeichen (-) \cite{DIN_EN_IEC_81346-2}}
-	\label{bmk:betriebsmittelkennzeichen}
+	\label{bmk:tab:betriebsmittelkennzeichen}
 	\begin{tabular}{|l|lll|}
 		\hline
 		\textbf{Abkürzung}       & \textbf{Klassenname}                            & \multicolumn{1}{l|}{\textbf{Allgemeine Bedeutung}} \\ \hline
@@ -98,16 +96,73 @@ Bei einer vollständigen Betriebsmittelbezeichnung sieht das Kennzeichen des Bet
 		\multicolumn{1}{|l|}{XD} & \makecell[l]{Niederspannungs-Verbindungsobjekt} & \multicolumn{1}{l|}{Klemme, Stecker oder Buchse}   \\ \hline
 	\end{tabular}
 \end{table}
+\pagebreak[1]
+
+Bei einer vollständigen Betriebsmittelbezeichnung sieht das Kennzeichen des Betriebsmittels folgendermaßen aus:
+
+\begin{center} =ES2+SE1-10QA1 \end{center}
+
+Die Betriebsmittelbezeichnung =ES2+SE1-10QA4 besagt, dass es sich um die Eingänge der Steuerung (=ES) handelt, wobei es zwei Funktionen gibt. Der Ort ist in der Steuereinheit (+SE) verortet, und das Betriebsmittel selbst ist ein Relais, das auf der Seite 10 des Schaltplans zu finden ist.
+
+Das Kennzeichen umfasst sowohl das Funktions- als auch das Ortskennzeichen, die jeweils mit einer fortlaufenden Nummer versehen sind. Das Betriebsmittelkennzeichen enthält zwei Nummerierungen: Die erste gibt an, auf welcher Seite des Schaltplans sich das Betriebsmittel befindet, während die zweite die fortlaufende Nummerierung des Bauteils darstellt.\\
+Im Schaltplan wird das Betriebsmittel lediglich durch das Betriebsmittelkennzeichen (-) dargestellt, während das Funktions- und Ortskennzeichen im Zeichnungskopf angegeben ist.
+
+\newpage
+
+\subsection{Verdrahtung Konventionen}
+\label{section:Verdrahtung_Konventionen}
+Für die Verdrahtung müssen den Spannungspotenzialen verschiedene Farben zugewiesen werden. Diese Zuordnungen sind in Tabelle \ref{Verdrahtung_Konventionen:tab:Zuordnung} aufgeführt.
+\pagebreak[1]
+\begin{table}[ht!]
+	\centering
+	\caption{Verdrahtung Konvention – Aderfarben}
+	\label{Verdrahtung_Konventionen:tab:Zuordnung}
+	\begin{tabular}{llccl}
+		\hline
+		\textbf{Name} & \textbf{Fabe}                 & \textbf{U in V} & \textbf{A in mm$^2$} & \textbf{Funktion} \\ \hline
+		              & \multicolumn{1}{l|}{Rot}      & $x$             & 1                    &                   \\
+		              & \multicolumn{1}{l|}{Blau}     & $x$             & 1                    &                   \\
+		              & \multicolumn{1}{l|}{Schwarz}  & $x$             & 1                    &                   \\
+		              & \multicolumn{1}{l|}{Schwarz}  & $< 48$          & 50                   &                   \\
+		              & \multicolumn{1}{l|}{Viollett} & $x$             & 1                    &                   \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[4]
+
+
+\section{Simulation mit Simulink}
+\label{section:Simulation}
+
+\myboxy{
+	\begin{itemize}
+		\item
+	\end{itemize}
+}{To-do}{\textwidth}
+
+
+\subsection{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 \newpage
-
-\subsection{Bauteilerstellung}
-
-In der Software QElectroTech, kann dies in der Bauteilsammlung getan werden.
-
 
 \section{Distanzmessung}
 
@@ -137,7 +192,7 @@ Der Sensor komuniziert mit einem Bussystem.
 
 
 
-
+\pagebreak[1]
 \begin{figure}[ht]
 	\begin{center}
 		\includegraphics[width=1\textwidth]{img/2_sen/dis_parkside_1_outside.png}
@@ -145,8 +200,9 @@ Der Sensor komuniziert mit einem Bussystem.
 		\label{img_2_2:sen_dis_parkside:1}
 	\end{center}
 \end{figure}
+\pagebreak[1]
 
-
+\pagebreak[1]
 \begin{table}[ht]
 	\centering
 	\caption{PARKSIDE – Pin Mapping – Distanzsensor}
@@ -160,15 +216,4 @@ Der Sensor komuniziert mit einem Bussystem.
 		4            & Schwarz        & GND               \\ \hline
 	\end{tabular}
 \end{table}
-
-
-
-
-
-\section{Steuerung}
-
-\myboxy{
-	\begin{itemize}
-		\item
-	\end{itemize}
-}{To-do}{\textwidth}
+\pagebreak[1]
