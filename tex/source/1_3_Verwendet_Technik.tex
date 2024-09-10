@@ -290,6 +290,92 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 \end{table}
 \pagebreak[4]
 
+
+\subsubsection{IO397-50k – Konfigurieren}
+\label{Simulink:IO397_50k_Konfigurieren}
+
+Der Driver Block, wie in Abbildung \ref{IO397_50k_Konfigurieren:img:Driver_Block} gezeigt, können an dem Pull-Widerstand des I/O-Moduls verschiedne Spannungen eingestellt werden. Zur Auswahl stehen:
+\begin{itemize}
+	\item Pull-up 3,3 V
+	\item Weak Pull-up 5,0 V
+	\item Pull-down
+	\item Floating
+\end{itemize}
+welche im Folgenden erklärt werden.
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=.5\textwidth]{img/4_simulink/IO397_50k.png}
+		\caption{Simulink – Driver Block – IO397-50k}
+		\label{IO397_50k_Konfigurieren:img:Driver_Block}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+
+Pull-Widerstände werden verwendet, um klare digitale Schaltzustände zu gewährleisten. Es gibt drei verschiedene Zustände: High entspricht logisch 1, Low entspricht logisch 0 und Floating ist hochohmig. Die Zustände zu den Einstellungen sind in der Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} aufgeführt.
+In Abbildung \ref{IO397_50k_Konfigurieren:img:TTL_IO_Interface} ist im rot markierten Bereich der Pull-Widerstand mit 4,7 k$\Omega$ an einen 47-$\Omega$-Widerstand am I/O-Anschluss angeschlossen. Der Pull-Widerstand kann, wie bereits erwähnt, konfiguriert werden. Dabei wird intern am Pull-Widerstand entweder eine Spannung von 3,3 V, 5 V, GND oder kein Kontakt, also Floating (hochohmig), geschaltet.
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=1.1\textwidth]{img/4_simulink/TTL_IO_Interface.png}
+		\caption{Simulink – TTL I/O Interface – IO397-50k \cite[12]{speedgoat:IO397_50k}}
+		\label{IO397_50k_Konfigurieren:img:TTL_IO_Interface}
+	\end{center}
+\end{figure}
+\pagebreak[4]
+
+
+
+Bei der Einstellung auf 3,3 V oder 5 V fungiert der Widerstand als Pull-up-Widerstand. Bei der Pull-down-Konfiguration liegt am Widerstand Ground (GND) an.
+
+
+
+In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktionszeiten der digitalen Ausgänge verglichen werden. Bei der Einstellung Weak Pull-up 5,0 V bedeutet \frqq weak\flqq, dass der Ausgang eine langsamere Anstiegszeit hat. In Abbildung \ref{IO397_50k_Konfigurieren:img:Pull_Widerstande} sind die Reaktionszeiten dargestellt.
+
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Simulink – Pull-Widerstand – Reaktionszeit}
+	\label{IO397_50k_Konfigurieren:tab:Reaktionszeit}
+	\begin{tabular}{lccc}
+		\hline
+		\multicolumn{1}{c}{\multirow{2}{*}{\textbf{Einstellung}}} & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Logischer zustand}}} & \multicolumn{2}{c}{\textbf{Reaktionszeit der Ausgänge}}           \\ \cline{3-4}
+		\multicolumn{1}{c}{}                                      & \multicolumn{1}{c}{}                                            & Anstieg                                                 & Abfall  \\ \hline
+		\multicolumn{1}{l|}{Pull-up 3,3V}                         & I/O = 1                                                         & Schnell                                                 & Schnell \\
+		\multicolumn{1}{l|}{weak pull-up 5,0V}                    & I/O = 1                                                         & Langsam                                                 & Schnell \\
+		\multicolumn{1}{l|}{Pull-down}                            & I/O = 0                                                         & Schnell                                                 & Langsam \\
+		\multicolumn{1}{l|}{Floating}                             & I/O = 0 -1                                                      & -                                                       & -       \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[1]
+
+
+
+\pagebreak[1]
+\begin{figure}
+	\begin{minipage}{0.8\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{img/4_simulink/O_Interface_3V3.png}
+		\caption*{Pull-up-Widerstand 3,3 V}
+	\end{minipage}
+	\begin{minipage}{0.8\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{img/4_simulink/O_Interface_5V.png}
+		\caption*{Weak Pull-up-Widerstand 5 V}
+	\end{minipage}
+	\begin{minipage}{0.8\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{img/4_simulink/O_Interface_0V.png}
+		\caption*{Pull-down-Widerstand GND}
+	\end{minipage}
+	\caption{Simulink – Pull-Widerstände – IO397-50k \cite[12]{speedgoat:IO397_50k}}
+	\label{IO397_50k_Konfigurieren:img:Pull_Widerstande}
+\end{figure}
+\pagebreak[4]
+
 \newpage
 \subsection{I/O-Modul – IO691}
 \label{section:IO691}
@@ -333,6 +419,10 @@ Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen
 \pagebreak[4]
 
 
+\subsubsection{IO691 Module Konfigurieren}
+\label{Simulink:IO691_Konfigurieren}
+
+
 \newpage
 \section{Simulink}
 \label{section:Simulink}
@@ -342,98 +432,6 @@ Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen
 		\item
 	\end{itemize}
 }{To-do}{\textwidth}
-
-
-\subsection{IO397-50k Module Konfigurieren}
-\label{Simulink:IO397_50k_Konfigurieren}
-In dem Driver Block, wie in Abbildung \ref{IO397_50k_Konfigurieren:img:Driver_Block} können die Pull-Resitors des Modules eingestellt werden, die in der Tabelle \ref{IO397_50k_Konfigurieren:tab:Pull_Resistors} aufgelistet sind.
-
-\pagebreak[1]
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=0.7\textwidth]{img/4_simulink/IO397_50k.png}
-		\caption{Simulink – Driver Block – IO397-50k}
-		\label{IO397_50k_Konfigurieren:img:Driver_Block}
-	\end{center}
-\end{figure}
-\pagebreak[1]
-
-Pull-Resistors werden verwendet um saubere Digitale schaltzustände zu erhalten, es gibt drei unterschiedliche Zustände, hight, low und floating die unterschieden werden.
-
-\pagebreak[1]
-\begin{table}[!ht]
-	\centering
-	\caption{Simulink – Pull Resistors}
-	\label{IO397_50k_Konfigurieren:tab:Pull_Resistors}
-	\begin{tabular}{ll}
-		\hline
-		\textbf{Modus}                         & \textbf{Funktion} \\ \hline
-		\multicolumn{1}{l|}{pull-up 3,3V}      &                   \\
-		\multicolumn{1}{l|}{weak pull-up 5,0V} &                   \\
-		\multicolumn{1}{l|}{pull-down}         &                   \\
-		\multicolumn{1}{l|}{floating}          &                   \\ \hline
-	\end{tabular}
-\end{table}
-\pagebreak[1]
-
-\pagebreak[1]
-\begin{figure}[ht!]
-	\centering
-	\begin{circuitikz}
-		\ctikzset{resistor = european}
-		\draw[R={Pullup-Resistor}](9.0,-5.5)to(9.0,-3.5);
-		\draw[short={}](11.5,-5.5)to(11.5,-5.5);
-		\draw[nos={S1}](9.0,-8.0)to(9.0,-6.5);
-		\draw[short={}](9.0,-6.5)to(9.0,-5.5);
-		\draw[short={}](9.0,-6.0)to(11.5,-6.0);
-		\draw[short={}](9.0,-8.0)to(9.0,-8.5);
-		\draw[short={}](8.5,-8.5)to(9.5,-8.5);
-		\draw(9.0,-3.5)to(9.0,-3.0) node[diamondpole]{};
-		\draw(9.0,-3.0)to(9.0,-3.0) node[diamondpole]{.          U+};
-		\draw[short={ UND}](11.5,-5.5)to(11.5,-7.5);
-		\draw[short={}](11.5,-7.0)to(11.0,-7.0);
-		\draw[short={}](11.5,-5.5)to(13.0,-5.5);
-		\draw[short={}](13.0,-5.5)to(13.0,-7.5);
-		\draw[short={}](13.0,-7.5)to(11.5,-7.5);
-		\draw[short={Q}](13.0,-6.5)to(14.0,-6.5);
-	\end{circuitikz}
-	\caption{Schaltung – Pullup Resistors}
-	\label{IO397_50k_Konfigurieren:img:Pullup Resistors}
-\end{figure}
-\pagebreak[4]
-
-\pagebreak[1]
-\begin{figure}[ht!]
-	\centering
-	\begin{circuitikz}
-		\ctikzset{resistor = european}
-		\draw[R={Pulldown-Resistor}](9.0,-8.0)to(9.0,-6.5);
-		\draw[short={}](11.5,-5.5)to(11.5,-5.5);
-		\draw[nos={S1}](9.0,-5.5)to(9.0,-3.5);
-		\draw[short={}](9.0,-6.5)to(9.0,-5.5);
-		\draw[short={}](9.0,-6.0)to(11.5,-6.0);
-		\draw[short={}](9.0,-8.0)to(9.0,-8.5);
-		\draw[short={}](8.5,-8.5)to(9.5,-8.5);
-		\draw(9.0,-3.5)to(9.0,-3.0) node[diamondpole]{};
-		\draw(9.0,-3.0)to(9.0,-3.0) node[diamondpole]{.          U+};
-		\draw[short={ UND}](11.5,-5.5)to(11.5,-7.5);
-		\draw[short={}](11.5,-7.0)to(11.0,-7.0);
-		\draw[short={}](11.5,-5.5)to(13.0,-5.5);
-		\draw[short={}](13.0,-5.5)to(13.0,-7.5);
-		\draw[short={}](13.0,-7.5)to(11.5,-7.5);
-		\draw[short={Q}](13.0,-6.5)to(14.0,-6.5);
-	\end{circuitikz}
-	\caption{Schaltung – Pullup Resistors}
-	\label{IO397_50k_Konfigurieren:img:Pulldown Resistors}
-\end{figure}
-\pagebreak[4]
-
-
-
-
-\subsection{IO691 Module Konfigurieren}
-\label{Simulink:IO691_Konfigurieren}
-
 
 
 

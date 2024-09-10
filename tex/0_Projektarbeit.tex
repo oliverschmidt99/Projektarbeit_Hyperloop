@@ -1,4 +1,6 @@
-\documentclass[oneside,a4paper,11pt]{book}      
+\documentclass[oneside,a4paper,11pt]{book} 
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}   
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
 \usepackage[pdftex,
@@ -15,30 +17,31 @@ pdfkeywords={Unterschrift}
 \usepackage{makeidx}
 \usepackage{xcolor}
 \usepackage[hang,small,scriptsize,bf]{caption}
+\usepackage{hsel-thesis2020}
 \usepackage{amssymb}
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{multirow}
 \usepackage{circuitikz}
 \usepackage{seqsplit}
+\usepackage{csquotes}
+\usepackage{makecell}
+\usepackage{animate}
+\usepackage{eso-pic}
+\usepackage{newfloat}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{listings}
 \usepackage[normalem]{ulem}
 \usepackage[
   style=numeric,
   sorting=none,
   backend=biber
   ]{biblatex}
-  \addbibresource{Literaturverzeichnis.bib}
-
-\usepackage{csquotes}
-\usepackage{makecell}
-\usepackage{animate}
-\usepackage{eso-pic}
-\usepackage{newfloat}
-
-\usepackage{tikz}
-\usepackage{listings}
-
+\addbibresource{Literaturverzeichnis.bib}
 \usetikzlibrary{positioning}
+
+
 \newcommand{\myboxy}[3]{
 	\begin{tikzpicture}[
 			every node/.style={rectangle,rounded corners,draw=black, top color=white,very thick, inner sep=0.3em, minimum size=1em} ]
@@ -46,7 +49,7 @@ pdfkeywords={Unterschrift}
 		\node[above =-2mm of main.north west, anchor=south west] (title) {#2};
 	\end{tikzpicture} }
 
-\usepackage{hsel-thesis2020}
+
 
 \newcommand{\textbfit}[1]{\textbf{\textit{#1}}}
 
@@ -65,7 +68,12 @@ pdfkeywords={Unterschrift}
 ]{oszillo}
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
@@ -95,11 +103,11 @@ pdfkeywords={Unterschrift}
 \include{source/einennoch}
 \include{source/1_5_Konklusion}
 \include{source/einennoch}
+\include{source/Literaturverzeichnis}
+\printbibliography
+\appendix
+\include{source/einennoch}
 \include{source/2_0_Anhang}
 
-\appendix
-\include{source/Literaturverzeichnis}
-
-\printbibliography
 
 \end{document}
