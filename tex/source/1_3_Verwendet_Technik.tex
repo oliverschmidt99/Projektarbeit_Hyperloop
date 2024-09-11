@@ -148,13 +148,12 @@ Der Vektor-Controller verwendet die Motorsteuerungstechnologie der feldorientier
 \myboxy{
 	\begin{itemize}
 		\item I/O Module 691 zuende Erklären.
+		\item Echtzeitfähigkeit auf die DIN Norm beziehen und besser erklären auf unserer Situation.
 	\end{itemize}
 }{To-do}{\textwidth}
 
 Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steuerung_goat} dargestellt, ist ein echtzeitfähiges System. Es wird hauptsächlich in der Entwicklung und beim Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt, bei denen die Echtzeitfähigkeit eine zentrale Rolle spielt.\\
-Echtzeitfähigkeit bezieht sich auf die Fähigkeit eines Systems, innerhalb einer festgelegten Frist auf externe Ereignisse oder Eingaben zu reagieren. In der Informatik und Technik spricht man von einem Echtzeitsystem, wenn es
-
-rechtzeitig arbeiten muss. Die Reaktionszeit auf Ereignisse ist hierbei entscheidend, da Verzögerungen zu Fehlern oder unvorhersehbaren Zuständen führen könnten \cite{DIN_44300}.
+Echtzeitfähigkeit bezieht sich auf die Fähigkeit eines Systems, innerhalb einer festgelegten Frist auf externe Ereignisse oder Eingaben zu reagieren. In der Informatik und Technik spricht man von einem Echtzeitsystem, wenn es rechtzeitig arbeiten muss. Die Reaktionszeit auf Ereignisse ist hierbei entscheidend, da Verzögerungen zu Fehlern oder unvorhersehbaren Zuständen führen könnten \cite{DIN_44300}.
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -402,18 +401,19 @@ Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen
 	\centering
 	\caption{IO691 Pin Mapping}
 	\label{speedgoat:IO691}
-	\begin{tabular}{ll}
+	\begin{tabular}{llll}
 		\hline
-		\textbf{Pin}           & \textbf{DB9 Connector A/B, Signal} \\ \hline
-		\multicolumn{1}{l|}{1} & -                                  \\
-		\multicolumn{1}{l|}{2} & CAN-low                            \\
-		\multicolumn{1}{l|}{3} & GND                                \\
-		\multicolumn{1}{l|}{4} & -                                  \\
-		\multicolumn{1}{l|}{5} & -                                  \\
-		\multicolumn{1}{l|}{6} & GND                                \\
-		\multicolumn{1}{l|}{7} & CAN-high                           \\
-		\multicolumn{1}{l|}{8} & -                                  \\
-		\multicolumn{1}{l|}{9} & -                                  \\ \hline
+		\textbf{Pin}            & \textbf{Farbe} & \textbf{An Sensor} & \textbf{DB9 Connector A/B, Signal} \\ \hline
+		\multicolumn{1}{l|}{1}  & Braun          & PIN 2 -  Weiß      & Vcc                                \\
+		\multicolumn{1}{l|}{2}  & Rot            & PIN 5 -  Grau      & CAN-low                            \\
+		\multicolumn{1}{l|}{3}  & Orange         & PIN 3 -  Blau      & GND                                \\
+		\multicolumn{1}{l|}{4}  & Gelb           &                    & -                                  \\
+		\multicolumn{1}{l|}{5}  & Grün           &                    & -                                  \\
+		\multicolumn{1}{l|}{6}  & Blau           & PIN 3 -  Blau      & GND                                \\
+		\multicolumn{1}{l|}{7}  & Viollet        & PIN 4 -  Schwarz   & CAN-high                           \\
+		\multicolumn{1}{l|}{8}  & Grau           &                    & -                                  \\
+		\multicolumn{1}{l|}{9}  & Schwarz        &                    & -                                  \\
+		\multicolumn{1}{l|}{SH} &                & PIN 1 - Braun      & Shield                             \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[4]
