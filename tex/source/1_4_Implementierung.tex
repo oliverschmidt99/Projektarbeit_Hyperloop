@@ -175,12 +175,119 @@ Für die Verdrahtung müssen den Spannungspotenzialen verschiedene Farben zugewi
 \subsection{Automat}
 \label{Automat}
 
-Das Fahrzeug, wird mittels eines Moore-Automaten gesteuert, das in der Abbildung \ref{Automat:img:Automat} dargestellt ist. Der Automat hat vier Zustände IDLE, Drive, Stop und Distance. Die Zustände werden durch die Eingänge (Eingabevektor $\overrightarrow{I}$) gewechselt.
+%Das Fahrzeug wird mittels eines Moore-Automaten gesteuert, wie in Abbildung \ref{Automat:img:Automat} dargestellt. Die Zustände $\overrightarrow{Z}$ (siehe Gleichung \ref{Automat:equation:vektor_z_auto}), die Eingänge $\overrightarrow{I}$ (siehe Gleichung \ref{Automat:equation:vektor_i}) und die Ausgänge $\overrightarrow{O}$ (siehe Gleichung \ref{Automat:equation:vektor_o}) können in Vektoren dargestellt werden.\\ \ \\
 
-\begin{equation}
-	\vec{I}= \left(\begin{array}{c} speed_{in}  \\ distance_{in} \\ start_{in} \\ stop_{in} \\emergencystop_{in} \end{array}\right)
-\end{equation}
+Die Steuerung des Fahrzeugs bietet die Möglichkeit, zwischen Automatik- und manuellem Betrieb zu wählen. Im manuellen Betrieb kann der Benutzer das Fahrzeug sowohl vorwärts als auch rückwärts fahren lassen, wobei zwei Geschwindigkeitsstufen – schnell und langsam – zur Verfügung stehen.\\
+Im Automatikmodus wird der Ablauf über den Startknopf aktiviert. Das Fahrzeug beschleunigt auf die voreingestellte Geschwindigkeit und bremst automatisch, sobald die Distanz zum Enddeckel der Röhre kleiner wird. Es hält schließlich am Ende der Strecke an.\\
+Über das Control Panel (siehe Abbildung \ref{Automat:img:Controllpanel}) können alle Eingaben via Simulink gesteuert werden. Mit dem Wahlschalter kann zwischen Automatik- und manuellem Betrieb gewechselt werden. Ist der manuelle Betrieb ausgewählt, kann mit dem Drehschalter (Manuell) zwischen Vorwärts, Rückwärts und Stopp geschaltet werden (siehe Tabelle \ref{Automat:tab:Wahlschalter}).\\
 
+\begin{table}[!ht]
+	\centering
+	\caption{Automat – Wahlschalter für den manuellen Betrieb}
+	\label{Automat:tab:Wahlschalter}
+	\begin{tabular}{ll}
+		\hline
+		Zustand                    & Wert \\ \hline
+		\multicolumn{1}{l|}{Rück+} & 1    \\
+		\multicolumn{1}{l|}{Rück}  & 2    \\
+		\multicolumn{1}{l|}{STOP}  & 3    \\
+		\multicolumn{1}{l|}{Vor}   & 4    \\
+		\multicolumn{1}{l|}{Vor+}  & 5    \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[3]
+Im Automatikbetrieb kann die Geschwindigkeit über das Drehrad \frqq Geschwindigkeit Automatik\flqq\ voreingestellt oder während der Fahrt angepasst werden. Das Fahrzeug beginnt zu fahren, sobald der Druckknopf \frqq Start\flqq\ betätigt wird, und die Automatik kann über den Druckknopf \frqq Stop\flqq\ gestoppt werden.\\ Im Notfall kann sowohl im Automatik- als auch im manuellen Betrieb der Druckknopf \frqq Emergency stop\flqq\ betätigt werden. Das Fahrzeug führt eine Vollbremsung mit der Motor- und der mechanischen Bremse durch. Der Notfallmodus kann durch Drücken des \frqq Reset\flqq\ -Knopfs beendet werden.\\ \ \\
+
+
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/5_simulation/Automat_con.png}
+		\caption{Automat – Controllpanel}
+		\label{Automat:img:Controllpanel}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+
+Die beiden Betriebsmodi werden im Folgenden näher erläutert.\\
+
+
+Der Automat des manuellen Betriebsmodus, wie in Abbildung \ref{Automat:img:man_übersicht} dargestellt, ist in zwei Zweige unterteilt vorwärts und rückwärts. In Abbildung \ref{Automat:img:man_vorwärts} wird der Vorwärtszweig gezeigt, der Rückwärtszweig ist dazu äquivalent.
+
+
+
+
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/5_simulation/Automat_man_uebersicht.png}
+		\caption{Automat – Übersicht der manuellen Steuerung}
+		\label{Automat:img:man_übersicht}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/5_simulation/Automat_man_vorwaerts_1.png}
+		\includegraphics[width=\textwidth]{img/5_simulation/Automat_man_vorwaerts.png}
+		\caption{Automat – Manuelle Steuerung Vorwärtszweig}
+		\label{Automat:img:man_vorwärts}
+	\end{center}
+\end{figure}
+\pagebreak[4]
+%\begin{center}
+%
+%	\begin{equation}
+%		\label{Automat:equation:vektor_z_auto}
+%		\vec{Z}_{A}= \left(\begin{array}{c} IDLE  \\ Drive \\ Distance \\ Stop \\ Emergency\ stop\end{array}\right)
+%	\end{equation}
+%
+%	\begin{equation}
+%		\label{Automat:equation:vektor_z_man}
+%		\vec{Z}_{M}= \left(\begin{array}{c} IDLE  \\ Drive \\ Distance \\ Stop \\ Emergency\ stop\end{array}\right)
+%	\end{equation}
+%
+%	\begin{equation}
+%		\label{Automat:equation:vektor_i}
+%		\vec{I}= \left(\begin{array}{c} speed_{in}  \\ distance_{in} \\ start_{in} \\ stop_{in} \\ reset_{in}\\ manual_{in} \\ manual_{mod}\\emergency\ stop_{in}  \end{array}\right)
+%	\end{equation}
+%
+%	\begin{equation}
+%		\label{Automat:equation:vektor_o}
+%		\vec{O}= \left(\begin{array}{c} 1 \leqslant speed_{out} \leqslant 4 \\ break\ motor_{out} \in\ \{1,5\} \\ direction_{out} \in\ \{1,5\}\\ cruise_{out} \in\ \{1,5\} \\ break\ mechanically_{out}\in\ \{1,5\}  \end{array}\right)
+%	\end{equation}\\ \ \\
+%\end{center}
+
+
+
+
+%Beim Ausgangsvektor \ref{Automat:equation:vektor_o} bedeutet der Wert 1, dass am Ausgang des  IO397-Moduls eine Spannung von 1 V anliegt, und bei einem Wert von 5 liegt am Ausgang eine Spannung von 5 V an. Der Ausgang $speed_{out}$ ist mit dem analogen Ausgang des IO397-Moduls verbunden, sodass die Spannung zwischen 1 V und 4 V variieren kann. Die Spannungsbereiche für die Eingänge des Vector-Controllers können zudem aus der Tabelle \ref{Vector_Controller:tab:pinmapping} entnommen werden.\\ \ \\
+
+
+%Der Zustand $\mathbf{IDLE}$ ist der Startzustand des Fahrzeugs. In diesem Zustand wird die Motorbremse aktiviert, die Ausgangsgeschwindigkeit auf null gesetzt ($speed_{out} = 1$ entspricht logisch Null), die Funktion Driving aufgerufen und zurückgesetzt. Die Funktion Driving, siehe Abbildung \ref{Automat:img:fnc_Driving}, erhält einen Eingangswert, der durch einen \frqq Rate Limiter\flqq\  begrenzt und am Ausgang ausgegeben wird.
+%Der Ausgang $direction_{out}$ ist
+
+
+
+%\begin{equation}
+%	\label{Automat:equation:vektor_o_1}
+%	\vec{O}_{IDLE} = \left(\begin{array}{c} speed_{out} = 1 \\  break\ motor_{out} = 5\\ break\ mechanically_{out}= 0\\  direction_{out} = 5\\ cruise_{out} = 5 \end{array}\right)
+%\end{equation}
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=.75\textwidth]{img/5_simulation/Automat_funktion_1.png}
+		\includegraphics[width=.75\textwidth]{img/5_simulation/Automat_funktion_2.png}
+		\caption{Automat – Funktion Driving}
+		\label{Automat:img:fnc_Driving}
+	\end{center}
+\end{figure}
+\pagebreak[4]
 
 
 \pagebreak[1]
