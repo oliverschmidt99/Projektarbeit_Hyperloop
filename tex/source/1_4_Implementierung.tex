@@ -172,73 +172,210 @@ Für die Verdrahtung müssen den Spannungspotenzialen verschiedene Farben zugewi
 }{To-do}{\textwidth}
 
 
-\subsection{Automat}
-\label{Automat}
+\subsection{Funktionsweise der Steuerung}
+\label{Steuerung}
 
 %Das Fahrzeug wird mittels eines Moore-Automaten gesteuert, wie in Abbildung \ref{Automat:img:Automat} dargestellt. Die Zustände $\overrightarrow{Z}$ (siehe Gleichung \ref{Automat:equation:vektor_z_auto}), die Eingänge $\overrightarrow{I}$ (siehe Gleichung \ref{Automat:equation:vektor_i}) und die Ausgänge $\overrightarrow{O}$ (siehe Gleichung \ref{Automat:equation:vektor_o}) können in Vektoren dargestellt werden.\\ \ \\
 
 Die Steuerung des Fahrzeugs bietet die Möglichkeit, zwischen Automatik- und manuellem Betrieb zu wählen. Im manuellen Betrieb kann der Benutzer das Fahrzeug sowohl vorwärts als auch rückwärts fahren lassen, wobei zwei Geschwindigkeitsstufen – schnell und langsam – zur Verfügung stehen.\\
-Im Automatikmodus wird der Ablauf über den Startknopf aktiviert. Das Fahrzeug beschleunigt auf die voreingestellte Geschwindigkeit und bremst automatisch, sobald die Distanz zum Enddeckel der Röhre kleiner wird. Es hält schließlich am Ende der Strecke an.\\
-Über das Control Panel (siehe Abbildung \ref{Automat:img:Controllpanel}) können alle Eingaben via Simulink gesteuert werden. Mit dem Wahlschalter kann zwischen Automatik- und manuellem Betrieb gewechselt werden. Ist der manuelle Betrieb ausgewählt, kann mit dem Drehschalter (Manuell) zwischen Vorwärts, Rückwärts und Stopp geschaltet werden (siehe Tabelle \ref{Automat:tab:Wahlschalter}).\\
+Der Automatikmodus wird über den Startknopf aktiviert. Das Fahrzeug beschleunigt auf die einstellbare Geschwindigkeit und bremst automatisch ab, sobald die Distanz zum Enddeckel der Röhre kleiner wird. Es hält schließlich am Ende der Strecke an.\\
 
+\subsubsection{Controllpanel}
+\label{Steuerung:Controllpanel}
+Über das Control Panel (siehe Abbildung \ref{Controllpanel:img:Controllpanel}) können alle Eingaben via Simulink gesteuert werden, welche im Folgenden erklärt werden. Mit dem Wahlschalter kann zwischen Automatik- und manuellem Betrieb gewechselt werden. Ist der manuelle Betrieb ausgewählt, kann mit dem Drehschalter (Manuell) zwischen Vorwärts, Rückwärts und Stopp geschaltet werden (siehe Tabelle \ref{Controllpanel:tab:Wahlschalter}, die Werte werden später für die Automaten Steuerung benötigt).\\
+
+
+\pagebreak[1]
 \begin{table}[!ht]
 	\centering
 	\caption{Automat – Wahlschalter für den manuellen Betrieb}
-	\label{Automat:tab:Wahlschalter}
-	\begin{tabular}{ll}
+	\label{Controllpanel:tab:Wahlschalter}
+	\begin{tabular}{cll}
 		\hline
-		Zustand                    & Wert \\ \hline
-		\multicolumn{1}{l|}{Rück+} & 1    \\
-		\multicolumn{1}{l|}{Rück}  & 2    \\
-		\multicolumn{1}{l|}{STOP}  & 3    \\
-		\multicolumn{1}{l|}{Vor}   & 4    \\
-		\multicolumn{1}{l|}{Vor+}  & 5    \\ \hline
+		\textbf{Schalterbezeichnung} & \textbf{Zustand} & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{Rück+}   & V schnell        & 1             \\
+		\multicolumn{1}{l|}{Rück}    & R langsam        & 2             \\
+		\multicolumn{1}{l|}{STOP}    & Manuell idle     & 3             \\
+		\multicolumn{1}{l|}{Vor}     & V langsam        & 4             \\
+		\multicolumn{1}{l|}{Vor+}    & V schnell        & 5             \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[3]
-Im Automatikbetrieb kann die Geschwindigkeit über das Drehrad \frqq Geschwindigkeit Automatik\flqq\ voreingestellt oder während der Fahrt angepasst werden. Das Fahrzeug beginnt zu fahren, sobald der Druckknopf \frqq Start\flqq\ betätigt wird, und die Automatik kann über den Druckknopf \frqq Stop\flqq\ gestoppt werden.\\ Im Notfall kann sowohl im Automatik- als auch im manuellen Betrieb der Druckknopf \frqq Emergency stop\flqq\ betätigt werden. Das Fahrzeug führt eine Vollbremsung mit der Motor- und der mechanischen Bremse durch. Der Notfallmodus kann durch Drücken des \frqq Reset\flqq\ -Knopfs beendet werden.\\ \ \\
-
+Im Automatikbetrieb kann die Geschwindigkeit über das Drehrad \frqq Geschwindigkeit Automatik\flqq\ voreingestellt oder während der Fahrt angepasst werden. Das Fahrzeug beginnt zu fahren, sobald der Druckknopf \frqq Start\flqq\ betätigt wird. Die Automatik kann über den Druckknopf \frqq Stop\flqq\ gestoppt werden.\\ Im Notfall kann sowohl im Automatik- als auch im manuellen Betrieb der Druckknopf \frqq Emergency stop\flqq\ betätigt werden. Das Fahrzeug führt eine Vollbremsung mit der Motor- und der mechanischen Bremse durch. Der Notfallmodus kann durch Drücken des \frqq Reset\flqq\ -Knopfs beendet werden.\\
+Die Funktionsweise der manuellen Steuerung wird in Abschnitt \ref{Automatensteuerung:Automat_man} erklärt, und die der automatischen Steuerung in Abschnitt \ref{Automatensteuerung:Automat_auto}
 
 
 \pagebreak[1]
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=\textwidth]{img/5_simulation/Automat_con.png}
+		\includegraphics[width=0.75\textwidth]{img/5_simulation/Automat_con.png}
 		\caption{Automat – Controllpanel}
-		\label{Automat:img:Controllpanel}
-	\end{center}
-\end{figure}
-\pagebreak[1]
-
-Die beiden Betriebsmodi werden im Folgenden näher erläutert.\\
-
-
-Der Automat des manuellen Betriebsmodus, wie in Abbildung \ref{Automat:img:man_übersicht} dargestellt, ist in zwei Zweige unterteilt vorwärts und rückwärts. In Abbildung \ref{Automat:img:man_vorwärts} wird der Vorwärtszweig gezeigt, der Rückwärtszweig ist dazu äquivalent.
-
-
-
-
-
-\pagebreak[1]
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=\textwidth]{img/5_simulation/Automat_man_uebersicht.png}
-		\caption{Automat – Übersicht der manuellen Steuerung}
-		\label{Automat:img:man_übersicht}
-	\end{center}
-\end{figure}
-\pagebreak[1]
-
-\pagebreak[1]
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=\textwidth]{img/5_simulation/Automat_man_vorwaerts_1.png}
-		\includegraphics[width=\textwidth]{img/5_simulation/Automat_man_vorwaerts.png}
-		\caption{Automat – Manuelle Steuerung Vorwärtszweig}
-		\label{Automat:img:man_vorwärts}
+		\label{Controllpanel:img:Controllpanel}
 	\end{center}
 \end{figure}
 \pagebreak[4]
+
+
+\subsection{Automatensteuerung}
+\label{Automatensteuerung}
+Die Automatensteuerung beschreibt die logische Steuerung eines Systems durch einen Automaten, wie etwa einen Moore- oder Mealy-Automaten, der auf Basis von Eingaben und aktuellen Zuständen Ausgaben steuert.\\
+Das Fahrzeug wird mittels eines Moore-Automaten gesteuert, wobei die Ausgänge erst dann aktiviert werden, wenn sich das System im entsprechenden Zustand befindet.\\ \ \\
+Der Automat startet im Zustand \frqq IDLE\flqq, und die Abläufe für den automatischen oder manuellen Modus werden von \frqq IDLE\flqq\ aus angesteuert. Im Zustand Idle werden die Ausgänge (siehe Tabelle \ref{Automat_man:tab:z_idle}) geschaltet.\\
+
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Ausgänge – Idle}
+	\label{Automat_man:tab:z_idle}
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Ausgänge}                           & \textbf{I/O Module}                 & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{IO397-50k – A1} & 1             \\
+		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}               & Reset         \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{IO397-50k – B3} & 5             \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{IO397-50k – B4} & 5             \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{IO397-50k – B5} & 5             \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{IO397-50k – B6} & 5             \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{IO397-50k – B7} & 0             \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[1]
+
+Die Funktion Driving, siehe Abbildung \ref{Automat:img:fnc_Driving}, erhält einen Eingangswert, der durch einen \frqq Rate Limiter\flqq\ begrenzt und am Ausgang ausgegeben wird. Die Funktion speichert den letzten Wert, daher muss sie in den Zuständen, in denen das Fahrzeug angehalten wird, zurückgesetzt werden. Dies geschieht, indem die Funktion Driving den Wert 1 erhält.\\
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=.5\textwidth]{img/5_simulation/Automat_funktion_1.png}
+		\includegraphics[width=.75\textwidth]{img/5_simulation/Automat_funktion_2.png}
+		\caption{Automat – Funktion Driving}
+		\label{Automat:img:fnc_Driving}
+	\end{center}
+\end{figure}
+\pagebreak[4]
+
+Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eingang \frqq emergency stop in\flqq\ erreicht werden, welcher sowohl über das Controllpanel als auch extern über das IO397-50k – B11 ausgelöst werden kann. Der Zustand kann nur durch ein Reset-Signal verlassen werden und führt dann in einen der Idle-Zustände zurück: Idle, manuell idle oder automatik idle zurück. Im Zustand \frqq Emergency stop\flqq\ werden die Ausgänge gemäß Tabelle \ref{Automat_man:tab:z_Emergency_stop} geschaltet.
+
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Ausgänge – Emergency stop}
+	\label{Automat_man:tab:z_Emergency_stop}
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Ausgänge}                           & \textbf{I/O Module}                 & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{IO397-50k – A1} & 1             \\
+		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}               & Reset         \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{IO397-50k – B3} & 5             \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{IO397-50k – B4} & 5             \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{IO397-50k – B5} & 5             \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{IO397-50k – B6} & 5             \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{IO397-50k – B7} & 5             \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[4]
+
+%\pagebreak[1]
+%\begin{figure}[!ht]
+%	\begin{center}
+%		\includegraphics[width=\textwidth]{img/5_simulation/Automat_idle.png}
+%		\caption{Automat – Start Zustand \frqq IDLE\flqq}
+%		\label{Automat_man:img:start_idle}
+%	\end{center}
+%\end{figure}
+%\pagebreak[4]
+
+
+
+
+
+
+
+
+\subsubsection{Automat für die manuelle Steuerung}
+\label{Automatensteuerung:Automat_man}
+
+Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_übersicht} dargestellt, ist in zwei Stateflows unterteilt: \frqq vorwärts\flqq\ und \frqq rückwärts\flqq . In Abbildung \ref{Automat_man:img:man_vorwärts} ist der \frqq vorwärts\flqq\ -Stateflow zu sehen, der \frqq rückwärts\flqq\ -Stateflow ist äquivalent, wobei sich lediglich der Ausgang \frqq Direction Out\flqq\ ändert. Daher wird nur der \frqq vorwärts\flqq\ -Stateflow erklärt. Die Ausgänge für die Zustände \frqq vorwärts\flqq\ und \frqq rückwärts\flqq\ sind in der Tabelle \ref{Automat_man:tab:z_V_langsam} für die Zustände \frqq langsam\flqq\ und in der Tabelle \ref{Automat_man:tab:z_V_schnell} für die Zustände \frqq schnell\flqq\ aufgelistet.
+
+
+
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{img/5_simulation/Automat_man_uebersicht.png}
+		\caption{Automat – Übersicht der manuellen Steuerung}
+		\label{Automat_man:img:man_übersicht}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Ausgänge – der Zustände vorwärts und rückwärts langsam}
+	\label{Automat_man:tab:z_V_langsam}
+	\begin{tabular}{llcc}
+		\hline
+		\textbf{Ausgänge}                               & \textbf{I/O Module}                 & \makecell{\textbf{Werte}     \\ \textbf{Vorwärts}} & \makecell{\textbf{Werte}     \\ \textbf{Rückwärts}}  \\ \hline
+		\multicolumn{1}{l|}{speed out = Driving$(1,5)$} & \multicolumn{1}{l|}{IO397-50k – A1} & 1,5                      & 3 \\
+		\multicolumn{1}{l|}{break motor out}            & \multicolumn{1}{l|}{IO397-50k – B3} & 1                        & 1 \\
+		\multicolumn{1}{l|}{direction out}              & \multicolumn{1}{l|}{IO397-50k – B4} & 5                        & 0 \\
+		\multicolumn{1}{l|}{cruise out}                 & \multicolumn{1}{l|}{IO397-50k – B5} & 5                        & 5 \\
+		\multicolumn{1}{l|}{break mechanically out}     & \multicolumn{1}{l|}{IO397-50k – B6} & 0                        & 0 \\
+		\multicolumn{1}{l|}{emergency stop out}         & \multicolumn{1}{l|}{IO397-50k – B7} & 0                        & 0 \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[1]
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Ausgänge – der Zustände vorwärts und rückwärts schnell}
+	\label{Automat_man:tab:z_V_schnell}
+	\begin{tabular}{llcc}
+		\hline
+		\textbf{Ausgänge}                             & \textbf{I/O Module}                 & \makecell{\textbf{Werte}     \\ \textbf{Vorwärts}} & \makecell{\textbf{Werte}     \\ \textbf{Rückwärts}} \\ \hline
+		\multicolumn{1}{l|}{speed out = Driving$(3)$} & \multicolumn{1}{l|}{IO397-50k – A1} & 3                        & 3 \\
+		\multicolumn{1}{l|}{break motor out}          & \multicolumn{1}{l|}{IO397-50k – B3} & 1                        & 1 \\
+		\multicolumn{1}{l|}{direction out}            & \multicolumn{1}{l|}{IO397-50k – B4} & 5                        & 0 \\
+		\multicolumn{1}{l|}{cruise out}               & \multicolumn{1}{l|}{IO397-50k – B5} & 5                        & 5 \\
+		\multicolumn{1}{l|}{break mechanically out}   & \multicolumn{1}{l|}{IO397-50k – B6} & 0                        & 0 \\
+		\multicolumn{1}{l|}{emergency stop out}       & \multicolumn{1}{l|}{IO397-50k – B7} & 0                        & 0 \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[1]
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/5_simulation/Automat_man_vorwaerts.png}
+		\caption{Automat – vorwärts Stateflow der manuellen Steuerung}
+		\label{Automat_man:img:man_vorwärts}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+
+
+
+Mit dem Wahltaster (siehe Tabelle \ref{Controllpanel:tab:Wahlschalter}) kann zwischen den Zuständen gewechselt werden. In der Abbildung \ref{Automat_man:img:man_vorwärts} ist der Ausschnitt des vorwärts Stateflow zu sehen. Wenn sich der Automat in dem Stateflow vorwärts befindet, gibt es keine direkte verknüpfung zu dem rückwärts Stateflow, somit muss man erst in den Zustand \frqq Manuell Idle\flqq\ wechseln, um in den Stateflow rückwärts zu gelangen.
+
+Der Zustand \frqq Sammler manuell in \flqq\ fängt  das Schaltsignal des Wahlschalters ab, wenn es mitten im Betrieb auf Automatik geschalten wird und führt zu dem \frqq Idle \flqq\ Zustand.
+
+
+
+
+
+
+
+
+
+\subsubsection{Automat für die automatische Steuerung}
+\label{Automatensteuerung:Automat_auto}
+
 %\begin{center}
 %
 %	\begin{equation}
@@ -278,16 +415,7 @@ Der Automat des manuellen Betriebsmodus, wie in Abbildung \ref{Automat:img:man_�
 %	\vec{O}_{IDLE} = \left(\begin{array}{c} speed_{out} = 1 \\  break\ motor_{out} = 5\\ break\ mechanically_{out}= 0\\  direction_{out} = 5\\ cruise_{out} = 5 \end{array}\right)
 %\end{equation}
 
-\pagebreak[1]
-\begin{figure}[!ht]
-	\begin{center}
-		\includegraphics[width=.75\textwidth]{img/5_simulation/Automat_funktion_1.png}
-		\includegraphics[width=.75\textwidth]{img/5_simulation/Automat_funktion_2.png}
-		\caption{Automat – Funktion Driving}
-		\label{Automat:img:fnc_Driving}
-	\end{center}
-\end{figure}
-\pagebreak[4]
+
 
 
 \pagebreak[1]
