@@ -13,7 +13,7 @@
 
 
 
-In dem folgenden Abschnitt werden die verwendeten Bauteile, welche in Kapitel \ref{chapter:Konzept} dargestellt worden sind, näher beschrieben.
+Im folgenden Abschnitt werden die verwendeten Bauteile, welche in Kapitel \ref{chapter:Konzept} dargestellt worden sind, näher beschrieben.
 
 
 \section{Antrieb – Golden Motor}
@@ -26,8 +26,7 @@ Golden Motor bietet eine Gesamtlösung bestehend aus einem BLDC-Motor und einem 
 \subsection{BLDC Motor}
 \label{section:BLDC_Motor}
 
-
-Der in Abbildung \ref{BLDC_Motor:img:antrieb_motor} dargestellte BLDC-Motor verfügt über eine Leistung von 10 kW und kann optional durch eine Ölkühlung gekühlt werden, was jedoch für das Fahrzeug derzeit nicht relevant ist. Die Drehzahl ist variabel und kann zwischen 2.000 und 6.000 U/min eingestellt werden, mittls dem Vector Controller der in Abschnitt \ref{section:Vector_Controller} erklärt wird. Das Nenndrehmoment beträgt 26 Nm, während das maximale Drehmoment bei 85 Nm liegt. Der Wirkungsgrad des Motors beträgt 91 \% \cite{Golden_Motor:bldc_motor}.
+Der in Abbildung \ref{BLDC_Motor:img:antrieb_motor} dargestellte BLDC-Motor verfügt über eine Leistung von 10 kW und kann optional durch eine Ölkühlung gekühlt werden, was jedoch für das Fahrzeug derzeit nicht relevant ist. Die Drehzahl ist variabel und kann, mittls des Vector Controllers, welcher in Abschnitt \ref{section:Vector_Controller} erklärt wird, zwischen 2.000 und 6.000 U/min eingestellt werden. Das Nenndrehmoment beträgt 26 Nm, während das maximale Drehmoment bei 85 Nm liegt. Der Wirkungsgrad des Motors beträgt 91 \% \cite{Golden_Motor:bldc_motor}.
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -87,7 +86,7 @@ Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem her
 
 Der Motor wird mithilfe eines Vektor-Controllers angesteuert, der in Abbildung \ref{Vector_Controller:img:Antrieb_Controller} dargestellt ist. Der Controller hat die Aufgabe, den Motor basierend auf den Eingangssignalen so zu steuern, dass beispielsweise eine gewünschte Drehzahl erreicht wird. Die genaue Funktionsweise des Vektor-Controllers wird kurz unter \ref{Vector_Controller:Funktionsweise} erläutert.
 
-Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführt. Bei den Steuersignalen muss auf den Spannungsbereich geachtet werden, da der Controller eine Störung meldet, wenn ein Signal außerhalb des zulässigen Bereichs liegt. Dies ist ein integriertes Sicherheitssystem des Controllers. Dies ist ein integriertes Sicherheitssystem des Controllers. So liegt beispielsweise bei der Bremse das digitale Signal bei 0, wenn die Spannung 1 V beträgt. Tritt ein Kabelbruch so wird die Spannung am Controller bei 0 V liegen und eine Warnung wird durch ein periodisches Piepen ausgegeben.
+Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführt. Bei den Steuersignalen muss auf den Spannungsbereich geachtet werden, da der Controller eine Störung meldet, wenn ein Signal außerhalb des zulässigen Bereichs liegt. Dies ist ein integriertes Sicherheitssystem des Controllers. Dies ist ein integriertes Sicherheitssystem des Controllers. So liegt beispielsweise bei der Bremse das logische Signal bei 0, wenn die Spannung 1 V beträgt. Tritt ein Kabelbruch ein, wird die Spannung am Controller bei 0 V liegen und eine Warnung wird durch ein periodisches Piepen ausgegeben.
 
 
 \begin{figure}[!ht]
@@ -152,8 +151,8 @@ Der Vektor-Controller verwendet die Motorsteuerungstechnologie der feldorientier
 	\end{itemize}
 }{To-do}{\textwidth}
 
-Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steuerung_goat} dargestellt, ist ein echtzeitfähiges System. Es wird hauptsächlich in der Entwicklung und beim Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt, bei denen die Echtzeitfähigkeit eine zentrale Rolle spielt.\\
-Echtzeitfähigkeit bezieht sich auf die Fähigkeit eines Systems, innerhalb einer festgelegten Frist auf externe Ereignisse oder Eingaben zu reagieren. In der Informatik und Technik spricht man von einem Echtzeitsystem, wenn es rechtzeitig arbeiten muss. Die Reaktionszeit auf Ereignisse ist hierbei entscheidend, da Verzögerungen zu Fehlern oder unvorhersehbaren Zuständen führen könnten \cite{DIN_44300}.
+Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steuerung_goat} dargestellt, ist ein echtzeitfähiges System. Es wird hauptsächlich in der Entwicklung und beim Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt, bei denen die Echtzeitfähigkeit eine zentrale Rolle spielt.\\ \ \\
+
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -165,8 +164,8 @@ Echtzeitfähigkeit bezieht sich auf die Fähigkeit eines Systems, innerhalb eine
 \end{figure}
 \pagebreak[1]
 
-Speedgoat-Systeme integrieren sich nahtlos mit Simulink, einer Software von MathWorks, die häufig zur Modellierung und Simulation dynamischer Systeme verwendet wird. Dank einer breiten Palette an I/O-Modulen lassen sich verschiedene Sensoren und Aktuatoren problemlos an die Systeme anschließen.
-Echtzeitsysteme von Speedgoat sind Computer, die in der Lage sind, Aufgaben innerhalb festgelegter Zeitintervalle auszuführen. Diese Systeme sind entscheidend für Anwendungen, bei denen die zeitliche Genauigkeit eine große Bedeutung ist, wie beispielsweise bei der Steuerung von Motoren, der Regelung von Prozessen oder der Simulation von physikalischen Systemen.
+Speedgoat-Systeme integrieren sich nahtlos mit Simulink, einer Software von MathWorks, die häufig zur Modellierung und Simulation dynamischer Systeme verwendet wird. Durch eine große Auswahl an I/O-Modulen lassen sich verschiedene Sensoren und Aktuatoren problemlos an die Systeme anschließen.
+Echtzeitsysteme von Speedgoat sind Computer, die in der Lage sind, Aufgaben innerhalb festgelegter Zeitintervalle auszuführen. Diese Systeme sind entscheidend für Anwendungen, bei denen die zeitliche Genauigkeit von großer Bedeutung ist, wie beispielsweise bei der Steuerung von Motoren, der Regelung von Prozessen oder der Simulation von physikalischen Systemen.
 
 
 \pagebreak[1]
@@ -293,7 +292,7 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 \subsubsection{IO397-50k – Konfigurieren}
 \label{Simulink:IO397_50k_Konfigurieren}
 
-Der Driver Block, wie in Abbildung \ref{IO397_50k_Konfigurieren:img:Driver_Block} gezeigt, können an dem Pull-Widerstand des I/O-Moduls verschiedne Spannungen eingestellt werden. Zur Auswahl stehen:
+In dem Driver Block, wie in Abbildung \ref{IO397_50k_Konfigurieren:img:Driver_Block} gezeigt, können am dem Pull-Widerstand des I/O-Moduls verschiedene Spannungen eingestellt werden. Zur Auswahl stehen:
 \begin{itemize}
 	\item Pull-up 3,3 V
 	\item Weak Pull-up 5,0 V
@@ -312,7 +311,7 @@ welche im Folgenden erklärt werden.
 \end{figure}
 \pagebreak[1]
 
-Pull-Widerstände werden verwendet, um klare digitale Schaltzustände zu gewährleisten. Es gibt drei verschiedene Zustände: High entspricht logisch 1, Low entspricht logisch 0 und Floating ist hochohmig. Die Zustände zu den Einstellungen sind in der Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} aufgeführt.
+Pull-Widerstände werden verwendet, um klare digitale Schaltzustände zu gewährleisten. Es gibt drei verschiedene Zustände: \frqq High\flqq\ entspricht \frqq logisch 1\flqq\, Low entspricht \frqq logisch 0\flqq\. \frqq Floating\flqq\ hat die Bedeutung, dass der Widerstand nicht an \frqq GND\flqq\ oder an einer Spannung angeschlossen ist. Somit ist der Widerstand hochohmig. Die Zustände zu den Einstellungen sind in der Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} aufgeführt.
 In Abbildung \ref{IO397_50k_Konfigurieren:img:TTL_IO_Interface} ist im rot markierten Bereich der Pull-Widerstand mit 4,7 k$\Omega$ an einen 47-$\Omega$-Widerstand am I/O-Anschluss angeschlossen. Der Pull-Widerstand kann, wie bereits erwähnt, konfiguriert werden. Dabei wird intern am Pull-Widerstand entweder eine Spannung von 3,3 V, 5 V, GND oder kein Kontakt, also Floating (hochohmig), geschaltet.
 
 \pagebreak[1]
@@ -323,7 +322,7 @@ In Abbildung \ref{IO397_50k_Konfigurieren:img:TTL_IO_Interface} ist im rot marki
 		\label{IO397_50k_Konfigurieren:img:TTL_IO_Interface}
 	\end{center}
 \end{figure}
-\pagebreak[4]
+\pagebreak[2]
 
 
 
@@ -331,7 +330,7 @@ Bei der Einstellung auf 3,3 V oder 5 V fungiert der Widerstand als Pull-up-Wider
 
 
 
-In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktionszeiten der digitalen Ausgänge verglichen werden. Bei der Einstellung Weak Pull-up 5,0 V bedeutet \frqq weak\flqq, dass der Ausgang eine langsamere Anstiegszeit hat. In Abbildung \ref{IO397_50k_Konfigurieren:img:Pull_Widerstande} sind die Reaktionszeiten dargestellt.
+In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktionszeiten der digitalen Ausgänge verglichen werden. Bei der Einstellung \frqq Weak Pull-up 5,0 V\flqq\ bedeutet \frqq weak\flqq, dass der Ausgang eine langsamere Anstiegszeit hat. In Abbildung \ref{IO397_50k_Konfigurieren:img:Pull_Widerstande} sind die Reaktionszeiten dargestellt.
 
 
 \pagebreak[1]
@@ -346,7 +345,7 @@ In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktions
 		\multicolumn{1}{l|}{Pull-up 3,3V}                         & I/O = 1                                                         & Schnell                                                 & Schnell \\
 		\multicolumn{1}{l|}{weak pull-up 5,0V}                    & I/O = 1                                                         & Langsam                                                 & Schnell \\
 		\multicolumn{1}{l|}{Pull-down}                            & I/O = 0                                                         & Schnell                                                 & Langsam \\
-		\multicolumn{1}{l|}{Floating}                             & I/O = 0 -1                                                      & -                                                       & -       \\ \hline
+		\multicolumn{1}{l|}{Floating}                             & I/O = 0 - 1                                                      & -                                                       & -       \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[1]
@@ -423,27 +422,9 @@ Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen
 \label{Simulink:IO691_Konfigurieren}
 
 
-\newpage
-\section{Simulink}
-\label{section:Simulink}
-
-\myboxy{
-	\begin{itemize}
-		\item
-	\end{itemize}
-}{To-do}{\textwidth}
 
 
 
-\newpage
-\section{QElectroTech}
-\label{section:QElectroTech}
-
-\myboxy{
-	\begin{itemize}
-		\item
-	\end{itemize}
-}{To-do}{\textwidth}
 
 
 

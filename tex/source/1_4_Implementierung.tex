@@ -15,6 +15,11 @@
 \section{Auswahl der Bauteile}
 \label{section:Auswahl_der_Bauteile}
 
+\myboxy{
+	\begin{itemize}
+		\item not happy
+	\end{itemize}}{To-do}{\textwidth}
+
 Für das Projekt wurden die echtzeitfähige Steuerung, die Batterie, der Motor und die zugehörige Steuerung vorgegeben. Alle weiteren Bauteile mussten bestellt werden.
 
 
@@ -124,7 +129,7 @@ Bei einer vollständigen Betriebsmittelbezeichnung sieht das Kennzeichen des Bet
 
 \begin{center} =ES2+SE1-10QA1 \end{center}
 
-Die Betriebsmittelbezeichnung =ES2+SE1-10QA4 besagt, dass es sich um die Eingänge der Steuerung (=ES) handelt, wobei es zwei Funktionen gibt. Der Ort ist in der Steuereinheit (+SE) verortet, und das Betriebsmittel selbst ist ein Relais, das auf der Seite 10 des Schaltplans zu finden ist.
+Die Betriebsmittelbezeichnung =ES2+SE1-10QA4 besagt, dass es sich um die Eingänge der Steuerung (=ES) handelt. Hierbei gibt es zwei Funktionen. Der Ort ist in der Steuereinheit (+SE) verortet, und das Betriebsmittel selbst ist ein Relais, welche auf der Seite 10 des Schaltplans zu finden ist.
 
 Das Kennzeichen umfasst sowohl das Funktions- als auch das Ortskennzeichen, die jeweils mit einer fortlaufenden Nummer versehen sind. Das Betriebsmittelkennzeichen enthält zwei Nummerierungen: Die erste gibt an, auf welcher Seite des Schaltplans sich das Betriebsmittel befindet, während die zweite die fortlaufende Nummerierung des Bauteils darstellt.\\
 Im Schaltplan wird das Betriebsmittel lediglich durch das Betriebsmittelkennzeichen (-) dargestellt, während das Funktions- und Ortskennzeichen im Zeichnungskopf angegeben ist.
@@ -182,7 +187,7 @@ Der Automatikmodus wird über den Startknopf aktiviert. Das Fahrzeug beschleunig
 
 \subsubsection{Controllpanel}
 \label{Steuerung:Controllpanel}
-Über das Control Panel (siehe Abbildung \ref{Controllpanel:img:Controllpanel}) können alle Eingaben via Simulink gesteuert werden, welche im Folgenden erklärt werden. Mit dem Wahlschalter kann zwischen Automatik- und manuellem Betrieb gewechselt werden. Ist der manuelle Betrieb ausgewählt, kann mit dem Drehschalter (Manuell) zwischen Vorwärts, Rückwärts und Stopp geschaltet werden (siehe Tabelle \ref{Controllpanel:tab:Wahlschalter}, die Werte werden später für die Automaten Steuerung benötigt).\\
+Über das Control Panel (siehe Abbildung \ref{Controllpanel:img:Controllpanel}) können alle Eingaben via Simulink gesteuert werden. Mit dem Wahlschalter kann, wie bereits erwähnt, zwischen Automatik- und manuellem Betrieb gewechselt werden. Ist der manuelle Betrieb ausgewählt, kann mit dem Drehschalter (Manuell) zwischen Vorwärts, Rückwärts und Stopp geschaltet werden (siehe Tabelle \ref{Controllpanel:tab:Wahlschalter}, die Werte werden später für die Automatensteuerung benötigt).\\
 
 
 \pagebreak[1]
@@ -190,14 +195,14 @@ Der Automatikmodus wird über den Startknopf aktiviert. Das Fahrzeug beschleunig
 	\centering
 	\caption{Automat – Wahlschalter für den manuellen Betrieb}
 	\label{Controllpanel:tab:Wahlschalter}
-	\begin{tabular}{cll}
+	\begin{tabular}{ccc}
 		\hline
-		\textbf{Schalterbezeichnung} & \textbf{Zustand} & \textbf{Wert} \\ \hline
-		\multicolumn{1}{l|}{Rück+}   & V schnell        & 1             \\
-		\multicolumn{1}{l|}{Rück}    & R langsam        & 2             \\
-		\multicolumn{1}{l|}{STOP}    & Manuell idle     & 3             \\
-		\multicolumn{1}{l|}{Vor}     & V langsam        & 4             \\
-		\multicolumn{1}{l|}{Vor+}    & V schnell        & 5             \\ \hline
+		\textbf{Schalterbezeichnung} & \textbf{Zustände} & \textbf{Wert} \\ \hline
+		\multicolumn{1}{c|}{Rück+}   & Forwards fast     & 1             \\
+		\multicolumn{1}{c|}{Rück}    & Forwards slow     & 2             \\
+		\multicolumn{1}{c|}{STOP}    & Manual idle       & 3             \\
+		\multicolumn{1}{c|}{Vor}     & Backwards slow    & 4             \\
+		\multicolumn{1}{c|}{Vor+}    & Backwards fast    & 5             \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[3]
@@ -220,7 +225,7 @@ Die Funktionsweise der manuellen Steuerung wird in Abschnitt \ref{Automatensteue
 \label{Automatensteuerung}
 Die Automatensteuerung beschreibt die logische Steuerung eines Systems durch einen Automaten, wie etwa einen Moore- oder Mealy-Automaten, der auf Basis von Eingaben und aktuellen Zuständen Ausgaben steuert.\\
 Das Fahrzeug wird mittels eines Moore-Automaten gesteuert, wobei die Ausgänge erst dann aktiviert werden, wenn sich das System im entsprechenden Zustand befindet.\\ \ \\
-Der Automat startet im Zustand \frqq IDLE\flqq, und die Abläufe für den automatischen oder manuellen Modus werden von \frqq IDLE\flqq\ aus angesteuert. Im Zustand Idle werden die Ausgänge (siehe Tabelle \ref{Automat_man:tab:z_idle}) geschaltet.\\
+Der Automat startet im Zustand \frqq Idle\flqq, und die Abläufe für den automatischen oder manuellen Modus werden von \frqq Idle\flqq\ aus angesteuert. Im Zustand Idle werden die Ausgänge (siehe Tabelle \ref{Automat_man:tab:z_idle}) geschaltet.\\
 
 
 \pagebreak[1]
@@ -242,7 +247,7 @@ Der Automat startet im Zustand \frqq IDLE\flqq, und die Abläufe für den automa
 \end{table}
 \pagebreak[1]
 
-Die Funktion Driving, siehe Abbildung \ref{Automat:img:fnc_Driving}, erhält einen Eingangswert, der durch einen \frqq Rate Limiter\flqq\ begrenzt und am Ausgang ausgegeben wird. Die Funktion speichert den letzten Wert, daher muss sie in den Zuständen, in denen das Fahrzeug angehalten wird, zurückgesetzt werden. Dies geschieht, indem die Funktion Driving den Wert 1 erhält.\\
+Die Funktion \frqq Driving\flqq, siehe Abbildung \ref{Automat:img:fnc_Driving}, erhält einen Eingangswert, der durch einen \frqq Rate Limiter\flqq\ begrenzt und am Ausgang ausgegeben wird. Die Funktion speichert den letzten Wert, daher muss sie in den Zuständen, in denen das Fahrzeug angehalten wird, zurückgesetzt werden. Dies geschieht, indem die Funktion \frqq Driving\flqq\ den Wert \frqq 1\flqq\ erhält.\\
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -255,7 +260,7 @@ Die Funktion Driving, siehe Abbildung \ref{Automat:img:fnc_Driving}, erhält ein
 \end{figure}
 \pagebreak[4]
 
-Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eingang \frqq emergency stop in\flqq\ erreicht werden, welcher sowohl über das Controllpanel als auch extern über das IO397-50k – B11 ausgelöst werden kann. Der Zustand kann nur durch ein Reset-Signal verlassen werden und führt dann in einen der Idle-Zustände zurück: Idle, manuell idle oder automatik idle zurück. Im Zustand \frqq Emergency stop\flqq\ werden die Ausgänge gemäß Tabelle \ref{Automat_man:tab:z_Emergency_stop} geschaltet.
+Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eingang \frqq emergency stop in\flqq\ erreicht werden, welcher sowohl über das Controllpanel als auch extern über das IO397-50k – B11 ausgelöst werden kann. Der Zustand kann nur durch ein Reset-Signal verlassen werden und führt dann in einen der Idle-Zustände zurück: \frqq Idle\flqq\ \frqq Manual idle\flqq\ oder \frqq Automatic idle\flqq. Im Zustand \frqq Emergency stop\flqq\ werden die Ausgänge gemäß Tabelle \ref{Automat_man:tab:z_Emergency_stop} geschaltet.
 
 
 \pagebreak[1]
@@ -297,7 +302,7 @@ Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eingang 
 \subsubsection{Automat für die manuelle Steuerung}
 \label{Automatensteuerung:Automat_man}
 
-Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_übersicht} dargestellt, ist in zwei Stateflows unterteilt: \frqq vorwärts\flqq\ und \frqq rückwärts\flqq . In Abbildung \ref{Automat_man:img:man_vorwärts} ist der \frqq vorwärts\flqq\ -Stateflow zu sehen, der \frqq rückwärts\flqq\ -Stateflow ist äquivalent, wobei sich lediglich der Ausgang \frqq Direction Out\flqq\ ändert. Daher wird nur der \frqq vorwärts\flqq\ -Stateflow erklärt. Die Ausgänge für die Zustände \frqq vorwärts\flqq\ und \frqq rückwärts\flqq\ sind in der Tabelle \ref{Automat_man:tab:z_V_langsam} für die Zustände \frqq langsam\flqq\ und in der Tabelle \ref{Automat_man:tab:z_V_schnell} für die Zustände \frqq schnell\flqq\ aufgelistet.
+Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_übersicht} dargestellt, ist in zwei Stateflows unterteilt: \frqq Forwards\flqq\ und \frqq Backwards\flqq . In Abbildung \ref{Automat_man:img:man_vorwärts} ist der \frqq Forwards\flqq\ -Stateflow zu sehen, der \frqq Backwards\flqq\ -Stateflow ist äquivalent, wobei sich lediglich der Ausgang \frqq Direction Out\flqq\ ändert. Daher wird nur der \frqq Forwards\flqq\ -Stateflow erklärt. Die Ausgänge für die Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ sind in der Tabelle \ref{Automat_man:tab:z_V_langsam} für die Zustände \frqq slow\flqq\ und in der Tabelle \ref{Automat_man:tab:z_V_schnell} für die Zustände \frqq fast\flqq\ aufgelistet.
 
 
 
@@ -316,17 +321,17 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 \pagebreak[1]
 \begin{table}[!ht]
 	\centering
-	\caption{Ausgänge – der Zustände vorwärts und rückwärts langsam}
+	\caption{Ausgänge – der Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ –  \frqq slow\flqq}
 	\label{Automat_man:tab:z_V_langsam}
 	\begin{tabular}{llcc}
 		\hline
-		\textbf{Ausgänge}                               & \textbf{I/O Module}                 & \makecell{\textbf{Werte}     \\ \textbf{Vorwärts}} & \makecell{\textbf{Werte}     \\ \textbf{Rückwärts}}  \\ \hline
-		\multicolumn{1}{l|}{speed out = Driving$(1,5)$} & \multicolumn{1}{l|}{IO397-50k – A1} & 1,5                      & 3 \\
-		\multicolumn{1}{l|}{break motor out}            & \multicolumn{1}{l|}{IO397-50k – B3} & 1                        & 1 \\
-		\multicolumn{1}{l|}{direction out}              & \multicolumn{1}{l|}{IO397-50k – B4} & 5                        & 0 \\
-		\multicolumn{1}{l|}{cruise out}                 & \multicolumn{1}{l|}{IO397-50k – B5} & 5                        & 5 \\
-		\multicolumn{1}{l|}{break mechanically out}     & \multicolumn{1}{l|}{IO397-50k – B6} & 0                        & 0 \\
-		\multicolumn{1}{l|}{emergency stop out}         & \multicolumn{1}{l|}{IO397-50k – B7} & 0                        & 0 \\ \hline
+		\textbf{Ausgänge}                               & \textbf{I/O Module}                 & \makecell{\textbf{Werte}       \\ \textbf{\frqq Forwards\flqq}} & \makecell{\textbf{Werte}     \\ \textbf{\frqq Backwards\flqq}}  \\ \hline
+		\multicolumn{1}{l|}{speed out = Driving$(1,5)$} & \multicolumn{1}{l|}{IO397-50k – A1} & 1,5                      & 1,5 \\
+		\multicolumn{1}{l|}{break motor out}            & \multicolumn{1}{l|}{IO397-50k – B3} & 1                        & 1   \\
+		\multicolumn{1}{l|}{direction out}              & \multicolumn{1}{l|}{IO397-50k – B4} & 5                        & 0   \\
+		\multicolumn{1}{l|}{cruise out}                 & \multicolumn{1}{l|}{IO397-50k – B5} & 5                        & 5   \\
+		\multicolumn{1}{l|}{break mechanically out}     & \multicolumn{1}{l|}{IO397-50k – B6} & 0                        & 0   \\
+		\multicolumn{1}{l|}{emergency stop out}         & \multicolumn{1}{l|}{IO397-50k – B7} & 0                        & 0   \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[1]
@@ -334,11 +339,11 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 \pagebreak[1]
 \begin{table}[!ht]
 	\centering
-	\caption{Ausgänge – der Zustände vorwärts und rückwärts schnell}
+	\caption{Ausgänge – der Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ –  \frqq fast\flqq}
 	\label{Automat_man:tab:z_V_schnell}
 	\begin{tabular}{llcc}
 		\hline
-		\textbf{Ausgänge}                             & \textbf{I/O Module}                 & \makecell{\textbf{Werte}     \\ \textbf{Vorwärts}} & \makecell{\textbf{Werte}     \\ \textbf{Rückwärts}} \\ \hline
+		\textbf{Ausgänge}                             & \textbf{I/O Module}                 & \makecell{\textbf{Werte}     \\ \textbf{\frqq Forwards\flqq}} & \makecell{\textbf{Werte}     \\ \textbf{\frqq Backwards\flqq}} \\ \hline
 		\multicolumn{1}{l|}{speed out = Driving$(3)$} & \multicolumn{1}{l|}{IO397-50k – A1} & 3                        & 3 \\
 		\multicolumn{1}{l|}{break motor out}          & \multicolumn{1}{l|}{IO397-50k – B3} & 1                        & 1 \\
 		\multicolumn{1}{l|}{direction out}            & \multicolumn{1}{l|}{IO397-50k – B4} & 5                        & 0 \\
@@ -353,7 +358,7 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{img/5_simulation/Automat_man_vorwaerts.png}
-		\caption{Automat – vorwärts Stateflow der manuellen Steuerung}
+		\caption{Automat – \frqq Forwards\flqq\ -Stateflow der manuellen Steuerung}
 		\label{Automat_man:img:man_vorwärts}
 	\end{center}
 \end{figure}
@@ -361,9 +366,9 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 
 
 
-Mit dem Wahltaster (siehe Tabelle \ref{Controllpanel:tab:Wahlschalter}) kann zwischen den Zuständen gewechselt werden. In der Abbildung \ref{Automat_man:img:man_vorwärts} ist der Ausschnitt des vorwärts Stateflow zu sehen. Wenn sich der Automat in dem Stateflow vorwärts befindet, gibt es keine direkte verknüpfung zu dem rückwärts Stateflow, somit muss man erst in den Zustand \frqq Manuell Idle\flqq\ wechseln, um in den Stateflow rückwärts zu gelangen.
+Mit dem Wahltaster (siehe Tabelle \ref{Controllpanel:tab:Wahlschalter}) kann zwischen den Zuständen gewechselt werden. In der Abbildung \ref{Automat_man:img:man_vorwärts} ist der Ausschnitt des \frqq Forwards\flqq\ -Stateflow zu sehen. Wenn sich der Automat in dem Stateflow \frqq Forwards\flqq\ befindet, gibt es keine direkte verknüpfung zu dem \frqq Backwards\flqq\ Stateflow, somit muss man erst in den Zustand \frqq Manual idle\flqq\ wechseln, um in den Stateflow \frqq Backwards\flqq\ zu gelangen.
 
-Der Zustand \frqq Sammler manuell in \flqq\ fängt  das Schaltsignal des Wahlschalters ab, wenn es mitten im Betrieb auf Automatik geschalten wird und führt zu dem \frqq Idle \flqq\ Zustand.
+Der Zustand \frqq Collector manual in\flqq\ fängt  das Schaltsignal des Wahlschalters ab, wenn mitten im Betrieb auf Automatik geschalten wird und führt zu dem \frqq Idle \flqq\ Zustand.
 
 
 
@@ -466,9 +471,9 @@ Der Sensor von Pepperl+Fuchs wurde ursprünglich für die Distanzmessung angesch
 Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU decodiert.
 
 \subsection{Verbindung}
-Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops haben wir diese Lötstellen analysiert und festgestellt, dass Leitung eins eine Spannung von 3,3 V führt und Leitung vier als GND dient. Die Leitungen zwei und drei übertragen digitale Signale und fungieren als Datenleitungen.\\
-Wenn zwei Leitungen für die Datenübertragung vorhanden sind, kann die Kommunikation bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Andernfalls, bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.
-Der Sensor komuniziert mit einem Bussystem.
+Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops wurden diese Lötstellen analysiert und es wurde festgestellt, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.\\
+Wenn zwei Leitungen für die Datenübertragung vorhanden sind, kann die Kommunikation bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.
+Der Sensor kommuniziert mit einem Bussystem.
 
 
 

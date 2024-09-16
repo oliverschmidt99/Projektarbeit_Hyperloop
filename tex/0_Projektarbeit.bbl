@@ -93,15 +93,6 @@
       \field{type}{PDF}
       \field{year}{2024}
     \endentry
-    \entry{DIN_44300}{misc}{}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{number}{DIN 44300}
-      \field{title}{DIN EN IEC 81346-2 Industrielle Systeme, Anlagen und Ausrüstungen und Industrieprodukte – Strukturierungsprinzipien und Referenzkennzeichnung –Teil 2}
-      \field{type}{Norm}
-      \field{year}{2020}
-    \endentry
     \entry{speedgoat:IO397_50k}{manual}{}
       \name{author}{1}{}{%
         {{hash=3c71b559c47f221833c2d6049e9dc769}{%
