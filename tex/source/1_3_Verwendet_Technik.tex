@@ -19,7 +19,7 @@ Im folgenden Abschnitt werden die verwendeten Bauteile, welche in Kapitel \ref{c
 \section{Antrieb – Golden Motor}
 \label{section:Antrieb}
 
-Golden Motor bietet eine Gesamtlösung bestehend aus einem BLDC-Motor und einem Vektor-Controller an. Der Motor wird dabei mit dem Controller verbunden, der eine Schnittstelle mit allen notwendigen Steuer- und Kontrollsignalen bereitstellt, um den Motor anzutreiben. Die Anschlüsse sowie die grundlegende Funktionsweise werden in den Abschnitten \ref{section:BLDC_Motor} und \ref{section:Vector_Controller} näher erläutert.
+Golden Motor bietet eine Gesamtlösung bestehend aus einem BLDC-Motor und einem Vektor-Controller an. Der Controller besitzt eine Schnittstelle für alle notwendigen Steuer- und Kontrollsignale, um den Motor anzutreiben. Die Anschlüsse sowie die grundlegende Funktionsweise werden in den Abschnitten \ref{section:BLDC_Motor} und \ref{section:Vector_Controller} näher erläutert.
 
 
 
@@ -86,7 +86,7 @@ Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem her
 
 Der Motor wird mithilfe eines Vektor-Controllers angesteuert, der in Abbildung \ref{Vector_Controller:img:Antrieb_Controller} dargestellt ist. Der Controller hat die Aufgabe, den Motor basierend auf den Eingangssignalen so zu steuern, dass beispielsweise eine gewünschte Drehzahl erreicht wird. Die genaue Funktionsweise des Vektor-Controllers wird kurz unter \ref{Vector_Controller:Funktionsweise} erläutert.
 
-Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführt. Bei den Steuersignalen muss auf den Spannungsbereich geachtet werden, da der Controller eine Störung meldet, wenn ein Signal außerhalb des zulässigen Bereichs liegt. Dies ist ein integriertes Sicherheitssystem des Controllers. Dies ist ein integriertes Sicherheitssystem des Controllers. So liegt beispielsweise bei der Bremse das logische Signal bei 0, wenn die Spannung 1 V beträgt. Tritt ein Kabelbruch ein, wird die Spannung am Controller bei 0 V liegen und eine Warnung wird durch ein periodisches Piepen ausgegeben.
+Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführt. Bei den Steuersignalen muss auf den Spannungsbereich geachtet werden, da der Controller eine Störung meldet, wenn ein Signal außerhalb des zulässigen Bereichs liegt. Dies ist ein integriertes Sicherheitssystem des Controllers. Dies ist ein integriertes Sicherheitssystem des Controllers. So liegt beispielsweise bei der Bremse das logische Signal bei 0, wenn die Spannung 1 V beträgt. Tritt ein Kabelbruch ein, wird die Spannung am Controller bei 0 V liegen und eine Warnung wird durch ein periodisches Tonsignal ausgegeben.
 
 
 \begin{figure}[!ht]
@@ -151,7 +151,7 @@ Der Vektor-Controller verwendet die Motorsteuerungstechnologie der feldorientier
 	\end{itemize}
 }{To-do}{\textwidth}
 
-Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steuerung_goat} dargestellt, ist ein echtzeitfähiges System. Es wird hauptsächlich in der Entwicklung und beim Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt, bei denen die Echtzeitfähigkeit eine zentrale Rolle spielt.\\ \ \\
+Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steuerung_goat} dargestellt, ist ein echtzeitfähiges System, welches ovn der Firma Speedgoat hergestellt und vertrieben wirden. Es wird hauptsächlich in der Entwicklung und beim Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt, bei denen die Echtzeitfähigkeit eine zentrale Rolle spielt.\\ \ \\
 
 
 \pagebreak[1]
@@ -207,7 +207,7 @@ Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers angeschlosse
 \subsection{I/O-Modul – IO397-50k}
 \label{section:IO397_50k}
 
-Das in Abbildung \ref{IO397_50k:img:Module} gezeigte IO397-50k I/O-Modul bietet eine Vielzahl von analogen und digitalen Ein- und Ausgängen. Die Anschlüsse werden auf Modul A, das die analogen Schnittstellen bereitstellt, und Modul B, welches die digitalen Schnittstellen umfasst, verteilt. Die Anschlussbelegung werden in den Tabellen \ref{IO397_50k:tab:Board_A} und \ref{IO397_50k:tab:Board_B} dargestellt. Die Spannungen der Ein- und Ausgänge können softwaregesteuert angepasst werden \cite{speedgoat:IO397_50k}.
+Das in Abbildung \ref{IO397_50k:img:Module} dargestellte IO397-50k I/O-Modul verfügt über zahlreiche analoge und digitale Ein- sowie Ausgänge. Die Anschlüsse werden auf Modul A, das die analogen Schnittstellen bereitstellt, und Modul B, welches die digitalen Schnittstellen umfasst, verteilt. Die Anschlussbelegung werden in den Tabellen \ref{IO397_50k:tab:Board_A} und \ref{IO397_50k:tab:Board_B} dargestellt. Die Spannungen der Ein- und Ausgänge können softwaregesteuert angepasst werden \cite{speedgoat:IO397_50k}.
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -227,7 +227,7 @@ Das Terminal Board A ist für die Verarbeitung analoger Signale konzipiert, sowo
 \pagebreak[1]
 \begin{table}[!ht]
 	\centering
-	\caption{IO397-50k Pin Mapping – Terminal Board A: analog I/O \cite{speedgoat:IO397_50k}}
+	\caption{IO397-50k Pin Mapping – Terminal Board A: analog I/O \cite[15]{speedgoat:IO397_50k}}
 	\label{IO397_50k:tab:Board_A}
 	\begin{tabular}{lll}
 		\hline
@@ -261,7 +261,7 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 \pagebreak[1]
 \begin{table}[!ht]
 	\centering
-	\caption{IO397-50k Pin Mapping – Terminal Board B: analog I/O \cite{speedgoat:IO397_50k}}
+	\caption{IO397-50k Pin Mapping – Terminal Board B: analog I/O \cite[15]{speedgoat:IO397_50k}}
 	\label{IO397_50k:tab:Board_B}
 	\begin{tabular}{lll}
 		\hline
@@ -318,7 +318,7 @@ In Abbildung \ref{IO397_50k_Konfigurieren:img:TTL_IO_Interface} ist im rot marki
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=1.1\textwidth]{img/4_simulink/TTL_IO_Interface.png}
-		\caption{Simulink – TTL I/O Interface – IO397-50k \cite[12]{speedgoat:IO397_50k}}
+		\caption{Speedgoat – TTL I/O Interface – IO397-50k \cite[12]{speedgoat:IO397_50k}}
 		\label{IO397_50k_Konfigurieren:img:TTL_IO_Interface}
 	\end{center}
 \end{figure}
@@ -345,7 +345,7 @@ In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktions
 		\multicolumn{1}{l|}{Pull-up 3,3V}                         & I/O = 1                                                         & Schnell                                                 & Schnell \\
 		\multicolumn{1}{l|}{weak pull-up 5,0V}                    & I/O = 1                                                         & Langsam                                                 & Schnell \\
 		\multicolumn{1}{l|}{Pull-down}                            & I/O = 0                                                         & Schnell                                                 & Langsam \\
-		\multicolumn{1}{l|}{Floating}                             & I/O = 0 - 1                                                      & -                                                       & -       \\ \hline
+		\multicolumn{1}{l|}{Floating}                             & I/O = 0 - 1                                                     & -                                                       & -       \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[1]

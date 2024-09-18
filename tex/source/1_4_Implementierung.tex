@@ -4,25 +4,6 @@
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\section{Auswahl der Bauteile}
-\label{section:Auswahl_der_Bauteile}
-
-\myboxy{
-	\begin{itemize}
-		\item not happy
-	\end{itemize}}{To-do}{\textwidth}
-
-Für das Projekt wurden die echtzeitfähige Steuerung, die Batterie, der Motor und die zugehörige Steuerung vorgegeben. Alle weiteren Bauteile mussten bestellt werden.
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -225,7 +206,17 @@ Die Funktionsweise der manuellen Steuerung wird in Abschnitt \ref{Automatensteue
 \label{Automatensteuerung}
 Die Automatensteuerung beschreibt die logische Steuerung eines Systems durch einen Automaten, wie etwa einen Moore- oder Mealy-Automaten, der auf Basis von Eingaben und aktuellen Zuständen Ausgaben steuert.\\
 Das Fahrzeug wird mittels eines Moore-Automaten gesteuert, wobei die Ausgänge erst dann aktiviert werden, wenn sich das System im entsprechenden Zustand befindet.\\ \ \\
-Der Automat startet im Zustand \frqq Idle\flqq, und die Abläufe für den automatischen oder manuellen Modus werden von \frqq Idle\flqq\ aus angesteuert. Im Zustand Idle werden die Ausgänge (siehe Tabelle \ref{Automat_man:tab:z_idle}) geschaltet.\\
+Der Automat startet im Zustand \frqq Idle\flqq siehe Abbildung \ref{Automat_man:tab:z_idle}, und die Abläufe für den automatischen oder manuellen Modus werden von \frqq Idle\flqq\ aus angesteuert. Im Zustand Idle werden die Ausgänge (siehe Tabelle \ref{Automat_man:tab:z_idle}) geschaltet.\\
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{img/5_simulation/Automat_idle.png}
+		\caption{Automat – Start Zustand \frqq Idle\flqq}
+		\label{Automat_man:img:start_idle}
+	\end{center}
+\end{figure}
+\pagebreak[4]
 
 
 \pagebreak[1]
@@ -280,17 +271,9 @@ Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eing
 		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{IO397-50k – B7} & 5             \\ \hline
 	\end{tabular}
 \end{table}
-\pagebreak[4]
+\pagebreak[1]
 
-%\pagebreak[1]
-%\begin{figure}[!ht]
-%	\begin{center}
-%		\includegraphics[width=\textwidth]{img/5_simulation/Automat_idle.png}
-%		\caption{Automat – Start Zustand \frqq IDLE\flqq}
-%		\label{Automat_man:img:start_idle}
-%	\end{center}
-%\end{figure}
-%\pagebreak[4]
+
 
 
 
@@ -302,7 +285,7 @@ Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eing
 \subsubsection{Automat für die manuelle Steuerung}
 \label{Automatensteuerung:Automat_man}
 
-Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_übersicht} dargestellt, ist in zwei Stateflows unterteilt: \frqq Forwards\flqq\ und \frqq Backwards\flqq . In Abbildung \ref{Automat_man:img:man_vorwärts} ist der \frqq Forwards\flqq\ -Stateflow zu sehen, der \frqq Backwards\flqq\ -Stateflow ist äquivalent, wobei sich lediglich der Ausgang \frqq Direction Out\flqq\ ändert. Daher wird nur der \frqq Forwards\flqq\ -Stateflow erklärt. Die Ausgänge für die Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ sind in der Tabelle \ref{Automat_man:tab:z_V_langsam} für die Zustände \frqq slow\flqq\ und in der Tabelle \ref{Automat_man:tab:z_V_schnell} für die Zustände \frqq fast\flqq\ aufgelistet.
+Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_übersicht} dargestellt, ist in zwei Stateflows unterteilt: \frqq Forwards\flqq\ und \frqq Backwards\flqq . In Abbildung \ref{Automat_man:img:man_vorwärts} ist der \frqq Forwards\flqq\ -Stateflow zu sehen, der \frqq Backwards\flqq\ -Stateflow ist äquivalent, wobei sich lediglich der Ausgang \frqq Direction Out\flqq\ ändert. Daher wird nur der \frqq Forwards\flqq\ -Stateflow erklärt. Der Zustand \frqq Emerency stop 1\flqq\ ist der gleiche Zustand wie \frqq Emerency stop\flqq. Die Ausgänge für die Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ sind in der Tabelle \ref{Automat_man:tab:z_V_langsam} für die Zustände \frqq slow\flqq\ und in der Tabelle \ref{Automat_man:tab:z_V_schnell} für die Zustände \frqq fast\flqq\ aufgelistet.
 
 
 
@@ -381,44 +364,6 @@ Der Zustand \frqq Collector manual in\flqq\ fängt  das Schaltsignal des Wahlsch
 \subsubsection{Automat für die automatische Steuerung}
 \label{Automatensteuerung:Automat_auto}
 
-%\begin{center}
-%
-%	\begin{equation}
-%		\label{Automat:equation:vektor_z_auto}
-%		\vec{Z}_{A}= \left(\begin{array}{c} IDLE  \\ Drive \\ Distance \\ Stop \\ Emergency\ stop\end{array}\right)
-%	\end{equation}
-%
-%	\begin{equation}
-%		\label{Automat:equation:vektor_z_man}
-%		\vec{Z}_{M}= \left(\begin{array}{c} IDLE  \\ Drive \\ Distance \\ Stop \\ Emergency\ stop\end{array}\right)
-%	\end{equation}
-%
-%	\begin{equation}
-%		\label{Automat:equation:vektor_i}
-%		\vec{I}= \left(\begin{array}{c} speed_{in}  \\ distance_{in} \\ start_{in} \\ stop_{in} \\ reset_{in}\\ manual_{in} \\ manual_{mod}\\emergency\ stop_{in}  \end{array}\right)
-%	\end{equation}
-%
-%	\begin{equation}
-%		\label{Automat:equation:vektor_o}
-%		\vec{O}= \left(\begin{array}{c} 1 \leqslant speed_{out} \leqslant 4 \\ break\ motor_{out} \in\ \{1,5\} \\ direction_{out} \in\ \{1,5\}\\ cruise_{out} \in\ \{1,5\} \\ break\ mechanically_{out}\in\ \{1,5\}  \end{array}\right)
-%	\end{equation}\\ \ \\
-%\end{center}
-
-
-
-
-%Beim Ausgangsvektor \ref{Automat:equation:vektor_o} bedeutet der Wert 1, dass am Ausgang des  IO397-Moduls eine Spannung von 1 V anliegt, und bei einem Wert von 5 liegt am Ausgang eine Spannung von 5 V an. Der Ausgang $speed_{out}$ ist mit dem analogen Ausgang des IO397-Moduls verbunden, sodass die Spannung zwischen 1 V und 4 V variieren kann. Die Spannungsbereiche für die Eingänge des Vector-Controllers können zudem aus der Tabelle \ref{Vector_Controller:tab:pinmapping} entnommen werden.\\ \ \\
-
-
-%Der Zustand $\mathbf{IDLE}$ ist der Startzustand des Fahrzeugs. In diesem Zustand wird die Motorbremse aktiviert, die Ausgangsgeschwindigkeit auf null gesetzt ($speed_{out} = 1$ entspricht logisch Null), die Funktion Driving aufgerufen und zurückgesetzt. Die Funktion Driving, siehe Abbildung \ref{Automat:img:fnc_Driving}, erhält einen Eingangswert, der durch einen \frqq Rate Limiter\flqq\  begrenzt und am Ausgang ausgegeben wird.
-%Der Ausgang $direction_{out}$ ist
-
-
-
-%\begin{equation}
-%	\label{Automat:equation:vektor_o_1}
-%	\vec{O}_{IDLE} = \left(\begin{array}{c} speed_{out} = 1 \\  break\ motor_{out} = 5\\ break\ mechanically_{out}= 0\\  direction_{out} = 5\\ cruise_{out} = 5 \end{array}\right)
-%\end{equation}
 
 
 
@@ -426,7 +371,7 @@ Der Zustand \frqq Collector manual in\flqq\ fängt  das Schaltsignal des Wahlsch
 \pagebreak[1]
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[height=0.86\textheight]{img/5_simulation/Automat_1.png}
+		\includegraphics[width=\textwidth]{img/5_simulation/Automat_auto_uebersicht.png}
 		\caption{Simulation – Automat}
 		\label{Automat:img:Automat}
 	\end{center}
