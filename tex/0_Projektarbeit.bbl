@@ -34,8 +34,8 @@
       \strng{authornamehash}{d22c0e0763d760334a47201303bc6482}
       \strng{authorfullhash}{d22c0e0763d760334a47201303bc6482}
       \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; Zugriff 05-September-2024]}
@@ -55,8 +55,8 @@
       \strng{authorbibnamehash}{27cbd58848db322664a3a4ad88af3dac}
       \strng{authornamehash}{27cbd58848db322664a3a4ad88af3dac}
       \strng{authorfullhash}{27cbd58848db322664a3a4ad88af3dac}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Abschnitt: Types of DC Motors; abgerufen am 11-08-2024}
@@ -135,9 +135,59 @@
       \field{type}{PDF}
       \field{year}{2024}
     \endentry
+    \entry{speedgoat:IO691:CAN_Message}{online}{}
+      \name{author}{1}{}{%
+        {{hash=bd50a83ca8b9cfa764a884c8b2b36c10}{%
+           family={goat},
+           familyi={g\bibinitperiod},
+           given={Speed},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{bd50a83ca8b9cfa764a884c8b2b36c10}
+      \strng{fullhash}{bd50a83ca8b9cfa764a884c8b2b36c10}
+      \strng{bibnamehash}{bd50a83ca8b9cfa764a884c8b2b36c10}
+      \strng{authorbibnamehash}{bd50a83ca8b9cfa764a884c8b2b36c10}
+      \strng{authornamehash}{bd50a83ca8b9cfa764a884c8b2b36c10}
+      \strng{authorfullhash}{bd50a83ca8b9cfa764a884c8b2b36c10}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{[Online; Zugriff 13-Oktober-2024]}
+      \field{title}{CAN Message Types}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.speedgoat.com/help/slrt/page/io_main/refentry_can_ofa_usage_notes
+      \endverb
+      \verb{url}
+      \verb https://www.speedgoat.com/help/slrt/page/io_main/refentry_can_ofa_usage_notes
+      \endverb
+    \endentry
+    \entry{microchip:CANModule}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=113a0e6327c8992091c93a50b8ee6450}{%
+           family={Richards},
+           familyi={R\bibinitperiod},
+           given={Pat},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{113a0e6327c8992091c93a50b8ee6450}
+      \strng{fullhash}{113a0e6327c8992091c93a50b8ee6450}
+      \strng{bibnamehash}{113a0e6327c8992091c93a50b8ee6450}
+      \strng{authorbibnamehash}{113a0e6327c8992091c93a50b8ee6450}
+      \strng{authornamehash}{113a0e6327c8992091c93a50b8ee6450}
+      \strng{authorfullhash}{113a0e6327c8992091c93a50b8ee6450}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Understanding Microchip's CAN Module Bit Timing}
+      \field{type}{PDF}
+      \field{year}{2001}
+    \endentry
     \entry{DIN_EN_IEC_81346-2}{misc}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labeltitlesource}{title}
       \field{number}{DIN EN 00338}
       \field{title}{DIN EN IEC 81346-2 Industrielle Systeme, Anlagen und Ausrüstungen und Industrieprodukte – Strukturierungsprinzipien und Referenzkennzeichnung – Teil 2}

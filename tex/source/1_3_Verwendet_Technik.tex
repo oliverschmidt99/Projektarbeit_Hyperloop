@@ -378,7 +378,7 @@ In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktions
 \subsection{I/O-Modul – IO691}
 \label{section:IO691}
 
-Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen, die sowohl flexible Datenrate CAN (CAN FD) als auch High-Speed CAN (CAN HS) unterstützen. Es ist kompatibel mit CAN 2.0A/B-Netzwerken und unterstützt SAE J1939 sowie ASAM XCP für Bypassing. Alle Signale sind über 9-polige D-Sub-Front-CAN-Anschlüsse zugänglich \cite{speedgoat:IO691}.
+Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen, die sowohl flexible Datenrate CAN (CAN FD) als auch High-Speed CAN (CAN HS) unterstützen. Es ist kompatibel mit CAN 2.0A/B-Netzwerken und unterstützt SAE J1939 sowie ASAM XCP für Bypassing. Alle Signale sind über 9-polige D-Sub-Front-CAN-Anschlüsse zugänglich \cite[4]{speedgoat:IO691}.
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -400,7 +400,7 @@ Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen
 	\centering
 	\caption{IO691 Pin Mapping}
 	\label{speedgoat:IO691}
-	\begin{tabular}{llll}
+	\begin{tabular}{lllc}
 		\hline
 		\textbf{Pin}            & \textbf{Farbe} & \textbf{An Sensor} & \textbf{DB9 Connector A/B, Signal} \\ \hline
 		\multicolumn{1}{l|}{1}  & Braun          & PIN 2 -  Weiß      & Vcc                                \\
@@ -415,16 +415,123 @@ Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen
 		\multicolumn{1}{l|}{SH} &                & PIN 1 - Braun      & Shield                             \\ \hline
 	\end{tabular}
 \end{table}
-\pagebreak[4]
+\pagebreak[1]
 
 
 \subsubsection{IO691 Module Konfigurieren}
 \label{Simulink:IO691_Konfigurieren}
 
+Im \frqq Driver Block\flqq, siehe Abbildung \ref{IO691_Konfigurieren:img:Driver_Block}, können die \frqq CAN Channels\flqq\ 1 und 2 konfiguriert werden. Wie bereits in Abschnitt \ref{section:IO691} erwähnt, lässt sich der Protokollmodus jedes Kanals separat einstellen, wobei zwischen \frqq CAN HS\flqq, \frqq CAN FD\flqq\ und \frqq Disable\flqq\ gewählt werden kann. Dabei entspricht \frqq CAN HS\flqq\ der Norm ISO 11898-2 und \frqq CAN FD\flqq\ der Norm ISO 11898-1 \cite[4]{speedgoat:IO691}.
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{img/4_simulink/IO691.png}
+		\caption{Simulink – Driver Block – I/O Module 691 \cite{speedgoat:IO691}}
+		\label{IO691_Konfigurieren:img:Driver_Block}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+
+
+Die \frqq Initialization\flqq- und \frqq Termination\flqq-CAN-Nachrichten können individuell angepasst werden. Im nachfolgenden Matlab-Skript (\ref{IO691_Konfigurieren:code:Driver_Block}) werden die Variablen \frqq initCAN\flqq\ und \frqq termCAN\flqq\ definiert.
 
 
 
+\pagebreak[4]
+\begin{lstlisting}[language=Matlab, caption=Initialization and Termination Structure \cite{speedgoat:IO691:CAN_Message}\label{IO691_Konfigurieren:code:Driver_Block}]
+% create Initialization structure
+initCAN.Channel     = 1;
+initCAN.Protocol    = 'CAN-FD';         % 'CAN' or 'CAN-FD'
+initCAN.BRS         = 1;                % 0 or 1
+initCAN.Type        = 'Standard';       % 'Standard' or 'Extended'
+initCAN.Identifier  = 99;               % ID must be double
+initCAN.Data        = [8 8 8 8 8 8 8 8];
+initCAN.Pause       = 0.05;
+
+% create Termination structure
+termCAN.Channel     = 1;
+termCAN.Protocol    = 'CAN-FD';         % 'CAN' or 'CAN-FD'
+termCAN.BRS         = 1;                % 0 or 1
+termCAN.Type        = 'Extended';       % 'Standard' or 'Extended'     
+termCAN.Identifier  = double(0xFFF);    % ID must be double
+termCAN.Data        = [1 1 1 1 1 1 1 1];
+termCAN.Pause       = 0.05
 
 
 
+ 
+\end{lstlisting}
+\pagebreak[1]
 
+Die Baudrate kann in zwei Kategorien unterteilt werden: \frqq Nominal Baud Rate\flqq\ und \frqq Data Baud Rate\flqq. Wenn im \frqq CAN Channels\flqq-Menü der Modus \frqq CAN FD\flqq\ ausgewählt wird, können beide Baudraten konfiguriert werden. Im Modus \frqq CAN HS\flqq\ ist die Einstellung der \frqq Nominal Baud Rate\flqq\ möglich. \\
+Es können entweder die voreingestellten Baudraten verwendet oder eigene Werte über ein Array [BRP, SJW, TSEG1, TSEG2] konfiguriert werden, deren Elemente im Folgenden kurz erläutert werden, siehe Tabelle \ref{IO691_Konfigurieren:tab:Baudraten}.
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Simulink – Baudraten Parameter }
+	\label{IO691_Konfigurieren:tab:Baudraten}
+	\begin{tabular}{ll}
+		\hline
+		\multicolumn{1}{c}{\textbf{Abkürzung}} & \multicolumn{1}{c}{\textbf{Bedeutung}} \\ \hline
+		\multicolumn{1}{l|}{BRP}               & Bit Rate Prescaler                     \\
+		\multicolumn{1}{l|}{SJW}               & Synchronization Jump Width             \\
+		\multicolumn{1}{l|}{TSEG1}             & Time Segment 1                         \\
+		\multicolumn{1}{l|}{TSEG2}             & Time Segment 2                         \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[1]
+
+
+
+Die sogenannte \frqq CAN Nominal Bit Time\flqq, wie in Abbildung \ref{IO691_Konfigurieren:img:Baudrate} dargestellt, besteht aus vier Segmenten: dem \frqq Sync Segment\flqq, dem \frqq Propagation Segment\flqq, dem \frqq\ Phase Buffer Segment 1\flqq\ und dem \frqq Phase Buffer Segment 2\flqq.
+Das \frqq Sync Segment\flqq\ dient zur Synchronisation der Knoten auf dem Bus und hat eine Länge von genau einem Zeitquantum.
+Im \frqq Propagation Segment\flqq\ werden die physikalischen Verzögerungen im Busnetzwerk ausgeglichen \cite[1]{microchip:CANModule}.\\
+Im \frqq Phase Buffer Segment 1\flqq\ werden positive Phasenfehler kompensiert, und das Segment kann während der Resynchronisation verlängert werden. Im \frqq Phase Buffer Segment 2\flqq\ hingegen werden negative Phasenfehler kompensiert, und das Segment kann während der Resynchronisation verkürzt werden.\\ \ \\
+
+
+
+Der \frqq BRP\flqq\ ist ein Parameter, der das Zeitquant $t_q$ festlegt siehe Gleichung \ref{eq:tq}.
+Der \frqq SJW\flqq\ ist ein Parameter, der die Länge von \frqq TSEG1\flqq\ verlängern und die Länge von \frqq TSEG2\flqq\ verkürzen kann, um die Synchronisation zwischen den Knoten zu gewährleisten, dabei darf \frqq SJW\flqq\ kleiner gleich \frqq TSEG2\flqq\ sein \cite{speedgoat:IO691:CAN_Message}.
+
+Der Sample Point (SP) ist der Punkt innerhalb eines CAN-Bits, an dem die tatsächliche Datenabtastung stattfindet. Dieser Punkt kann durch das Verhältnis zwischen \frqq TSEG1\flqq\ und \frqq TSEG2\flqq\ angepasst werden.
+
+\pagebreak[1]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{img/4_simulink/IO691_Baudrate.png}
+		\caption{Simulink – Baudrate – I/O Module 691 \cite{speedgoat:IO691:CAN_Message}}
+		\label{IO691_Konfigurieren:img:Baudrate}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+
+Mit den weiteren Gleichungen können die Zeiten innerhalb des \frqq CAN Nominal Bit Time\flqq\ ermittelt werden.
+\begin{align}
+	\label{eq:tq}
+	t_{q}   & = \frac{BRP}{CAN_{Clk}} \\
+	t_{BS1} & = t_{q}  \cdot TSEG1    \\
+	t_{BS2} & = t_{q}  \cdot TSEG2
+\end{align}
+
+\begin{align}
+	\begin{split}
+		NominalBitTime & = t_{q} + t_{BS1} + t_{BS2}        \\
+		               & = t_{q}  \cdot (1 + TSEG1 + TSEG2)
+	\end{split}
+\end{align}
+
+\begin{align}
+	CAN_{Baudrate} & = \frac{1}{NominalBitTime}
+\end{align}
+
+\begin{align}
+	\begin{split}
+		SP & = \frac{(1 + TSEG1)}{(1 + TSEG1 + TSEG2)} \\
+		   & = \frac{(t_q + t_{BS1})}{NominalBitTime}
+	\end{split}
+\end{align}
+
+Am CAN-Bus ist es wichtig, an beiden Enden Abschlusswiderstände von 120 $\Omega$ zu installieren. Diese Widerstände verhindern Reflexionen von Signalen, die auf der Leitung entstehen können, wenn die Impedanz des Busses nicht korrekt abgestimmt ist.\\
+Reflexionen können das ursprüngliche Signal beeinträchtigen und zu Fehlern in der Datenkommunikation führen. Die Abschlusswiderstände gewährleisten eine angepasste Impedanz und minimieren somit die Wahrscheinlichkeit von Signalreflexionen \cite{speedgoat:IO691:CAN_Message}.
