@@ -324,15 +324,15 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 	\centering
 	\caption{Ausgänge – der Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ –  \frqq fast\flqq}
 	\label{Automat_man:tab:z_V_schnell}
-	\begin{tabular}{llcc}
+	\begin{tabular}{cccc}
 		\hline
-		\textbf{Ausgänge}                             & \textbf{I/O Module}                 & \makecell{\textbf{Werte}     \\ \textbf{\frqq Forwards\flqq}} & \makecell{\textbf{Werte}     \\ \textbf{\frqq Backwards\flqq}} \\ \hline
-		\multicolumn{1}{l|}{speed out = Driving$(3)$} & \multicolumn{1}{l|}{IO397-50k – A1} & 3                        & 3 \\
-		\multicolumn{1}{l|}{break motor out}          & \multicolumn{1}{l|}{IO397-50k – B3} & 1                        & 1 \\
-		\multicolumn{1}{l|}{direction out}            & \multicolumn{1}{l|}{IO397-50k – B4} & 5                        & 0 \\
-		\multicolumn{1}{l|}{cruise out}               & \multicolumn{1}{l|}{IO397-50k – B5} & 5                        & 5 \\
-		\multicolumn{1}{l|}{break mechanically out}   & \multicolumn{1}{l|}{IO397-50k – B6} & 0                        & 0 \\
-		\multicolumn{1}{l|}{emergency stop out}       & \multicolumn{1}{l|}{IO397-50k – B7} & 0                        & 0 \\ \hline
+		\textbf{Ausgänge}                             & \makecell{\textbf{I/O Module}         \\ \textbf{IO397-50k}}    & \makecell{\textbf{Werte}     \\ \textbf{\frqq Forwards\flqq}} & \makecell{\textbf{Werte}     \\ \textbf{\frqq Backwards\flqq}} \\ \hline
+		\multicolumn{1}{l|}{speed out = Driving$(3)$} & \multicolumn{1}{l|}{A1}       & 3 & 3 \\
+		\multicolumn{1}{l|}{break motor out}          & \multicolumn{1}{l|}{B3}       & 1 & 1 \\
+		\multicolumn{1}{l|}{direction out}            & \multicolumn{1}{l|}{B4}       & 5 & 0 \\
+		\multicolumn{1}{l|}{cruise out}               & \multicolumn{1}{l|}{B5}       & 5 & 5 \\
+		\multicolumn{1}{l|}{break mechanically out}   & \multicolumn{1}{l|}{ B6}      & 0 & 0 \\
+		\multicolumn{1}{l|}{emergency stop out}       & \multicolumn{1}{l|}{B7}       & 0 & 0 \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[1]
