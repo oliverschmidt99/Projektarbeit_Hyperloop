@@ -333,7 +333,7 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{B3}       & 1 & 1 \\
 		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5 & 0 \\
 		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5 & 5 \\
-		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{ B6}      & 0 & 0 \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 0 & 0 \\
 		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 0 & 0 \\ \hline
 	\end{tabular}
 \end{table}
@@ -366,11 +366,22 @@ Der Zustand \frqq Collector manual in\flqq\ fängt  das Schaltsignal des Wahlsch
 \subsubsection{Automat für die automatische Steuerung}
 \label{Automatensteuerung:Automat_auto}
 
-Die automatische Steuerung soll das Fahrzeug innerhalb der Röhre bis zur eingestellten Geschwindigkeit beschleunigen. Ab einer bestimmten Distanz zum Ende der Röhre soll es allmählich abbremsen und schließlich zum Stillstand kommen.\\
 
-Der Automat \frqq Automatic\flqq\ besteht aus den Zuständen \frqq Automatic\flqq, \frqq Drive\flqq, \frqq Distance\flqq, \frqq Stop\flqq\ und \frqq Emergency stop\flqq\ die in der Abbildung  \ref{Automat:img:auto_übersicht} zu sehen sind.
+Die automatische Steuerung soll das Fahrzeug innerhalb der Röhre bis zur eingestellten Geschwindigkeit beschleunigen. Ab einer bestimmten Distanz zum Ende der Röhre soll es allmählich abbremsen und schließlich zum Stillstand kommen.
 
-Der Zustand \frqq Automatic\flqq beschreibt den Idel-Zustand der automatischen Steuerung, von hieraus wird der Zusand \frqq Drive\flqq\ angesteuert, wenn der Startknopf vom \frqq Conrtollpanel\flqq\ siehe Abbildung \ref{Controllpanel:img:Controllpanel} betätigt wird.
+Der Automat \frqq Automatic\flqq\ besteht aus den Zuständen \frqq Automatic\flqq, \frqq Drive\flqq, \frqq Distance\flqq, \frqq Stop\flqq\ und \frqq Emergency stop\flqq, die in Abbildung \ref{Automat:img:auto_übersicht} dargestellt sind.\\
+Der Zustand \frqq Automatic\flqq\ beschreibt den Idle-Zustand der automatischen Steuerung. Von hier aus wird der Zustand \frqq Drive\flqq\ angesteuert, sobald der Startknopf des \frqq Control Panels\flqq\ (siehe Abbildung \ref{Controllpanel:img:Controllpanel}) betätigt wird. Die Ausgänge werden gemäß Tabelle \ref{Automat_man:tab:automatic} gesetzt, solange der Zustand \frqq Automatic\flqq\ nicht verlassen wird.\\
+Im Zustand \frqq Drive\flqq\ wird die Geschwindigkeit vom Nutzer mittels des Drehrads \frqq Geschwindigkeit Automatik\flqq\ eingestellt. Wird hingegen der \frqq Stop\flqq\ Taster betätigt, wird der Zustand \frqq Stop\flqq\ angesteuert. Ab einer Distanz von 10 m wird der Zustand \frqq Distance\flqq\ aktiviert. In Tabelle \ref{Automat_man:tab:drive} sind die Ausgänge des Zustands \frqq Drive\flqq\ dargestellt.\\
+Wie bereits erwähnt, wird die Geschwindigkeit in Abhängigkeit zum Abstand \frqq distance\flqq\ vom Ende der Röhre verringert, hier bei wird in dem Zustand \frqq Distance\flqq\ der Augang der Geschwindigkeit mittels der Gleichung:
+
+\pagebreak[1]
+\begin{align}
+	\label{eq:speedout}
+	speed_{out} = distance_{in}\cdot\frac{speed_{in}-1}{distance}+1
+\end{align}
+\pagebreak[1]
+
+ermittelt.
 
 \pagebreak[1]
 \begin{table}[!ht]
@@ -391,7 +402,7 @@ Der Zustand \frqq Automatic\flqq beschreibt den Idel-Zustand der automatischen S
 \end{table}
 \pagebreak[2]
 
-Im Zustand \frqq Drive\flqq\ wird die Geschwindigkeit durch das Drehrad  \frqq Geschwindigkeit Automatik\flqq\ siehe Abbildung \ref{Controllpanel:img:Controllpanel} durch den Nutzer eingestellt.
+
 
 \pagebreak[1]
 \begin{table}[!ht]
@@ -408,6 +419,26 @@ Im Zustand \frqq Drive\flqq\ wird die Geschwindigkeit durch das Drehrad  \frqq G
 		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5                 \\
 		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 5                 \\
 		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 5                 \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[2]
+
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Ausgänge – Distance}
+	\label{Automat_man:tab:distance}
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}                         \\ \textbf{IO397-50k}}                 & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{A1}       & gl. \ref{eq:speedout} \\
+		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}         & distance in           \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{B3}       & 1                     \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5                     \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5                     \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 0                     \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 0                     \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[2]
