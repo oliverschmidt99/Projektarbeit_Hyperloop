@@ -121,7 +121,7 @@ Im Schaltplan wird das Betriebsmittel lediglich durch das Betriebsmittelkennzeic
 \label{section:Verdrahtung_Konventionen}
 Für die Verdrahtung müssen den Spannungspotenzialen verschiedene Farben zugewiesen werden. Diese Zuordnungen sind in Tabelle \ref{Verdrahtung_Konventionen:tab:Zuordnung} aufgeführt.
 \pagebreak[1]
-\begin{table}[ht!]
+\begin{table}[!ht]
 	\centering
 	\caption{Verdrahtung Konvention – Aderfarben}
 	\label{Verdrahtung_Konventionen:tab:Zuordnung}
@@ -261,14 +261,14 @@ Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eing
 	\label{Automat_man:tab:z_Emergency_stop}
 	\begin{tabular}{lll}
 		\hline
-		\textbf{Ausgänge}                           & \textbf{I/O Module}                 & \textbf{Wert} \\ \hline
-		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{IO397-50k – A1} & 1             \\
-		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}               & Reset         \\
-		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{IO397-50k – B3} & 5             \\
-		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{IO397-50k – B4} & 5             \\
-		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{IO397-50k – B5} & 5             \\
-		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{IO397-50k – B6} & 5             \\
-		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{IO397-50k – B7} & 5             \\ \hline
+		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}         \\ \textbf{IO397-50k}}                 & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{A1}       & 1     \\
+		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}         & Reset \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{}         & 5     \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5     \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5     \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 5     \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 5     \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[1]
@@ -284,6 +284,8 @@ Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eing
 
 \subsubsection{Automat für die manuelle Steuerung}
 \label{Automatensteuerung:Automat_man}
+
+Die manuelle Steuerung bietet dem Nutzer die Flexibilität, das Fahrzeug sowohl innerhalb als auch außerhalb der Röhre zu steuern.\\
 
 Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_übersicht} dargestellt, ist in zwei Stateflows unterteilt: \frqq Forwards\flqq\ und \frqq Backwards\flqq . In Abbildung \ref{Automat_man:img:man_vorwärts} ist der \frqq Forwards\flqq\ -Stateflow zu sehen, der \frqq Backwards\flqq\ -Stateflow ist äquivalent, wobei sich lediglich der Ausgang \frqq Direction Out\flqq\ ändert. Daher wird nur der \frqq Forwards\flqq\ -Stateflow erklärt. Der Zustand \frqq Emerency stop 1\flqq\ ist der gleiche Zustand wie \frqq Emerency stop\flqq. Die Ausgänge für die Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ sind in der Tabelle \ref{Automat_man:tab:z_V_langsam} für die Zustände \frqq slow\flqq\ und in der Tabelle \ref{Automat_man:tab:z_V_schnell} für die Zustände \frqq fast\flqq\ aufgelistet.
 
@@ -308,13 +310,13 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 	\label{Automat_man:tab:z_V_langsam}
 	\begin{tabular}{llcc}
 		\hline
-		\textbf{Ausgänge}                               & \textbf{I/O Module}                 & \makecell{\textbf{Werte}       \\ \textbf{\frqq Forwards\flqq}} & \makecell{\textbf{Werte}     \\ \textbf{\frqq Backwards\flqq}}  \\ \hline
-		\multicolumn{1}{l|}{speed out = Driving$(1,5)$} & \multicolumn{1}{l|}{IO397-50k – A1} & 1,5                      & 1,5 \\
-		\multicolumn{1}{l|}{break motor out}            & \multicolumn{1}{l|}{IO397-50k – B3} & 1                        & 1   \\
-		\multicolumn{1}{l|}{direction out}              & \multicolumn{1}{l|}{IO397-50k – B4} & 5                        & 0   \\
-		\multicolumn{1}{l|}{cruise out}                 & \multicolumn{1}{l|}{IO397-50k – B5} & 5                        & 5   \\
-		\multicolumn{1}{l|}{break mechanically out}     & \multicolumn{1}{l|}{IO397-50k – B6} & 0                        & 0   \\
-		\multicolumn{1}{l|}{emergency stop out}         & \multicolumn{1}{l|}{IO397-50k – B7} & 0                        & 0   \\ \hline
+		\textbf{Ausgänge}                             & \makecell{\textbf{I/O Module}             \\ \textbf{IO397-50k}}     & \makecell{\textbf{Werte}       \\ \textbf{\frqq Forwards\flqq}} & \makecell{\textbf{Werte}     \\ \textbf{\frqq Backwards\flqq}}  \\ \hline
+		\multicolumn{1}{l|}{speed out=Driving$(1,5)$} & \multicolumn{1}{l|}{A1}       & 1,5 & 1,5 \\
+		\multicolumn{1}{l|}{break motor out}          & \multicolumn{1}{l|}{B3}       & 1   & 1   \\
+		\multicolumn{1}{l|}{direction out}            & \multicolumn{1}{l|}{B4}       & 5   & 0   \\
+		\multicolumn{1}{l|}{cruise out}               & \multicolumn{1}{l|}{B5}       & 5   & 5   \\
+		\multicolumn{1}{l|}{break mechanically out}   & \multicolumn{1}{l|}{B6}       & 0   & 0   \\
+		\multicolumn{1}{l|}{emergency stop out}       & \multicolumn{1}{l|}{B7}       & 0   & 0   \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[1]
@@ -326,13 +328,13 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 	\label{Automat_man:tab:z_V_schnell}
 	\begin{tabular}{cccc}
 		\hline
-		\textbf{Ausgänge}                             & \makecell{\textbf{I/O Module}         \\ \textbf{IO397-50k}}    & \makecell{\textbf{Werte}     \\ \textbf{\frqq Forwards\flqq}} & \makecell{\textbf{Werte}     \\ \textbf{\frqq Backwards\flqq}} \\ \hline
-		\multicolumn{1}{l|}{speed out = Driving$(3)$} & \multicolumn{1}{l|}{A1}       & 3 & 3 \\
-		\multicolumn{1}{l|}{break motor out}          & \multicolumn{1}{l|}{B3}       & 1 & 1 \\
-		\multicolumn{1}{l|}{direction out}            & \multicolumn{1}{l|}{B4}       & 5 & 0 \\
-		\multicolumn{1}{l|}{cruise out}               & \multicolumn{1}{l|}{B5}       & 5 & 5 \\
-		\multicolumn{1}{l|}{break mechanically out}   & \multicolumn{1}{l|}{ B6}      & 0 & 0 \\
-		\multicolumn{1}{l|}{emergency stop out}       & \multicolumn{1}{l|}{B7}       & 0 & 0 \\ \hline
+		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}         \\ \textbf{IO397-50k}}    & \makecell{\textbf{Werte}     \\ \textbf{\frqq Forwards\flqq}} & \makecell{\textbf{Werte}     \\ \textbf{\frqq Backwards\flqq}} \\ \hline
+		\multicolumn{1}{l|}{speed out=Driving$(3)$} & \multicolumn{1}{l|}{A1}       & 3 & 3 \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{B3}       & 1 & 1 \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5 & 0 \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5 & 5 \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{ B6}      & 0 & 0 \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 0 & 0 \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[1]
@@ -364,19 +366,64 @@ Der Zustand \frqq Collector manual in\flqq\ fängt  das Schaltsignal des Wahlsch
 \subsubsection{Automat für die automatische Steuerung}
 \label{Automatensteuerung:Automat_auto}
 
-Die automatische Steuerung
+Die automatische Steuerung soll das Fahrzeug innerhalb der Röhre bis zur eingestellten Geschwindigkeit beschleunigen. Ab einer bestimmten Distanz zum Ende der Röhre soll es allmählich abbremsen und schließlich zum Stillstand kommen.\\
 
+Der Automat \frqq Automatic\flqq\ besteht aus den Zuständen \frqq Automatic\flqq, \frqq Drive\flqq, \frqq Distance\flqq, \frqq Stop\flqq\ und \frqq Emergency stop\flqq\ die in der Abbildung  \ref{Automat:img:auto_übersicht} zu sehen sind.
 
+Der Zustand \frqq Automatic\flqq beschreibt den Idel-Zustand der automatischen Steuerung, von hieraus wird der Zusand \frqq Drive\flqq\ angesteuert, wenn der Startknopf vom \frqq Conrtollpanel\flqq\ siehe Abbildung \ref{Controllpanel:img:Controllpanel} betätigt wird.
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Ausgänge – Automatic}
+	\label{Automat_man:tab:automatic}
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}         \\ \textbf{IO397-50k}}                 & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{A1}       & 1     \\
+		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}         & Reset \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{B3}       & 5     \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5     \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5     \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 5     \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 5     \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[2]
+
+Im Zustand \frqq Drive\flqq\ wird die Geschwindigkeit durch das Drehrad  \frqq Geschwindigkeit Automatik\flqq\ siehe Abbildung \ref{Controllpanel:img:Controllpanel} durch den Nutzer eingestellt.
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Ausgänge – Drive}
+	\label{Automat_man:tab:drive}
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}                     \\ \textbf{IO397-50k}}                 & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{A1}       & Driving(speed in) \\
+		\multicolumn{1}{l|}{Driving(speed in)}      & \multicolumn{1}{l|}{}         & speed in          \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{B3}       & 5                 \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5                 \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5                 \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 5                 \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 5                 \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[2]
 
 \pagebreak[1]
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{img/5_simulation/Automat_auto_uebersicht.png}
-		\caption{Simulation – Automat}
-		\label{Automat:img:Automat}
+		\caption{Automat – Übersicht der automatischen Steuerung}
+		\label{Automat:img:auto_übersicht}
 	\end{center}
 \end{figure}
-\pagebreak[4]
+\pagebreak[1]
+
+
+
 
 
 
@@ -413,7 +460,7 @@ Die automatische Steuerung
 
 
 Der Sensor von Pepperl+Fuchs wurde ursprünglich für die Distanzmessung angeschafft. Da dieser Sensor jedoch sehr teuer ist und wir nicht das Risiko eines möglichen Schadens im Vakuum eingehen wollten, wurde nach einer kostengünstigen Alternative gesucht.\\
-Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU decodiert.
+Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU zu decodiert.
 
 \subsection{Verbindung}
 Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops wurden diese Lötstellen analysiert und es wurde festgestellt, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.\\
