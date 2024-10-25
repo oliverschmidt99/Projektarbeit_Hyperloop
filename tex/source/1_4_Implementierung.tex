@@ -473,6 +473,7 @@ ermittelt.
 
 \newpage
 \section{Distanzmessung}
+\label{Distanzmessung}
 
 \myboxy{
 	\begin{itemize}
@@ -496,7 +497,7 @@ Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und 
 \subsection{Verbindung}
 Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops wurden diese Lötstellen analysiert und es wurde festgestellt, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.\\
 Wenn zwei Leitungen für die Datenübertragung vorhanden sind, kann die Kommunikation bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.
-Der Sensor kommuniziert mit einem Bussystem.
+
 
 
 
@@ -524,9 +525,23 @@ Der Sensor kommuniziert mit einem Bussystem.
 		4            & Schwarz        & GND               \\ \hline
 	\end{tabular}
 \end{table}
-\pagebreak[1]
+\pagebreak[4]
+
+\subsection{Kodierung der Steuersignale}
+\label{Distanzmessung:Kodierung}
+Der Sensor sendet verschiedene Steuersignale, die über die Busleitung übertragen werden. Jede Nachricht beginnt mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) und endet mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende).\\
+Damit der Sensor eine Distanz misst werden die drei folgenden Nachrichten übertragen:\\
+\\
+24 30 30 30 33 32 36 30 30 32 39 26 (Stopp signal)\\
+24 30 30 30 33 32 36 30 31 33 30 26 (Laser an)\\
+24 30 30 30 32 32 31 32 33 26 (Messen)\\
 
 
+\subsection{Steuerung für die Sensordaten}
+\label{Distanzmessung:Steuerung}
+
+
+Um die Werte von dem Distanzsensor zu erhalten wird eine ESP verwnedet.
 
 
 
