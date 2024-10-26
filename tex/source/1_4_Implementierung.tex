@@ -472,8 +472,8 @@ Soll die Automatik beendet werden, kann dies über den Stop-Taster auf dem Contr
 		\label{Automat:img:auto_übersicht}
 	\end{center}
 \end{figure}
-\pagebreak[1]
-
+\pagebreak[4]
+\ 
 
 
 
@@ -486,11 +486,6 @@ Soll die Automatik beendet werden, kann dies über den Stop-Taster auf dem Contr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
 
 \newpage
 \section{Distanzmessung}
@@ -516,11 +511,11 @@ Der Sensor von Pepperl+Fuchs wurde ursprünglich für die Distanzmessung angesch
 Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU zu decodiert.
 
 \subsection{Verbindung}
-Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops wurden diese Lötstellen analysiert und es wurde festgestellt, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.\\
+Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops und eines Multieters wurden die Signale an den Lötstellen analysiert und es wurde festgestellt, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.\\
 
 
 
-Wenn zwei Leitungen für die Datenübertragung vorhanden sind, kann die Kommunikation bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.\\
+Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.\\
 
 
 
