@@ -1,0 +1,27 @@
+\babel@toc {ngerman}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Hyperloop der Hochschule Emden-Leer}}{1}{figure.caption.7}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Konzept – Aufbauplan des Fahrzeugs}}{4}{figure.caption.8}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Golden Motor – 10 KW BLDC Motor Liquid Cooled}}{6}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Golden Motor – VECTOR 500 Motor Controller}}{8}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Speedgoat – Baseline Real-Time Target Machine}}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Speedgoat – Ansicht der Modulanschlüsse}}{11}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Speedgoat – I/O Module 397 \blx@tocontentsinit {0}\cite {speedgoat:IO397_50k}}}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Simulink – Driver Block – IO397-50k}}{15}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Speedgoat – TTL I/O Interface – IO397-50k \blx@tocontentsinit {0}\cite [12]{speedgoat:IO397_50k}}}{15}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Simulink – Pull-Widerstände – IO397-50k \blx@tocontentsinit {0}\cite [12]{speedgoat:IO397_50k}}}{16}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Speedgoat – I/O Module 691 \blx@tocontentsinit {0}\cite {speedgoat:IO691}}}{17}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Simulink – Driver Block – I/O Module 691 \blx@tocontentsinit {0}\cite {speedgoat:IO691}}}{18}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Simulink – Baudrate – I/O Module 691 \blx@tocontentsinit {0}\cite {speedgoat:IO691:CAN_Message}}}{20}{figure.caption.27}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Automat – Controllpanel}}{27}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Automat – Start Zustand \frqq Idle\flqq }}{28}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Automat – Funktion Driving}}{29}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Automat – Übersicht der manuellen Steuerung}}{31}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Automat – \frqq Forwards\flqq \ -Stateflow der manuellen Steuerung}}{32}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Automat – Übersicht der automatischen Steuerung}}{35}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces PARKSIDE – Distanzsensor – Innenaufbau}}{36}{figure.caption.48}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

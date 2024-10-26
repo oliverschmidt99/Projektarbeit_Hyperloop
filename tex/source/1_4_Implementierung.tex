@@ -262,8 +262,7 @@ Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eing
 	\begin{tabular}{lll}
 		\hline
 		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}         \\ \textbf{IO397-50k}}                 & \textbf{Wert} \\ \hline
-		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{A1}       & 1     \\
-		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}         & Reset \\
+		\multicolumn{1}{l|}{speed out=Driving()}    & \multicolumn{1}{l|}{A1}       & Reset \\
 		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{}         & 5     \\
 		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5     \\
 		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5     \\
@@ -383,6 +382,8 @@ Wie bereits erwähnt, wird die Geschwindigkeit in Abhängigkeit zum Abstand \frq
 
 ermittelt.
 
+Soll die Automatik beendet werden, kann dies über den Stop-Taster auf dem Control Panel ausgelöst werden. Dabei werden die in Tabelle \ref{Automat_man:tab:stop} aufgeführten Signale geschaltet.
+
 \pagebreak[1]
 \begin{table}[!ht]
 	\centering
@@ -390,14 +391,14 @@ ermittelt.
 	\label{Automat_man:tab:automatic}
 	\begin{tabular}{lll}
 		\hline
-		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}         \\ \textbf{IO397-50k}}                 & \textbf{Wert} \\ \hline
-		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{A1}       & 1     \\
-		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}         & Reset \\
-		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{B3}       & 5     \\
-		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5     \\
-		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5     \\
-		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 5     \\
-		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 5     \\ \hline
+		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}             \\ \textbf{IO397-50k}}                 & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{A1}       & Driving() \\
+		\multicolumn{1}{l|}{Driving(1)}             & \multicolumn{1}{l|}{}         & Reset     \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{B3}       & 5         \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5         \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5         \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 5         \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 5         \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[2]
@@ -443,6 +444,26 @@ ermittelt.
 \end{table}
 \pagebreak[2]
 
+
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Ausgänge – Stop}
+	\label{Automat_man:tab:stop}
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Ausgänge}                           & \makecell{\textbf{I/O Module}             \\ \textbf{IO397-50k}}                 & \textbf{Wert} \\ \hline
+		\multicolumn{1}{l|}{speed out}              & \multicolumn{1}{l|}{A1}       & Driving() \\
+		\multicolumn{1}{l|}{Driving(Reset)}         & \multicolumn{1}{l|}{}         & Reset     \\
+		\multicolumn{1}{l|}{break motor out}        & \multicolumn{1}{l|}{B3}       & 1         \\
+		\multicolumn{1}{l|}{direction out}          & \multicolumn{1}{l|}{B4}       & 5         \\
+		\multicolumn{1}{l|}{cruise out}             & \multicolumn{1}{l|}{B5}       & 5         \\
+		\multicolumn{1}{l|}{break mechanically out} & \multicolumn{1}{l|}{B6}       & 0         \\
+		\multicolumn{1}{l|}{emergency stop out}     & \multicolumn{1}{l|}{B7}       & 0         \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[2]
+
 \pagebreak[1]
 \begin{figure}[!ht]
 	\begin{center}
@@ -474,42 +495,34 @@ ermittelt.
 \newpage
 \section{Distanzmessung}
 \label{Distanzmessung}
-
-\myboxy{
-	\begin{itemize}
-		\item + Anschlüsse herauszufinden vier anschlüsse gefunden.
-		\item + Was für Aufgaben haben die Anschlüsse?
-		      \subitem Was für ein Kommunikationsprotokol hat der Sensor?
-		      \subitem Asynchron und seriell mit Baudrate 115200. (Ozilloskop)
-		\item mit einem ESP32 die Sensordaten lesen.
-		\item Nachrichtdekodierung (Controller MCU)
-		      \subitem Ox24 Start (Nachricht start)
-		      \subitem 0x26 Stopp (Nachricht ende)
-		      \subitem 24 30 30 30 33 32 36 30 30 32 39 26 (Stopp signal)
-		      \subitem 24 30 30 30 33 32 36 30 31 33 30 26 (Laser an)
-		      \subitem 24 30 30 30 32 32 31 32 33 26 (Messen)
-	\end{itemize}}{To-do}{\textwidth}
-
-
+%
+%\myboxy{
+%	\begin{itemize}
+%		\item + Anschlüsse herauszufinden vier anschlüsse gefunden.
+%		\item + Was für Aufgaben haben die Anschlüsse?
+%		      \subitem Was für ein Kommunikationsprotokol hat der Sensor?
+%		      \subitem Asynchron und seriell mit Baudrate 115200. (Ozilloskop)
+%		\item mit einem ESP32 die Sensordaten lesen.
+%		\item Nachrichtdekodierung (Controller MCU)
+%		      \subitem Ox24 Start (Nachricht start)
+%		      \subitem 0x26 Stopp (Nachricht ende)
+%		      \subitem 24 30 30 30 33 32 36 30 30 32 39 26 (Stopp signal)
+%		      \subitem 24 30 30 30 33 32 36 30 31 33 30 26 (Laser an)
+%		      \subitem 24 30 30 30 32 32 31 32 33 26 (Messen)
+%	\end{itemize}}{To-do}{\textwidth}
+%
+%
 Der Sensor von Pepperl+Fuchs wurde ursprünglich für die Distanzmessung angeschafft. Da dieser Sensor jedoch sehr teuer ist und wir nicht das Risiko eines möglichen Schadens im Vakuum eingehen wollten, wurde nach einer kostengünstigen Alternative gesucht.\\
 Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU zu decodiert.
 
 \subsection{Verbindung}
 Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops wurden diese Lötstellen analysiert und es wurde festgestellt, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.\\
-Wenn zwei Leitungen für die Datenübertragung vorhanden sind, kann die Kommunikation bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.
 
 
 
+Wenn zwei Leitungen für die Datenübertragung vorhanden sind, kann die Kommunikation bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.\\
 
-\pagebreak[1]
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=1\textwidth]{img/2_sen/dis_parkside_1_outside.png}
-		\caption{PARKSIDE – Distanzsensor – Innenaufbau}
-		\label{img_2_2:sen_dis_parkside:1}
-	\end{center}
-\end{figure}
-\pagebreak[1]
+
 
 \pagebreak[1]
 \begin{table}[ht]
@@ -525,23 +538,34 @@ Wenn zwei Leitungen für die Datenübertragung vorhanden sind, kann die Kommunik
 		4            & Schwarz        & GND               \\ \hline
 	\end{tabular}
 \end{table}
+\pagebreak[1]
+
+\pagebreak[1]
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{img/2_sen/dis_parkside_1_outside.png}
+		\caption{PARKSIDE – Distanzsensor – Innenaufbau}
+		\label{img_2_2:sen_dis_parkside:1}
+	\end{center}
+\end{figure}
 \pagebreak[4]
 
 \subsection{Kodierung der Steuersignale}
 \label{Distanzmessung:Kodierung}
-Der Sensor sendet verschiedene Steuersignale, die über die Busleitung übertragen werden. Jede Nachricht beginnt mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) und endet mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende).\\
-Damit der Sensor eine Distanz misst werden die drei folgenden Nachrichten übertragen:\\
+Der Sensor sendet verschiedene Steuersignale, die über die Busleitung übertragen werden. Jede Nachricht beginnt mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) und endet mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende), zwischen den beiden Bitmuster werden die Steuersignale und Messwerte kodiert.\\
+Um eine Messung durchzuführen, müssen zwei Signale an den Sensor übertragen werden \frqq Laser on \flqq\ und \frqq Laser start\flqq, dannch sendet der Sensor die gemessene Distanz \frqq distanceValue\flqq.\\
 \\
-24 30 30 30 33 32 36 30 30 32 39 26 (Stopp signal)\\
-24 30 30 30 33 32 36 30 31 33 30 26 (Laser an)\\
-24 30 30 30 32 32 31 32 33 26 (Messen)\\
-
+\begin{center}
+	24 30 30 30 33 32 36 30 30 32 39 26 (Laser on)\\
+	24 30 30 30 33 32 36 30 31 33 30 26 (Laser start)\\
+	24 30 30 30 32 32 31 32 33 26 (Messen)\\
+\end{center}
 
 \subsection{Steuerung für die Sensordaten}
 \label{Distanzmessung:Steuerung}
 
 
-Um die Werte von dem Distanzsensor zu erhalten wird eine ESP verwnedet.
+Um die Werte von dem Distanzsensor zu erhalten wird eine ESP verwendet.
 
 
 
@@ -553,3 +577,4 @@ Um die Werte von dem Distanzsensor zu erhalten wird eine ESP verwnedet.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

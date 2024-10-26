@@ -1,0 +1,43 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{Rechtliche Erklärung}{I}{chapter*.1}%
+\contentsline {section}{Abbildungsverzeichnis}{IV}{chapter*.5}%
+\contentsline {section}{Tabellenverzeichnis}{V}{chapter*.6}%
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation der Hyperloop Technologie}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Institute of Hyperloop Technology}{2}{subsection.1.1.1}%
+\contentsline {section}{\numberline {1.2}Aufgabenstellung}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Aufbau der Projektdokumentation}{3}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Konzept}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Stand der Technik}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Antrieb – Golden Motor}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}BLDC Motor}{5}{subsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1.1}Funktionsweise}{7}{subsubsection.3.1.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Vector Controller}{8}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Funktionsweise}{9}{subsubsection.3.1.2.1}%
+\contentsline {section}{\numberline {3.2}Echtzeitfähige Steuerung – Speedgoat}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}I/O-Modul – IO397-50k}{12}{subsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.1}Pin Mapping – IO397-50k}{12}{subsubsection.3.2.1.1}%
+\contentsline {subsubsection}{\numberline {3.2.1.2}IO397-50k – Konfigurieren}{14}{subsubsection.3.2.1.2}%
+\contentsline {subsection}{\numberline {3.2.2}I/O-Modul – IO691}{17}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Pin Mapping – IO691}{18}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}IO691 Module Konfigurieren}{18}{subsubsection.3.2.2.2}%
+\contentsline {chapter}{\numberline {4}Implementierung}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Schaltplan}{22}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Betriebsmittelbezeichnung}{22}{subsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.1}Funktionskennzeichen}{23}{subsubsection.4.1.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1.2}Ortskennzeichen}{23}{subsubsection.4.1.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.1.3}Betriebsmittelkennzeichen}{23}{subsubsection.4.1.1.3}%
+\contentsline {subsection}{\numberline {4.1.2}Verdrahtung Konventionen}{25}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Simulation mit Simulink}{26}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Funktionsweise der Steuerung}{26}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}Controllpanel}{26}{subsubsection.4.2.1.1}%
+\contentsline {subsection}{\numberline {4.2.2}Automatensteuerung}{28}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Automat für die manuelle Steuerung}{30}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Automat für die automatische Steuerung}{32}{subsubsection.4.2.2.2}%
+\contentsline {section}{\numberline {4.3}Distanzmessung}{34}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Verbindung}{34}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Kodierung der Steuersignale}{36}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Steuerung für die Sensordaten}{36}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5}Konklusion}{37}{chapter.5}%
+\contentsline {chapter}{\numberline {A}Anhang}{39}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Schaltplan}{39}{section.A.1}%
