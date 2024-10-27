@@ -1,37 +1,8 @@
 \chapter{Implementierung}
 \label{chapter:Implementierung}
 
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \section{Schaltplan}
 \label{section:Schaltplan}
-
-
-\myboxy{
-	\begin{itemize}
-		\item Funktion (=Anlage) und Ortskennzeichen (+Ort) definieren. Funktionales Engineering.
-		\item Bauteilkennzeichnung (BMK) festlegen.
-		\item Aderfarben und Querschnitt definieren.
-		\item Ausgewählte Bauteile in die Schaltung integrieren.
-		\item Nicht vorhandene Bauteile selbst erstellen.
-		      \begin{itemize}
-			      \item Bauteile sortiert hinzufügen: Spannungsversorgung, Steuerung (Eingang, dann Ausgang), Lastkreis und Sonderfunktionen.
-		      \end{itemize}
-	\end{itemize}}{To-do}{\textwidth}
-
-
-
 Zu Beginn der Erstellung des Schaltplans sollten die Funktions- und Ortskennzeichen sowie die Beschriftung der Bauteile und Leitungen festgelegt werden. Bei der Verdrahtung ist es erforderlich, die Aderfarben den entsprechenden Spannungspotenzialen zuzuordnen.
 
 \subsection{Betriebsmittelbezeichnung}
@@ -127,15 +98,18 @@ Für die Verdrahtung müssen den Spannungspotenzialen verschiedene Farben zugewi
 	\label{Verdrahtung_Konventionen:tab:Zuordnung}
 	\begin{tabular}{llccl}
 		\hline
-		\textbf{Name} & \textbf{Fabe}                 & \textbf{U in V} & \textbf{A in mm$^2$} & \textbf{Funktion} \\ \hline
-		              & \multicolumn{1}{l|}{Rot}      & $x$             & 1                    &                   \\
-		              & \multicolumn{1}{l|}{Blau}     & $x$             & 1                    &                   \\
-		              & \multicolumn{1}{l|}{Schwarz}  & $x$             & 1                    &                   \\
-		              & \multicolumn{1}{l|}{Schwarz}  & $< 48$          & 50                   &                   \\
-		              & \multicolumn{1}{l|}{Viollett} & $x$             & 1                    &                   \\ \hline
+		\textbf{Name} & \textbf{Fabe}                 & \textbf{U in V} & \textbf{A in mm$^2$} & \textbf{Funktion}       \\ \hline
+		              & \multicolumn{1}{l|}{Rot}      & $24$            & 1                    & Steuerspannung          \\
+		              & \multicolumn{1}{l|}{Blau}     & $x$             & 1                    &                         \\
+		              & \multicolumn{1}{l|}{Schwarz}  & $GND$           & 1                    & Masse Steuerspannung    \\
+		              & \multicolumn{1}{l|}{Schwarz}  & $< 48$          & 50                   & Batteriespannung (Last) \\
+		              & \multicolumn{1}{l|}{Viollett} & $5$             & 1                    & Steuerung               \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[4]
+
+\newpage
+
 
 
 
@@ -151,11 +125,6 @@ Für die Verdrahtung müssen den Spannungspotenzialen verschiedene Farben zugewi
 \section{Simulation mit Simulink}
 \label{section:Simulation}
 
-\myboxy{
-	\begin{itemize}
-		\item
-	\end{itemize}
-}{To-do}{\textwidth}
 
 
 \subsection{Funktionsweise der Steuerung}
@@ -474,12 +443,6 @@ Soll die Automatik beendet werden, kann dies über den Stop-Taster auf dem Contr
 \end{figure}
 \pagebreak[4]
 \
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -511,15 +474,28 @@ Der Sensor von Pepperl+Fuchs wurde ursprünglich für die Distanzmessung angesch
 Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU zu decodiert.
 
 \subsection{Verbindung}
-Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops und eines Multieters wurden die Signale an den Lötstellen analysiert und es wurde festgestellt, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.\\
-Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Es wurde eine Messung, siehe Oszillogramm ,der beiden Leitungen vorgenommen und festgestelt, dass beide Leitungen kein Clock Signal hatte, somit ist eine Asynchron Datenübertragung.
 
-Dies ermöglicht eine Vollduplex-Übertragung. In der Tabelle \ref{parkside:pinmapping} ist die Pinbelegung aufgelistet.\\
+Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops und eines Multimeters wurden die Signale an den Lötstellen analysiert, wobei festgestellt wurde, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.
+
+Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Bei synchroner Kommunikation dient eine der Leitungen als Taktleitung (Clock). Bei asynchroner Kommunikation ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Zur Überprüfung der Kommunikationsart wurde ein Oszillogramm (siehe Abbildung \ref{parkside:ozi:datenübertragung}) erstellt. Im Oszillogramm wurde kein Taktsignal festgestellt, sodass die Datenübertragung asynchron und Vollduplex erfolgt. In Tabelle \ref{parkside:pinmapping} ist die Pinbelegung aufgelistet.\\
 
 
 
 \pagebreak[1]
-\begin{table}[ht]
+\begin{figure}[ht]
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/2_sen/ozi_3.png}
+		\caption{Messung – zur Überprüfung der Kommunikationsart: Synchron oder Asynchron}
+		\label{parkside:ozi:datenübertragung}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+
+
+
+
+\pagebreak[1]
+\begin{table}[!ht]
 	\centering
 	\caption{PARKSIDE – Pin Mapping – Distanzsensor}
 	\label{parkside:pinmapping}
@@ -535,7 +511,7 @@ Dies ermöglicht eine Vollduplex-Übertragung. In der Tabelle \ref{parkside:pinm
 \pagebreak[1]
 
 \pagebreak[1]
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=1\textwidth]{img/2_sen/dis_parkside_1_outside.png}
 		\caption{PARKSIDE – Distanzsensor – Innenaufbau}
@@ -546,27 +522,107 @@ Dies ermöglicht eine Vollduplex-Übertragung. In der Tabelle \ref{parkside:pinm
 
 \subsection{Dekodierung der Steuersignale}
 \label{Distanzmessung:Kodierung}
-Um die Steuersignal zu analysi
+Um die Steuersignale zu analysieren, wurden die mit dem Oszilloskop aufgenommenen Messwerte in den Tabellen \ref{Steuerung:tab:TX1}, \ref{Steuerung:tab:RX1} und \ref{Steuerung:tab:RX2} dokumentiert. Bei den Messungen fiel auf, dass jede Nachricht mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) beginnt und mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende) endet. Zwischen diesen beiden Bitmustern sind die Steuersignale und Messwerte kodiert, welche im folgenden erklärt werden.\\
+\
+\pagebreak[4]
+\begin{figure}[!ht]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{img/2_sen/dis_parkside_signalverlauf.png}
+		\caption{Distanzmessung – Signalverlauf der Steuersignale}
+		\label{Kodierung:pic:signalverlauf}
+	\end{center}
+\end{figure}
+\pagebreak[1]
+Die Signalübertragung in den Tabellen ist wie folgt aufgebaut: In Tabelle \ref{Steuerung:tab:TX1} zeigt die Spalte \frqq Stopp\flqq\ die erste Nachricht, die an den Sensor gesendet wird. Der Sensor antwortet stets mit zwei Nachrichten: Die erste Nachricht ist in Tabelle \ref{Steuerung:tab:RX1} dargestellt, die zweite in Tabelle \ref{Steuerung:tab:RX2}, in der Abbildung \ref{Kodierung:pic:signalverlauf} ist der Verlauf noch einmal aufgeführt.\\ \ \\
+Die gelb hinterlegten Felder in den Tabellen weisen auf ein identisches Bitmuster hin. Nach jedem Start-Byte werden drei identisch kodierte Bytes gesendet, die als Delay fungieren. Der Sensor antwortet nach jedem \frqq Transmitter\flqq\ Signal mit derselben Kodierung, was als Bestätigung dient, dass er sendebereit ist. Erst wenn das Bitmuster \frqq Messen\flqq\ an den Sensor gesendet wird, überträgt der Sensor die Messdaten, die in den grün hinterlegten Feldern in Tabelle \ref{Steuerung:tab:RX2} als ASCII-Zeichen dargestellt sind.
 
 
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Distanzmessung – Signale die an den Sensor gesendet werden (TX)}
+	\label{Steuerung:tab:TX1}
+	\begin{tabular}{lllllll}
+		\hline
+		                        & \multicolumn{2}{c}{TX Stopp} & \multicolumn{2}{c}{ TX Laser an}                   & \multicolumn{2}{c}{TX Messen}                                                                                                                   \\ \hline
+		\textbf{Bytes}          & \textbf{Nachricht}           & \textbf{Bdtg.}                                     & \textbf{Nachricht}            & \textbf{Bdtg.}                                     & \textbf{Nachricht}         & \textbf{Bdtg.}                \\ \hline
+		\multicolumn{1}{l|}{0}  & \cellcolor[HTML]{9AFF99}24   & \multicolumn{1}{l|}{\cellcolor[HTML]{9AFF99}Start} & \cellcolor[HTML]{9AFF99}24    & \multicolumn{1}{l|}{\cellcolor[HTML]{9AFF99}Start} & \cellcolor[HTML]{9AFF99}24 & \cellcolor[HTML]{9AFF99}Start \\
+		\multicolumn{1}{l|}{1}  & \cellcolor[HTML]{FCFF2F}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{FCFF2F}}      & \cellcolor[HTML]{FCFF2F}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{FCFF2F}}      & \cellcolor[HTML]{FCFF2F}30 & \cellcolor[HTML]{FCFF2F}      \\
+		\multicolumn{1}{l|}{2}  & \cellcolor[HTML]{FCFF2F}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{FCFF2F}}      & \cellcolor[HTML]{FCFF2F}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{FCFF2F}}      & \cellcolor[HTML]{FCFF2F}30 & \cellcolor[HTML]{FCFF2F}      \\
+		\multicolumn{1}{l|}{3}  & \cellcolor[HTML]{FCFF2F}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{FCFF2F}}      & \cellcolor[HTML]{FCFF2F}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{FCFF2F}}      & \cellcolor[HTML]{FCFF2F}30 & \cellcolor[HTML]{FCFF2F}      \\
+		\multicolumn{1}{l|}{4}  & 33                           & \multicolumn{1}{l|}{}                              & 33                            & \multicolumn{1}{l|}{}                              & 32                         &                               \\
+		\multicolumn{1}{l|}{5}  & 32                           & \multicolumn{1}{l|}{}                              & 32                            & \multicolumn{1}{l|}{}                              & 32                         &                               \\
+		\multicolumn{1}{l|}{6}  & 36                           & \multicolumn{1}{l|}{}                              & 36                            & \multicolumn{1}{l|}{}                              & 31                         &                               \\
+		\multicolumn{1}{l|}{7}  & 30                           & \multicolumn{1}{l|}{}                              & 30                            & \multicolumn{1}{l|}{}                              & 32                         &                               \\
+		\multicolumn{1}{l|}{8}  & 30                           & \multicolumn{1}{l|}{}                              & 31                            & \multicolumn{1}{l|}{}                              & 33                         &                               \\
+		\multicolumn{1}{l|}{9}  & 32                           & \multicolumn{1}{l|}{}                              & 33                            & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{FD6864}26 & \cellcolor[HTML]{FD6864}Stop  \\
+		\multicolumn{1}{l|}{10} & 39                           & \multicolumn{1}{l|}{}                              & 30                            & \multicolumn{1}{l|}{}                              &                            &                               \\
+		\multicolumn{1}{l|}{11} & \cellcolor[HTML]{FD6864}26   & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}Stop}  & \cellcolor[HTML]{FD6864}26    & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}Stop}  &                            &                               \\ \hline
+	\end{tabular}
+\end{table}
 
 
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Distanzmessung – Signale die von dem Sensor gesendet werden 1 (RX)}
+	\label{Steuerung:tab:RX1}
+	\begin{tabular}{lllllll}
+		\hline
+		                        & \multicolumn{2}{c}{RX Stopp} & \multicolumn{2}{c}{RX Laser an}                    & \multicolumn{2}{c}{RX Messen}                                                                                                                   \\ \hline
+		\textbf{Bytes}          & \textbf{Nachricht}           & \textbf{Bdtg.}                                     & \textbf{Nachricht}            & \textbf{Bdtg.}                                     & \textbf{Nachricht}         & \textbf{Bdtg.}                \\ \hline
+		\multicolumn{1}{l|}{0}  & \cellcolor[HTML]{9AFF99}24   & \multicolumn{1}{l|}{\cellcolor[HTML]{9AFF99}Start} & \cellcolor[HTML]{9AFF99}24    & \multicolumn{1}{l|}{\cellcolor[HTML]{9AFF99}Start} & \cellcolor[HTML]{9AFF99}24 & \cellcolor[HTML]{9AFF99}Start \\
+		\multicolumn{1}{l|}{1}  & \cellcolor[HTML]{F8FF00}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30 & \cellcolor[HTML]{F8FF00}      \\
+		\multicolumn{1}{l|}{2}  & \cellcolor[HTML]{F8FF00}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30 & \cellcolor[HTML]{F8FF00}      \\
+		\multicolumn{1}{l|}{3}  & \cellcolor[HTML]{F8FF00}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30 & \cellcolor[HTML]{F8FF00}      \\
+		\multicolumn{1}{l|}{4}  & \cellcolor[HTML]{F8FF00}32   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}32    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}32 & \cellcolor[HTML]{F8FF00}      \\
+		\multicolumn{1}{l|}{5}  & \cellcolor[HTML]{F8FF00}33   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}33    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}33 & \cellcolor[HTML]{F8FF00}      \\
+		\multicolumn{1}{l|}{6}  & \cellcolor[HTML]{F8FF00}33   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}33    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}33 & \cellcolor[HTML]{F8FF00}      \\
+		\multicolumn{1}{l|}{7}  & \cellcolor[HTML]{F8FF00}33   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}33    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}33 & \cellcolor[HTML]{F8FF00}      \\
+		\multicolumn{1}{l|}{8}  & \cellcolor[HTML]{F8FF00}35   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}35    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}35 & \cellcolor[HTML]{F8FF00}      \\
+		\multicolumn{1}{l|}{9}  & \cellcolor[HTML]{FD6864}26   & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}Stop}  & \cellcolor[HTML]{FD6864}26    & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}Stop}  & \cellcolor[HTML]{FD6864}26 & \cellcolor[HTML]{FD6864}Stop  \\
+		\multicolumn{1}{l|}{10} &                              & \multicolumn{1}{l|}{}                              &                               & \multicolumn{1}{l|}{}                              &                            &                               \\
+		\multicolumn{1}{l|}{11} &                              & \multicolumn{1}{l|}{}                              &                               & \multicolumn{1}{l|}{}                              &                            &                               \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[1]
 
-Jede Nachricht beginnt mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) und endet mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende), zwischen den beiden Bitmuster werden die Steuersignale und Messwerte kodiert.\\
-Um eine Messung durchzuführen, müssen zwei Signale an den Sensor übertragen werden \frqq Laser on \flqq\ und \frqq Laser start\flqq, dannch sendet der Sensor die gemessene Distanz \frqq distanceValue\flqq.\\
-\\
-\begin{center}
-	24 30 30 30 33 32 36 30 30 32 39 26 (Laser on)\\
-	24 30 30 30 33 32 36 30 31 33 30 26 (Laser start)\\
-	24 30 30 30 32 32 31 32 33 26 (Messen)\\
-\end{center}
+\pagebreak[1]
+\begin{table}[!ht]
+	\centering
+	\caption{Distanzmessung – Signale die von dem Sensor gesendet werden 2 (RX)}
+	\label{Steuerung:tab:RX2}
+	\begin{tabular}{lllllll}
+		\hline
+		                        & \multicolumn{2}{c}{RX Stopp} & \multicolumn{2}{c}{RX Laser an}                    & \multicolumn{2}{c}{RX Messen}                                                                                                                                    \\ \hline
+		\textbf{Bytes}          & \textbf{Nachricht}           & \textbf{Bdtg.}                                     & \textbf{Nachricht}            & \textbf{Bdtg.}                                     & \textbf{Nachricht}         & \textbf{Bdtg.}                                 \\ \hline
+		\multicolumn{1}{l|}{0}  & \cellcolor[HTML]{9AFF99}24   & \multicolumn{1}{l|}{\cellcolor[HTML]{9AFF99}Start} & \cellcolor[HTML]{9AFF99}24    & \multicolumn{1}{l|}{\cellcolor[HTML]{9AFF99}Start} & \cellcolor[HTML]{9AFF99}24 & \cellcolor[HTML]{9AFF99}Start                  \\
+		\multicolumn{1}{l|}{1}  & \cellcolor[HTML]{F8FF00}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30 & \cellcolor[HTML]{F8FF00}                       \\
+		\multicolumn{1}{l|}{2}  & \cellcolor[HTML]{F8FF00}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30 & \cellcolor[HTML]{F8FF00}                       \\
+		\multicolumn{1}{l|}{3}  & \cellcolor[HTML]{F8FF00}30   & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30    & \multicolumn{1}{l|}{\cellcolor[HTML]{F8FF00}}      & \cellcolor[HTML]{F8FF00}30 & \cellcolor[HTML]{F8FF00}                       \\
+		\multicolumn{1}{l|}{4}  & 33                           & \multicolumn{1}{l|}{}                              & 33                            & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{FFCC67}36 &                                                \\
+		\multicolumn{1}{l|}{5}  & 32                           & \multicolumn{1}{l|}{}                              & 32                            & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{FFCC67}32 &                                                \\
+		\multicolumn{1}{l|}{6}  & 36                           & \multicolumn{1}{l|}{}                              & 36                            & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{FFCC67}31 &                                                \\
+		\multicolumn{1}{l|}{7}  & 30                           & \multicolumn{1}{l|}{}                              & 30                            & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}30 & \cellcolor[HTML]{32CB00}10\textasciicircum{}+4 \\
+		\multicolumn{1}{l|}{8}  & 30                           & \multicolumn{1}{l|}{}                              & 30                            & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}30 & \cellcolor[HTML]{32CB00}10\textasciicircum{}+3 \\
+		\multicolumn{1}{l|}{9}  & 32                           & \multicolumn{1}{l|}{}                              & 32                            & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}30 & \cellcolor[HTML]{32CB00}10\textasciicircum{}+2 \\
+		\multicolumn{1}{l|}{10} & 39                           & \multicolumn{1}{l|}{}                              & 39                            & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}30 & \cellcolor[HTML]{32CB00}10\textasciicircum{}+1 \\
+		\multicolumn{1}{l|}{11} & \cellcolor[HTML]{FD6864}26   & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}Stop}  & \cellcolor[HTML]{FD6864}26    & \multicolumn{1}{l|}{\cellcolor[HTML]{FD6864}Stop}  & \cellcolor[HTML]{32CB00}30 & \cellcolor[HTML]{32CB00}10\textasciicircum{}+0 \\
+		\multicolumn{1}{l|}{12} &                              & \multicolumn{1}{l|}{}                              &                               & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}33 & \cellcolor[HTML]{32CB00}10\textasciicircum{}-1 \\
+		\multicolumn{1}{l|}{13} &                              & \multicolumn{1}{l|}{}                              &                               & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}33 & \cellcolor[HTML]{32CB00}10\textasciicircum{}-2 \\
+		\multicolumn{1}{l|}{14} &                              & \multicolumn{1}{l|}{}                              &                               & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}30 & \cellcolor[HTML]{32CB00}10\textasciicircum{}-3 \\
+		\multicolumn{1}{l|}{15} &                              & \multicolumn{1}{l|}{}                              &                               & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}36 & \cellcolor[HTML]{32CB00}10\textasciicircum{}-4 \\
+		\multicolumn{1}{l|}{16} &                              & \multicolumn{1}{l|}{}                              &                               & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{32CB00}30 & \cellcolor[HTML]{32CB00}10\textasciicircum{}-5 \\
+		\multicolumn{1}{l|}{17} &                              & \multicolumn{1}{l|}{}                              &                               & \multicolumn{1}{l|}{}                              & \cellcolor[HTML]{FD6864}26 & \cellcolor[HTML]{FD6864}Stop                   \\ \hline
+	\end{tabular}
+\end{table}
+\pagebreak[4]
 
-\subsection{Steuerung für die Sensordaten}
-\label{Distanzmessung:Steuerung}
-
-
-Um die Werte von dem Distanzsensor zu erhalten wird eine ESP verwendet.
-
+%\subsection{Steuerung für die Sensordaten}
+%\label{Distanzmessung:Steuerung}
+%
+%
+%Um die Werte von dem Distanzsensor zu erhalten wird eine ESP verwendet.
 
 
 

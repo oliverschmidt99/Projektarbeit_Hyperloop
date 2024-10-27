@@ -1,17 +1,5 @@
 \chapter{Stand der Technik}
 \label{chapter:Stand_der_Technik}
-\myboxy{
-	\begin{itemize}
-		\item Bilder neu machen aus dem Schaltplan.
-		\item Vector Controller, Funktionsweise nur kurz erklären und mehr auf die Anschlüsse eingehen.
-		\item PIN-Mapping als Tabelle erstellen, für den Motor und den Vector Controller.
-		\item QElectroTeck.
-		\item PIN-Mapping als Tabelle erstellen, für den Motor und den Vector Controller.
-		\item Auf die PDF verweisen.
-	\end{itemize}
-}{To-do}{\textwidth}
-
-
 
 Im folgenden Abschnitt werden die verwendeten Bauteile, welche in Kapitel \ref{chapter:Konzept} dargestellt worden sind, näher beschrieben.
 
@@ -20,8 +8,6 @@ Im folgenden Abschnitt werden die verwendeten Bauteile, welche in Kapitel \ref{c
 \label{section:Antrieb}
 
 Golden Motor bietet eine Gesamtlösung bestehend aus einem BLDC-Motor und einem Vektor-Controller an. Der Controller besitzt eine Schnittstelle für alle notwendigen Steuer- und Kontrollsignale, um den Motor anzutreiben. Die Anschlüsse sowie die grundlegende Funktionsweise werden in den Abschnitten \ref{section:BLDC_Motor} und \ref{section:Vector_Controller} näher erläutert.
-
-
 
 \subsection{BLDC Motor}
 \label{section:BLDC_Motor}
@@ -103,33 +89,33 @@ Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführ
 	\label{Vector_Controller:tab:pinmapping}
 	\begin{tabular}{lll|l}
 		\hline
-		\textbf{Anschluss}           & \textbf{Funktionalität}  & \textbf{Farbe}              & \textbf{U in V}                  \\ \hline
-		\multicolumn{4}{c}{\textbf{Batterie Eingang}}                                                                            \\ \hline
-		\multicolumn{1}{l|}{B+}      & Versorgungsspannung      & RT                          & 48 V                             \\
-		\multicolumn{1}{l|}{B-}      & Masse                    & SW                          & 0 V                              \\ \hline
-		\multicolumn{4}{c}{\textbf{Motor Ausgnag}}                                                                               \\ \hline
-		\multicolumn{1}{l|}{U}       & Spule 1                  & GE                          &                                  \\
-		\multicolumn{1}{l|}{V}       & Spule 2                  & GN                          &                                  \\
-		\multicolumn{1}{l|}{W}       & Spule 3                  & BL                          &                                  \\ \hline
-		\multicolumn{4}{c}{\textbf{Steuerungskabel}}                                                                             \\ \hline
-		\multicolumn{1}{l|}{1}       & CANL - CAN-Bus Nein           & \textcolor{red}{Vorhanden?} &                                  \\
-		\multicolumn{1}{l|}{2}       & CANH – CAN-Bus Nein           & \textcolor{red}{Vorhanden?} &                                  \\
-		\multicolumn{1}{l|}{3}       & Motor Temperatur         & BL                          &                                  \\
-		\multicolumn{1}{l|}{4, 5, 6} & Masse                    & SW                          & 0 V                              \\
-		\multicolumn{1}{l|}{7}       & Tempomat                 & Gr                          & 0 V - 5 V                        \\
-		\multicolumn{1}{l|}{10}      & Elektronisches Schloss   & Pink                          & 0 V - 5 V                        \\
-		\multicolumn{1}{l|}{11}      & Hall C – Sensor          & BL                          &                                  \\
-		\multicolumn{1}{l|}{12}      & Hall B – Sensor          & GN                          &                                  \\
-		\multicolumn{1}{l|}{13}      & Hall A – Sensor          & GE                          &                                  \\
-		\multicolumn{1}{l|}{14}      & +5 V                     & RT                          & 5 V                              \\
-		\multicolumn{1}{l|}{15}      & +12V Bremse              & GN\&WS                      & \textcolor{red}{Vorhanden? Nein} \\
-		\multicolumn{1}{l|}{16}      & Bremse                   & BL\&WS                      & 1 V - 5 V                        \\
-		\multicolumn{1}{l|}{20}      & Hohe Geschwindigkeit     & BL                          & \textcolor{red}{Vorhanden? Nein} \\
-		\multicolumn{1}{l|}{21}      & Masse                    & SW                          & 0 V                              \\
-		\multicolumn{1}{l|}{24}      & Niedrige Geschwindigkeit & BL                          & \textcolor{red}{Vorhanden?Nein}  \\
-		\multicolumn{1}{l|}{25}      & Masse                    & SW\&WS                      & 0 V                              \\
-		\multicolumn{1}{l|}{26}      & Gaspedal                 & GN\&WS                      & 1 V - 4 V                        \\
-		\multicolumn{1}{l|}{27}      & Masse                    & SW                          & 0 V                              \\ \hline
+		\textbf{Anschluss}           & \textbf{Funktionalität} & \textbf{Farbe} & \textbf{U in V} \\ \hline
+		\multicolumn{4}{c}{\textbf{Batterie Eingang}}                                             \\ \hline
+		\multicolumn{1}{l|}{B+}      & Versorgungsspannung     & RT             & 48 V            \\
+		\multicolumn{1}{l|}{B-}      & Masse                   & SW             & 0 V             \\ \hline
+		\multicolumn{4}{c}{\textbf{Motor Ausgnag}}                                                \\ \hline
+		\multicolumn{1}{l|}{U}       & Spule 1                 & GE             &                 \\
+		\multicolumn{1}{l|}{V}       & Spule 2                 & GN             &                 \\
+		\multicolumn{1}{l|}{W}       & Spule 3                 & BL             &                 \\ \hline
+		\multicolumn{4}{c}{\textbf{Steuerungskabel}}                                              \\ \hline
+		\multicolumn{1}{l|}{1}       &                         &                &                 \\
+		\multicolumn{1}{l|}{2}       &                         &                &                 \\
+		\multicolumn{1}{l|}{3}       & Motor Temperatur        & BL             &                 \\
+		\multicolumn{1}{l|}{4, 5, 6} & Masse                   & SW             & 0 V             \\
+		\multicolumn{1}{l|}{7}       & Tempomat                & Gr             & 0 V - 5 V       \\
+		\multicolumn{1}{l|}{10}      & Elektronisches Schloss  & Pink           & 0 V - 5 V       \\
+		\multicolumn{1}{l|}{11}      & Hall C – Sensor         & BL             &                 \\
+		\multicolumn{1}{l|}{12}      & Hall B – Sensor         & GN             &                 \\
+		\multicolumn{1}{l|}{13}      & Hall A – Sensor         & GE             &                 \\
+		\multicolumn{1}{l|}{14}      & +5 V                    & RT             & 5 V             \\
+		\multicolumn{1}{l|}{15}      &                         &                &                 \\
+		\multicolumn{1}{l|}{16}      & Bremse                  & BL\&WS         & 1 V - 5 V       \\
+		\multicolumn{1}{l|}{20}      &                         &                &                 \\
+		\multicolumn{1}{l|}{21}      & Masse                   & SW             & 0 V             \\
+		\multicolumn{1}{l|}{24}      &                         &                &                 \\
+		\multicolumn{1}{l|}{25}      & Masse                   & SW\&WS         & 0 V             \\
+		\multicolumn{1}{l|}{26}      & Gaspedal                & GN\&WS         & 1 V - 4 V       \\
+		\multicolumn{1}{l|}{27}      & Masse                   & SW             & 0 V             \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[4]
@@ -144,12 +130,7 @@ Der Vektor-Controller verwendet die Motorsteuerungstechnologie der feldorientier
 
 \section{Echtzeitfähige Steuerung – Speedgoat}
 \label{section:speedgoat}
-\myboxy{
-	\begin{itemize}
-		\item I/O Module 691 zuende Erklären.
-		\item Echtzeitfähigkeit auf die DIN Norm beziehen und besser erklären auf unserer Situation.
-	\end{itemize}
-}{To-do}{\textwidth}
+
 
 Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steuerung_goat} dargestellt, ist ein echtzeitfähiges System, welches ovn der Firma Speedgoat hergestellt und vertrieben wirden. Es wird hauptsächlich in der Entwicklung und beim Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt, bei denen die Echtzeitfähigkeit eine zentrale Rolle spielt.\\ \ \\
 
