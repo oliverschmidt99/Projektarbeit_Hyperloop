@@ -473,7 +473,7 @@ Soll die Automatik beendet werden, kann dies über den Stop-Taster auf dem Contr
 	\end{center}
 \end{figure}
 \pagebreak[4]
-\ 
+\
 
 
 
@@ -512,10 +512,9 @@ Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und 
 
 \subsection{Verbindung}
 Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops und eines Multieters wurden die Signale an den Lötstellen analysiert und es wurde festgestellt, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.\\
+Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Es wurde eine Messung, siehe Oszillogramm ,der beiden Leitungen vorgenommen und festgestelt, dass beide Leitungen kein Clock Signal hatte, somit ist eine Asynchron Datenübertragung.
 
-
-
-Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Ist die Kommunikation synchron, dient eine der Leitungen als Taktleitung (Clock). Bei einer asynchronen Kommunikation, ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Dies ermöglicht eine Vollduplex-Übertragung.\\
+Dies ermöglicht eine Vollduplex-Übertragung. In der Tabelle \ref{parkside:pinmapping} ist die Pinbelegung aufgelistet.\\
 
 
 
@@ -545,9 +544,15 @@ Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder a
 \end{figure}
 \pagebreak[4]
 
-\subsection{Kodierung der Steuersignale}
+\subsection{Dekodierung der Steuersignale}
 \label{Distanzmessung:Kodierung}
-Der Sensor sendet verschiedene Steuersignale, die über die Busleitung übertragen werden. Jede Nachricht beginnt mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) und endet mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende), zwischen den beiden Bitmuster werden die Steuersignale und Messwerte kodiert.\\
+Um die Steuersignal zu analysi
+
+
+
+
+
+Jede Nachricht beginnt mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) und endet mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende), zwischen den beiden Bitmuster werden die Steuersignale und Messwerte kodiert.\\
 Um eine Messung durchzuführen, müssen zwei Signale an den Sensor übertragen werden \frqq Laser on \flqq\ und \frqq Laser start\flqq, dannch sendet der Sensor die gemessene Distanz \frqq distanceValue\flqq.\\
 \\
 \begin{center}
