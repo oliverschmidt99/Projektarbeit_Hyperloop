@@ -89,33 +89,31 @@ Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführ
 	\label{Vector_Controller:tab:pinmapping}
 	\begin{tabular}{lll|l}
 		\hline
-		\textbf{Anschluss}           & \textbf{Funktionalität} & \textbf{Farbe} & \textbf{U in V} \\ \hline
-		\multicolumn{4}{c}{\textbf{Batterie Eingang}}                                             \\ \hline
-		\multicolumn{1}{l|}{B+}      & Versorgungsspannung     & RT             & 48 V            \\
-		\multicolumn{1}{l|}{B-}      & Masse                   & SW             & 0 V             \\ \hline
-		\multicolumn{4}{c}{\textbf{Motor Ausgnag}}                                                \\ \hline
-		\multicolumn{1}{l|}{U}       & Spule 1                 & GE             &                 \\
-		\multicolumn{1}{l|}{V}       & Spule 2                 & GN             &                 \\
-		\multicolumn{1}{l|}{W}       & Spule 3                 & BL             &                 \\ \hline
-		\multicolumn{4}{c}{\textbf{Steuerungskabel}}                                              \\ \hline
-		\multicolumn{1}{l|}{1}       &                         &                &                 \\
-		\multicolumn{1}{l|}{2}       &                         &                &                 \\
-		\multicolumn{1}{l|}{3}       & Motor Temperatur        & BL             &                 \\
-		\multicolumn{1}{l|}{4, 5, 6} & Masse                   & SW             & 0 V             \\
-		\multicolumn{1}{l|}{7}       & Tempomat                & Gr             & 0 V - 5 V       \\
-		\multicolumn{1}{l|}{10}      & Elektronisches Schloss  & Pink           & 0 V - 5 V       \\
-		\multicolumn{1}{l|}{11}      & Hall C – Sensor         & BL             &                 \\
-		\multicolumn{1}{l|}{12}      & Hall B – Sensor         & GN             &                 \\
-		\multicolumn{1}{l|}{13}      & Hall A – Sensor         & GE             &                 \\
-		\multicolumn{1}{l|}{14}      & +5 V                    & RT             & 5 V             \\
-		\multicolumn{1}{l|}{15}      &                         &                &                 \\
-		\multicolumn{1}{l|}{16}      & Bremse                  & BL\&WS         & 1 V - 5 V       \\
-		\multicolumn{1}{l|}{20}      &                         &                &                 \\
-		\multicolumn{1}{l|}{21}      & Masse                   & SW             & 0 V             \\
-		\multicolumn{1}{l|}{24}      &                         &                &                 \\
-		\multicolumn{1}{l|}{25}      & Masse                   & SW\&WS         & 0 V             \\
-		\multicolumn{1}{l|}{26}      & Gaspedal                & GN\&WS         & 1 V - 4 V       \\
-		\multicolumn{1}{l|}{27}      & Masse                   & SW             & 0 V             \\ \hline
+		\textbf{Anschluss}        & \textbf{Funktionalität} & \textbf{Farbe} & \textbf{U in V} \\ \hline
+		\multicolumn{4}{c}{\textbf{Batterie Eingang}}                                          \\ \hline
+		\multicolumn{1}{l|}{B+}   & Versorgungsspannung     & RT             & 48 V            \\
+		\multicolumn{1}{l|}{B-}   & Masse                   & SW             & 0 V             \\ \hline
+		\multicolumn{4}{c}{\textbf{Motor Ausgnag}}                                             \\ \hline
+		\multicolumn{1}{l|}{U}    & Spule 1                 & GE             &                 \\
+		\multicolumn{1}{l|}{V}    & Spule 2                 & GN             &                 \\
+		\multicolumn{1}{l|}{W}    & Spule 3                 & BL             &                 \\ \hline
+		\multicolumn{4}{c}{\textbf{Steuerungskabel}}                                           \\ \hline
+		\multicolumn{1}{l|}{(3)}  & Motor Temperatur        & WH             &                 \\
+		\multicolumn{1}{l|}{5}    & Masse - Bremse          & SW             & 0 V             \\
+		\multicolumn{1}{l|}{6}    & Masse                   & SW             & 0 V             \\
+		\multicolumn{1}{l|}{6}    & Masse - Tempomat        & SW             & 0 V             \\
+		\multicolumn{1}{l|}{7}    & Tempomat                & Gr             & 0 V oder 5 V    \\
+		\multicolumn{1}{l|}{10}   & elektronisches Schloss  & Pink           & 0 V oder 5 V    \\
+		\multicolumn{1}{l|}{(11)} & Hall C – Sensor         & BL             &                 \\
+		\multicolumn{1}{l|}{(12)} & Hall B – Sensor         & GN             &                 \\
+		\multicolumn{1}{l|}{(13)} & Hall A – Sensor         & GE             &                 \\
+		\multicolumn{1}{l|}{(14)} & +5 V                    & RT             & 5 V             \\
+		\multicolumn{1}{l|}{16}   & Bremse                  & BL\&WS         & 1 V oder 5 V    \\
+		\multicolumn{1}{l|}{17}   & Fahrtrichtung           & BR             & 0 V oder 5 V    \\
+		\multicolumn{1}{l|}{(21)} & Masse                   & SW             & 0 V             \\
+		\multicolumn{1}{l|}{26}   & Masse                   & SW\&WS         & 0 V             \\
+		\multicolumn{1}{l|}{27}   & Gaspedal                & GN\&WS         & 1 V - 4 V       \\
+		\multicolumn{1}{l|}{28}   & Masse                   & SW             & 0 V             \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[4]
