@@ -24,6 +24,7 @@ Das Funktionskennzeichen beschreibt eine bestimmte Funktion im Schaltplan, wie b
 		\multicolumn{1}{l|}{SV} & Spannungsversorung   \\
 		\multicolumn{1}{l|}{ES} & Eingänge Steuerung   \\
 		\multicolumn{1}{l|}{AS} & Ausgänge Steuerung   \\
+		\multicolumn{1}{l|}{KL} & Klemmenleisten       \\
 		\multicolumn{1}{l|}{KO} & Kommunikation        \\
 		\multicolumn{1}{l|}{AT} & Antrieb              \\
 		\multicolumn{1}{l|}{NA} & Not-Aus              \\ \hline
@@ -62,17 +63,17 @@ Das Betriebsmittelkennzeichen bezeichnet das spezifische Bauteil. Die genaue Zuo
 	\label{bmk:tab:betriebsmittelkennzeichen}
 	\begin{tabular}{|l|lll|}
 		\hline
-		\textbf{Abkürzung}       & \textbf{Klassenname}                            & \multicolumn{1}{l|}{\textbf{Allgemeine Bedeutung}} \\ \hline
-		\multicolumn{1}{|l|}{FC} & \makecell[l]{Überstromschutzobjekt}             & \multicolumn{1}{l|}{Sicherung}                     \\ \hline
-		\multicolumn{1}{|l|}{GB} & \makecell[l]{Erzeugungsobjekt für elektrische                                                        \\Energie durch chemische Energie} & \multicolumn{1}{l|}{Batterie} \\ \hline
-		\multicolumn{1}{|l|}{KE} & \makecell[l]{Elektrische Signale                                                                     \\verarbeitendes Objekt}   & \multicolumn{1}{l|}{Steuerung} \\ \hline
-		\multicolumn{1}{|l|}{MA} & \makecell[l]{Elektromagnetisches                                                                     \\Rotationsantriebsobjekt} & \multicolumn{1}{l|}{Motor} \\ \hline
-		\multicolumn{1}{|l|}{QA} & \makecell[l]{Stromsteuerungsobjekt}             & \multicolumn{1}{l|}{Relais}                        \\ \hline
-		\multicolumn{1}{|l|}{RL} & \makecell[l]{Bewegungsbegrenzungsobjekt}        & \multicolumn{1}{l|}{Bremse}                        \\ \hline
-		\multicolumn{1}{|l|}{SF} & \makecell[l]{Gesichtsinteraktionsobjekt}        & \multicolumn{1}{l|}{Schalter}                      \\ \hline
-		\multicolumn{1}{|l|}{TB} & \makecell[l]{Stromkonvertierungsobjekt}         & \multicolumn{1}{l|}{Transformator}                 \\ \hline
-		\multicolumn{1}{|l|}{WD} & \makecell[l]{Niederspannungsenergie Leitobjekt} & \multicolumn{1}{l|}{Leitung/Kabel}                 \\ \hline
-		\multicolumn{1}{|l|}{XD} & \makecell[l]{Niederspannungs-Verbindungsobjekt} & \multicolumn{1}{l|}{Klemme, Stecker oder Buchse}   \\ \hline
+		\textbf{Abkürzung}       & \textbf{Klassenname}                            & \multicolumn{1}{l|}{\makecell[l]{\textbf{Allgemeine} \\ \textbf{Bedeutung}}} \\ \hline
+		\multicolumn{1}{|l|}{FC} & \makecell[l]{Überstromschutzobjekt}             & \multicolumn{1}{l|}{Sicherung}                       \\ \hline
+		\multicolumn{1}{|l|}{GB} & \makecell[l]{Erzeugungsobjekt für elektrische                                                          \\Energie durch chemische Energie} & \multicolumn{1}{l|}{Batterie} \\ \hline
+		\multicolumn{1}{|l|}{KE} & \makecell[l]{Elektrische Signale                                                                       \\verarbeitendes Objekt}   & \multicolumn{1}{l|}{Steuerung} \\ \hline
+		\multicolumn{1}{|l|}{MA} & \makecell[l]{Elektromagnetisches                                                                       \\Rotationsantriebsobjekt} & \multicolumn{1}{l|}{Motor} \\ \hline
+		\multicolumn{1}{|l|}{QA} & \makecell[l]{Stromsteuerungsobjekt}             & \multicolumn{1}{l|}{Relais}                          \\ \hline
+		\multicolumn{1}{|l|}{RL} & \makecell[l]{Bewegungsbegrenzungsobjekt}        & \multicolumn{1}{l|}{Bremse}                          \\ \hline
+		\multicolumn{1}{|l|}{SF} & \makecell[l]{Fingerinteraktionsobjekt}          & \multicolumn{1}{l|}{Schalter}                        \\ \hline
+		\multicolumn{1}{|l|}{TB} & \makecell[l]{Stromkonvertierungsobjekt}         & \multicolumn{1}{l|}{Transformator}                   \\ \hline
+		\multicolumn{1}{|l|}{WD} & \makecell[l]{Niederspannungsenergie Leitobjekt} & \multicolumn{1}{l|}{Leitung/Kabel}                   \\ \hline
+		\multicolumn{1}{|l|}{XD} & \makecell[l]{Niederspannungs-Verbindungsobjekt} & \multicolumn{1}{l|}{\makecell[l]{Klemme, Stecker     \\ oder Buchse}} \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[1]
@@ -81,9 +82,9 @@ Bei einer vollständigen Betriebsmittelbezeichnung sieht das Kennzeichen des Bet
 
 \begin{center} =ES2+SE1-10QA1 \end{center}
 
-Die Betriebsmittelbezeichnung =ES2+SE1-10QA4 besagt, dass es sich um die Eingänge der Steuerung (=ES) handelt. Hierbei gibt es zwei Funktionen. Der Ort ist in der Steuereinheit (+SE) verortet, und das Betriebsmittel selbst ist ein Relais, welche auf der Seite 10 des Schaltplans zu finden ist.
+Die Betriebsmittelbezeichnung =ES2+SE1-10QA4 besagt, dass es sich um die Eingänge der Steuerung (=ES) handelt und es gibt zwei Funktionen in dem Schaltplan. Der Ort ist in der Steuereinheit (+SE) verortet, und das Betriebsmittel selbst ist ein Relais, welche auf der Seite 10 des Schaltplans zu finden ist.
 
-Das Kennzeichen umfasst sowohl das Funktions- als auch das Ortskennzeichen, die jeweils mit einer fortlaufenden Nummer versehen sind. Das Betriebsmittelkennzeichen enthält zwei Nummerierungen: Die erste gibt an, auf welcher Seite des Schaltplans sich das Betriebsmittel befindet, während die zweite die fortlaufende Nummerierung des Bauteils darstellt.\\
+Das Kennzeichen umfasst sowohl das Funktions- als auch das Ortskennzeichen, die jeweils mit einer fortlaufenden Nummer versehen werden. Das Betriebsmittelkennzeichen enthält zwei Nummerierungen: Die erste gibt an, auf welcher Seite des Schaltplans sich das Betriebsmittel befindet, während die zweite die fortlaufende Nummerierung des Bauteils darstellt.\\
 Im Schaltplan wird das Betriebsmittel lediglich durch das Betriebsmittelkennzeichen (-) dargestellt, während das Funktions- und Ortskennzeichen im Zeichnungskopf angegeben ist.
 
 \newpage
@@ -96,14 +97,14 @@ Für die Verdrahtung müssen den Spannungspotenzialen verschiedene Farben zugewi
 	\centering
 	\caption{Verdrahtung Konvention – Aderfarben}
 	\label{Verdrahtung_Konventionen:tab:Zuordnung}
-	\begin{tabular}{llccl}
+	\begin{tabular}{lccl}
 		\hline
-		\textbf{Name} & \textbf{Fabe}                 & \textbf{U in V} & \textbf{A in mm$^2$} & \textbf{Funktion}       \\ \hline
-		              & \multicolumn{1}{l|}{Rot}      & $24$            & 1                    & Steuerspannung          \\
-		              & \multicolumn{1}{l|}{Blau}     & $x$             & 1                    &                         \\
-		              & \multicolumn{1}{l|}{Schwarz}  & $GND$           & 1                    & Masse Steuerspannung    \\
-		              & \multicolumn{1}{l|}{Schwarz}  & $< 48$          & 50                   & Batteriespannung (Last) \\
-		              & \multicolumn{1}{l|}{Viollett} & $5$             & 1                    & Steuerung               \\ \hline
+		\textbf{Farbe}                & \textbf{U in V} & \textbf{A in mm$^2$} & \textbf{Funktion}       \\ \hline
+		\multicolumn{1}{l|}{Rot}      & $24$            & 1                    & Steuerspannung          \\
+		\multicolumn{1}{l|}{Blau}     & $x$             & 1                    &                         \\
+		\multicolumn{1}{l|}{Schwarz}  & $GND$           & 1                    & Masse Steuerspannung    \\
+		\multicolumn{1}{l|}{Schwarz}  & $< 48$          & 50                   & Batteriespannung (Last) \\
+		\multicolumn{1}{l|}{Viollett} & $5$             & 1                    & Steuerung               \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[4]
@@ -130,21 +131,19 @@ Für die Verdrahtung müssen den Spannungspotenzialen verschiedene Farben zugewi
 \subsection{Funktionsweise der Steuerung}
 \label{Steuerung}
 
-%Das Fahrzeug wird mittels eines Moore-Automaten gesteuert, wie in Abbildung \ref{Automat:img:Automat} dargestellt. Die Zustände $\overrightarrow{Z}$ (siehe Gleichung \ref{Automat:equation:vektor_z_auto}), die Eingänge $\overrightarrow{I}$ (siehe Gleichung \ref{Automat:equation:vektor_i}) und die Ausgänge $\overrightarrow{O}$ (siehe Gleichung \ref{Automat:equation:vektor_o}) können in Vektoren dargestellt werden.\\ \ \\
+Die Steuerung des Fahrzeugs bietet die Möglichkeit, zwischen Automatik- und manuellem Betrieb zu wählen. Im manuellen Betrieb kann der Benutzer das Fahrzeug sowohl vorwärts als auch rückwärts bewegen, wobei zwei Geschwindigkeitsstufen – schnell und langsam – zur Verfügung stehen. Diese Funktion erlaubt dem Nutzer, das Fahrzeug innerhalb der Röhre individuell zu steuern und es hinein- und herauszufahren.\\
+Im Automatikmodus beschleunigt das Fahrzeug auf eine einstellbare Geschwindigkeit und bremst automatisch ab, sobald eine bestimmte Distanz zum Enddeckel der Röhre erreicht ist. Schließlich hält es am Ende der Strecke an.\\
 
-Die Steuerung des Fahrzeugs bietet die Möglichkeit, zwischen Automatik- und manuellem Betrieb zu wählen. Im manuellen Betrieb kann der Benutzer das Fahrzeug sowohl vorwärts als auch rückwärts fahren lassen, wobei zwei Geschwindigkeitsstufen – schnell und langsam – zur Verfügung stehen. Diese Funktion soll die möglichkeit geben666\\
-Der Automatikmodus wird über den Startknopf aktiviert. Das Fahrzeug beschleunigt auf die einstellbare Geschwindigkeit und bremst automatisch ab, sobald die Distanz zum Enddeckel der Röhre kleiner wird. Es hält schließlich am Ende der Strecke an.\\
-
-\subsubsection{Controllpanel}
-\label{Steuerung:Controllpanel}
-Über das Control Panel (siehe Abbildung \ref{Controllpanel:img:Controllpanel}) können alle Eingaben via Simulink gesteuert werden. Mit dem Wahlschalter kann, wie bereits erwähnt, zwischen Automatik- und manuellem Betrieb gewechselt werden. Ist der manuelle Betrieb ausgewählt, kann mit dem Drehschalter (Manuell) zwischen Vorwärts, Rückwärts und Stopp geschaltet werden (siehe Tabelle \ref{Controllpanel:tab:Wahlschalter}, die Werte werden später für die Automatensteuerung benötigt).\\
+\subsubsection{Controlpanel}
+\label{Steuerung:Controlpanel}
+Über das Control Panel (siehe Abbildung \ref{Controlpanel:img:Controlpanel}) können alle Eingaben via Simulink gesteuert werden. Mit dem Wahlschalter kann, zwischen Automatik- und manuellem Betrieb gewechselt werden. Ist der manuelle Betrieb ausgewählt, kann mit dem Drehschalter (Manuell) zwischen Vorwärts, Rückwärts und Stopp geschaltet werden (siehe Tabelle \ref{Controlpanel:tab:Wahlschalter}, die Werte werden später für die Automatensteuerung benötigt).\\
 
 
 \pagebreak[1]
 \begin{table}[!ht]
 	\centering
 	\caption{Automat – Wahlschalter für den manuellen Betrieb}
-	\label{Controllpanel:tab:Wahlschalter}
+	\label{Controlpanel:tab:Wahlschalter}
 	\begin{tabular}{ccc}
 		\hline
 		\textbf{Schalterbezeichnung} & \textbf{Zustände} & \textbf{Wert} \\ \hline
@@ -163,9 +162,9 @@ Die Funktionsweise der manuellen Steuerung wird in Abschnitt \ref{Automatensteue
 \pagebreak[1]
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=0.75\textwidth]{img/5_simulation/Automat_con.png}
-		\caption{Automat – Controllpanel}
-		\label{Controllpanel:img:Controllpanel}
+		\includegraphics[width=\textwidth]{img/5_simulation/Automat_con.png}
+		\caption{Automat – Controlpanel}
+		\label{Controlpanel:img:Controlpanel}
 	\end{center}
 \end{figure}
 \pagebreak[4]
@@ -175,7 +174,7 @@ Die Funktionsweise der manuellen Steuerung wird in Abschnitt \ref{Automatensteue
 \label{Automatensteuerung}
 Die Automatensteuerung beschreibt die logische Steuerung eines Systems durch einen Automaten, wie etwa einen Moore- oder Mealy-Automaten, der auf Basis von Eingaben und aktuellen Zuständen Ausgaben steuert.\\
 Das Fahrzeug wird mittels eines Moore-Automaten gesteuert, wobei die Ausgänge erst dann aktiviert werden, wenn sich das System im entsprechenden Zustand befindet.\\ \ \\
-Der Automat startet im Zustand \frqq Idle\flqq siehe Abbildung \ref{Automat_man:tab:z_idle}, und die Abläufe für den automatischen oder manuellen Modus werden von \frqq Idle\flqq\ aus angesteuert. Im Zustand Idle werden die Ausgänge (siehe Tabelle \ref{Automat_man:tab:z_idle}) geschaltet.\\
+Der Automat startet im Zustand \frqq Idle\flqq\ siehe Abbildung \ref{Automat_man:tab:z_idle}, und die Abläufe für den automatischen oder manuellen Modus werden von \frqq Idle\flqq\ aus angesteuert. Im Zustand Idle werden die Ausgänge (siehe Tabelle \ref{Automat_man:tab:z_idle}) geschaltet.\\
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -220,7 +219,7 @@ Die Funktion \frqq Driving\flqq, siehe Abbildung \ref{Automat:img:fnc_Driving}, 
 \end{figure}
 \pagebreak[4]
 
-Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eingang \frqq emergency stop in\flqq\ erreicht werden, welcher sowohl über das Controllpanel als auch extern über das IO397-50k – B11 ausgelöst werden kann. Der Zustand kann nur durch ein Reset-Signal verlassen werden und führt dann in einen der Idle-Zustände zurück: \frqq Idle\flqq\ \frqq Manual idle\flqq\ oder \frqq Automatic idle\flqq. Im Zustand \frqq Emergency stop\flqq\ werden die Ausgänge gemäß Tabelle \ref{Automat_man:tab:z_Emergency_stop} geschaltet.
+Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eingang \frqq emergency stop in\flqq\ erreicht werden, welcher sowohl über das Controlpanel als auch extern über das IO397-50k – B11 ausgelöst werden kann. Der Zustand kann nur durch die Quittierung verlassen werden und führt dann in einen der Idle-Zustände zurück: \frqq Idle\flqq\ \frqq Manual idle\flqq\ oder \frqq Automatic idle\flqq. Im Zustand \frqq Emergency stop\flqq\ werden die Ausgänge gemäß Tabelle \ref{Automat_man:tab:z_Emergency_stop} geschaltet.
 
 
 \pagebreak[1]
@@ -255,7 +254,9 @@ Der Zustand \frqq Emergency stop\flqq\ kann von jedem Zustand aus durch den Eing
 
 Die manuelle Steuerung bietet dem Nutzer die Flexibilität, das Fahrzeug sowohl innerhalb als auch außerhalb der Röhre zu steuern.\\
 
-Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_übersicht} dargestellt, ist in zwei Stateflows unterteilt: \frqq Forwards\flqq\ und \frqq Backwards\flqq . In Abbildung \ref{Automat_man:img:man_vorwärts} ist der \frqq Forwards\flqq\ -Stateflow zu sehen, der \frqq Backwards\flqq\ -Stateflow ist äquivalent, wobei sich lediglich der Ausgang \frqq Direction Out\flqq\ ändert. Daher wird nur der \frqq Forwards\flqq\ -Stateflow erklärt. Der Zustand \frqq Emerency stop 1\flqq\ ist der gleiche Zustand wie \frqq Emerency stop\flqq. Die Ausgänge für die Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ sind in der Tabelle \ref{Automat_man:tab:z_V_langsam} für die Zustände \frqq slow\flqq\ und in der Tabelle \ref{Automat_man:tab:z_V_schnell} für die Zustände \frqq fast\flqq\ aufgelistet.
+Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_übersicht} dargestellt, ist in zwei Stateflows unterteilt: \frqq Forwards\flqq\ und \frqq Backwards\flqq . In Abbildung \ref{Automat_man:img:man_vorwärts} ist der \frqq Forwards\flqq\ -Stateflow zu sehen, der \frqq Backwards\flqq\ -Stateflow ist äquivalent, wobei sich lediglich der Ausgang \frqq Direction Out\flqq\ ändert. Daher wird nur der \frqq Forwards\flqq\ -Stateflow erklärt. Der Zustand \frqq Emerency stop 1\flqq\ ist der gleiche Zustand wie \frqq Emergency stop\flqq.
+Die Ausgänge für die Zustände \frqq Forwards\flqq\ und \frqq Backwards\flqq\ sind in 2 Tabellen aufgeführt \ref{Automat_man:tab:z_V_langsam} und \ref{Automat_man:tab:z_V_schnell} aufgeführt, hierbei ist die erste Tabelle die Zustände \frqq slow\flqq\ und die zweite Tabelle für die Zustände \frqq fast\flqq.
+
 
 
 
@@ -319,9 +320,9 @@ Der Automat des manuellen Ablaufs, wie in Abbildung \ref{Automat_man:img:man_üb
 
 
 
-Mit dem Wahltaster (siehe Tabelle \ref{Controllpanel:tab:Wahlschalter}) kann zwischen den Zuständen gewechselt werden. In der Abbildung \ref{Automat_man:img:man_vorwärts} ist der Ausschnitt des \frqq Forwards\flqq\ -Stateflow zu sehen. Wenn sich der Automat in dem Stateflow \frqq Forwards\flqq\ befindet, gibt es keine direkte verknüpfung zu dem \frqq Backwards\flqq\ Stateflow, somit muss man erst in den Zustand \frqq Manual idle\flqq\ wechseln, um in den Stateflow \frqq Backwards\flqq\ zu gelangen.
+Mit dem Wahltaster (siehe Tabelle \ref{Controlpanel:tab:Wahlschalter}) kann zwischen den Zuständen gewechselt werden. In der Abbildung \ref{Automat_man:img:man_vorwärts} ist der Ausschnitt des \frqq Forwards\flqq\ -Stateflow zu sehen. Wenn sich der Automat in dem Stateflow \frqq Forwards\flqq\ befindet, gibt es keine direkte Verknüpfung zu dem \frqq Backwards\flqq\ Stateflow, somit muss man erst in den Zustand \frqq Manual idle\flqq\ wechseln, um in den Stateflow \frqq Backwards\flqq\ zu gelangen.
 
-Der Zustand \frqq Collector manual in\flqq\ fängt  das Schaltsignal des Wahlschalters ab, wenn mitten im Betrieb auf Automatik geschalten wird und führt zu dem \frqq Idle \flqq\ Zustand.
+Der Zustand \frqq Collector manual in\flqq\ fängt  das Schaltsignal des Wahlschalters ab, wenn mitten im Betrieb auf Automatik geschalten wird und führt in dem \frqq Idle \flqq\ Zustand.
 
 
 
@@ -338,9 +339,9 @@ Der Zustand \frqq Collector manual in\flqq\ fängt  das Schaltsignal des Wahlsch
 Die automatische Steuerung soll das Fahrzeug innerhalb der Röhre bis zur eingestellten Geschwindigkeit beschleunigen. Ab einer bestimmten Distanz zum Ende der Röhre soll es allmählich abbremsen und schließlich zum Stillstand kommen.
 
 Der Automat \frqq Automatic\flqq\ besteht aus den Zuständen \frqq Automatic\flqq, \frqq Drive\flqq, \frqq Distance\flqq, \frqq Stop\flqq\ und \frqq Emergency stop\flqq, die in Abbildung \ref{Automat:img:auto_übersicht} dargestellt sind.\\
-Der Zustand \frqq Automatic\flqq\ beschreibt den Idle-Zustand der automatischen Steuerung. Von hier aus wird der Zustand \frqq Drive\flqq\ angesteuert, sobald der Startknopf des \frqq Control Panels\flqq\ (siehe Abbildung \ref{Controllpanel:img:Controllpanel}) betätigt wird. Die Ausgänge werden gemäß Tabelle \ref{Automat_man:tab:automatic} gesetzt, solange der Zustand \frqq Automatic\flqq\ nicht verlassen wird.\\
+Der Zustand \frqq Automatic\flqq\ beschreibt den Idle-Zustand der automatischen Steuerung. Von hier aus wird der Zustand \frqq Drive\flqq\ angesteuert, sobald der Startknopf des \frqq Control Panels\flqq\ (siehe Abbildung \ref{Controlpanel:img:Controlpanel}) betätigt wird. Die Ausgänge werden gemäß Tabelle \ref{Automat_man:tab:automatic} gesetzt, solange der Zustand \frqq Automatic\flqq\ nicht verlassen wird.\\
 Im Zustand \frqq Drive\flqq\ wird die Geschwindigkeit vom Nutzer mittels des Drehrads \frqq Geschwindigkeit Automatik\flqq\ eingestellt. Wird hingegen der \frqq Stop\flqq\ Taster betätigt, wird der Zustand \frqq Stop\flqq\ angesteuert. Ab einer Distanz von 10 m wird der Zustand \frqq Distance\flqq\ aktiviert. In Tabelle \ref{Automat_man:tab:drive} sind die Ausgänge des Zustands \frqq Drive\flqq\ dargestellt.\\
-Wie bereits erwähnt, wird die Geschwindigkeit in Abhängigkeit zum Abstand \frqq distance\flqq\ vom Ende der Röhre verringert, hier bei wird in dem Zustand \frqq Distance\flqq\ der Augang der Geschwindigkeit mittels der Gleichung:
+Wie bereits erwähnt, wird die Geschwindigkeit in Abhängigkeit vom Abstand \frqq distance\flqq\ zum Ende der Röhre verringert, hierbei wird in dem Zustand \frqq Distance\flqq\ der Augang der Geschwindigkeit mittels folgender Gleichung ermittelt:
 
 \pagebreak[1]
 \begin{align}
@@ -349,9 +350,7 @@ Wie bereits erwähnt, wird die Geschwindigkeit in Abhängigkeit zum Abstand \frq
 \end{align}
 \pagebreak[1]
 
-ermittelt.
-
-Soll die Automatik beendet werden, kann dies über den Stop-Taster auf dem Control Panel ausgelöst werden. Dabei werden die in Tabelle \ref{Automat_man:tab:stop} aufgeführten Signale geschaltet.
+Soll die Automatik beendet werden, kann dies über den Stopp-Taster auf dem Control Panel ausgelöst werden. Dabei werden die in Tabelle \ref{Automat_man:tab:stop} aufgeführten Signale geschaltet.
 
 \pagebreak[1]
 \begin{table}[!ht]
@@ -470,19 +469,21 @@ Soll die Automatik beendet werden, kann dies über den Stop-Taster auf dem Contr
 %	\end{itemize}}{To-do}{\textwidth}
 %
 %
-Der Sensor von Pepperl+Fuchs wurde ursprünglich für die Distanzmessung angeschafft. Da dieser Sensor jedoch sehr teuer ist und wir nicht das Risiko eines möglichen Schadens im Vakuum eingehen wollten, wurde nach einer kostengünstigen Alternative gesucht.\\
-Die Idee bestand darin, ein Entfernungsmessgerät von PARKSIDE zu verwenden und den Sensor aus dem Gerät zu entfernen. Die Messwerte werden anschließend mit einer MCU zu decodiert.
+
+Ursprünglich wurde ein Sensor von Pepperl+Fuchs für die Distanzmessung angeschafft. Da dieser Sensor jedoch sehr teuer ist und wir nicht das Risiko eines möglichen Schadens im Vakuum eingehen wollten, wurde nach einer kostengünstigen Alternative gesucht.\\
+Dafür wurde ein günstiges Entfernungsmessgerät für den Heimbedarf angeschafft und analysiert, ob es für die Anwendung geeignet ist.
+
 
 \subsection{Verbindung}
 
 Der Sensor ist über ein Flachbandkabel mit der Hauptplatine verbunden, wie in Abbildung \ref{img_2_2:sen_dis_parkside:1} zu sehen ist. Auf der Hauptplatine befinden sich vier ungenutzte Lötstellen. Mithilfe eines Oszilloskops und eines Multimeters wurden die Signale an den Lötstellen analysiert, wobei festgestellt wurde, dass Leitung \frqq 1\flqq\ eine Spannung von 3,3 V führt und Leitung \frqq 4\flqq\ als GND dient. Die Leitungen \frqq 2\flqq\ und \frqq 3\flqq\ übertragen digitale Signale und fungieren als Datenleitungen.
 
-Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Bei synchroner Kommunikation dient eine der Leitungen als Taktleitung (Clock). Bei asynchroner Kommunikation ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Zur Überprüfung der Kommunikationsart wurde ein Oszillogramm (siehe Abbildung \ref{parkside:ozi:datenübertragung}) erstellt. Im Oszillogramm wurde kein Taktsignal festgestellt, sodass die Datenübertragung asynchron und Vollduplex erfolgt. In Tabelle \ref{parkside:pinmapping} ist die Pinbelegung aufgelistet.\\
+Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder asynchron erfolgen. Bei synchroner Kommunikation dient eine der Leitungen als Taktleitung (Clock). Bei asynchroner Kommunikation ist eine Leitung der Sender (TX) und die andere der Empfänger (RX). Zur Überprüfung der Kommunikationsart wurde ein Oszillogramm (siehe Abbildung \ref{parkside:ozi:datenübertragung}) aufgenommen. Im Oszillogramm wurde kein Taktsignal festgestellt, sodass die Datenübertragung asynchron und Vollduplex erfolgt. In Tabelle \ref{parkside:pinmapping} ist die Pinbelegung aufgelistet.\\
 
 
 
 \pagebreak[1]
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=\textwidth]{img/2_sen/ozi_3.png}
 		\caption{Messung – zur Überprüfung der Kommunikationsart: Synchron oder Asynchron}
@@ -522,9 +523,9 @@ Die Kommunikation kann bei einer zweiadrigen Verbindung entweder synchron oder a
 
 \subsection{Dekodierung der Steuersignale}
 \label{Distanzmessung:Kodierung}
-Um die Steuersignale zu analysieren, wurden die mit dem Oszilloskop aufgenommenen Messwerte in den Tabellen \ref{Steuerung:tab:TX1}, \ref{Steuerung:tab:RX1} und \ref{Steuerung:tab:RX2} dokumentiert. Bei den Messungen fiel auf, dass jede Nachricht mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) beginnt und mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende) endet. Zwischen diesen beiden Bitmustern sind die Steuersignale und Messwerte kodiert, welche im folgenden erklärt werden.\\
+Um die Steuersignale zu analysieren, wurden die mit dem Oszilloskop aufgenommenen Messwerte in den Tabellen \ref{Steuerung:tab:TX1}, \ref{Steuerung:tab:RX1} und \ref{Steuerung:tab:RX2} dokumentiert. Bei den Messungen fiel auf, dass jede Nachricht mit dem Bitmuster \frqq 0x24\flqq\ (Nachricht-Start) beginnt und mit dem Bitmuster \frqq 0x26\flqq\ (Nachricht-Ende) endet. Zwischen diesen beiden Bitmustern sind die Steuersignale und Messwerte kodiert, welche im Folgenden erklärt werden.\\
 \
-\pagebreak[4]
+\pagebreak[1]
 \begin{figure}[!ht]
 	\begin{center}
 		\includegraphics[width=1\textwidth]{img/2_sen/dis_parkside_signalverlauf.png}
@@ -532,12 +533,12 @@ Um die Steuersignale zu analysieren, wurden die mit dem Oszilloskop aufgenommene
 		\label{Kodierung:pic:signalverlauf}
 	\end{center}
 \end{figure}
-\pagebreak[1]
+\pagebreak[4]
 Die Signalübertragung in den Tabellen ist wie folgt aufgebaut: In Tabelle \ref{Steuerung:tab:TX1} zeigt die Spalte \frqq Stopp\flqq\ die erste Nachricht, die an den Sensor gesendet wird. Der Sensor antwortet stets mit zwei Nachrichten: Die erste Nachricht ist in Tabelle \ref{Steuerung:tab:RX1} dargestellt, die zweite in Tabelle \ref{Steuerung:tab:RX2}, in der Abbildung \ref{Kodierung:pic:signalverlauf} ist der Verlauf noch einmal aufgeführt.\\ \ \\
 Die gelb hinterlegten Felder in den Tabellen weisen auf ein identisches Bitmuster hin. Nach jedem Start-Byte werden drei identisch kodierte Bytes gesendet, die als Delay fungieren. Der Sensor antwortet nach jedem \frqq Transmitter\flqq\ Signal mit derselben Kodierung, was als Bestätigung dient, dass er sendebereit ist. Erst wenn das Bitmuster \frqq Messen\flqq\ an den Sensor gesendet wird, überträgt der Sensor die Messdaten, die in den grün hinterlegten Feldern in Tabelle \ref{Steuerung:tab:RX2} als ASCII-Zeichen dargestellt sind.
 
 
-\pagebreak[1]
+\pagebreak[4]
 \begin{table}[!ht]
 	\centering
 	\caption{Distanzmessung – Signale die an den Sensor gesendet werden (TX)}

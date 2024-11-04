@@ -1,18 +1,18 @@
 \chapter{Stand der Technik}
 \label{chapter:Stand_der_Technik}
 
-Im folgenden Abschnitt werden die verwendeten Bauteile, welche in Kapitel \ref{chapter:Konzept} dargestellt worden sind, näher beschrieben.
+Im folgenden Abschnitt werden die verwendeten Bauteile, welche in Kapitel \ref{chapter:Konzept} dargestellt wurden, näher beschrieben.
 
 
 \section{Antrieb – Golden Motor}
 \label{section:Antrieb}
 
-Golden Motor bietet eine Gesamtlösung bestehend aus einem BLDC-Motor und einem Vektor-Controller an. Der Controller besitzt eine Schnittstelle für alle notwendigen Steuer- und Kontrollsignale, um den Motor anzutreiben. Die Anschlüsse sowie die grundlegende Funktionsweise werden in den Abschnitten \ref{section:BLDC_Motor} und \ref{section:Vector_Controller} näher erläutert.
+Golden Motor bietet eine Gesamtlösung bestehend aus einem BLDC-Motor und einem Vector-Controller an. Der Controller besitzt eine Schnittstelle für alle notwendigen Steuer- und Kontrollsignale, um den Motor anzutreiben. Die Anschlüsse sowie die grundlegende Funktionsweise werden in den Abschnitten \ref{section:BLDC_Motor} und \ref{section:Vector_Controller} näher erläutert.
 
 \subsection{BLDC Motor}
 \label{section:BLDC_Motor}
 
-Der in Abbildung \ref{BLDC_Motor:img:antrieb_motor} dargestellte BLDC-Motor verfügt über eine Leistung von 10 kW und kann optional durch eine Ölkühlung gekühlt werden, was jedoch für das Fahrzeug derzeit nicht relevant ist. Die Drehzahl ist variabel und kann, mittls des Vector Controllers, welcher in Abschnitt \ref{section:Vector_Controller} erklärt wird, zwischen 2.000 und 6.000 U/min eingestellt werden. Das Nenndrehmoment beträgt 26 Nm, während das maximale Drehmoment bei 85 Nm liegt. Der Wirkungsgrad des Motors beträgt 91 \% \cite{Golden_Motor:bldc_motor}.
+Der in Abbildung \ref{BLDC_Motor:img:antrieb_motor} dargestellte BLDC-Motor verfügt über eine Leistung von 10 kW und kann optional durch eine Ölkühlung gekühlt werden, was jedoch für das Fahrzeug derzeit nicht relevant ist. Die Drehzahl ist variabel und kann, mittels des Vector Controllers, welcher in Abschnitt \ref{section:Vector_Controller} erklärt wird, zwischen 2.000 und 6.000 U/min eingestellt werden. Das Nenndrehmoment beträgt 26 Nm, während das maximale Drehmoment bei 85 Nm liegt. Der Wirkungsgrad des Motors beträgt 91 \% \cite{Golden_Motor:bldc_motor}.
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -60,7 +60,7 @@ Die Anschlüsse des Motors sind in Tabelle \ref{BLDC_Motor:tab:pinmapping} aufge
 
 
 
-\subsubsection{Funktionsweise}
+\subsubsection*{Funktionsweise}
 \label{BLDC_Motor:Funktionsweise}
 Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem herkömmlichen Gleichstrommotor. Während bei einem traditionellen DC-Motor die Polumschaltung (Kommutierung) mechanisch über Kohlebürsten erfolgt, übernimmt beim BLDC-Motor eine elektronische Steuerung diese Aufgabe. Dadurch entfällt die Notwendigkeit von Kohlebürsten, was den Motor effizienter und langlebiger macht\cite{mathworks:bldc_motor}.
 \newpage
@@ -70,9 +70,9 @@ Ein BLDC-Motor (Brushless DC Motor) unterscheidet sich grundlegend von einem her
 \subsection{Vector Controller}
 \label{section:Vector_Controller}
 
-Der Motor wird mithilfe eines Vektor-Controllers angesteuert, der in Abbildung \ref{Vector_Controller:img:Antrieb_Controller} dargestellt ist. Der Controller hat die Aufgabe, den Motor basierend auf den Eingangssignalen so zu steuern, dass beispielsweise eine gewünschte Drehzahl erreicht wird. Die genaue Funktionsweise des Vektor-Controllers wird kurz unter \ref{Vector_Controller:Funktionsweise} erläutert.
+Der Motor wird mithilfe eines Vector-Controllers angesteuert, der in Abbildung \ref{Vector_Controller:img:Antrieb_Controller} dargestellt ist. Der Controller hat die Aufgabe, den Motor basierend auf den Eingangssignalen so zu steuern, dass beispielsweise eine gewünschte Drehzahl erreicht wird. Die genaue Funktionsweise des Vector-Controllers wird kurz unter \ref{Vector_Controller:Funktionsweise} erläutert.
 
-Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführt. Bei den Steuersignalen muss auf den Spannungsbereich geachtet werden, da der Controller eine Störung meldet, wenn ein Signal außerhalb des zulässigen Bereichs liegt. Dies ist ein integriertes Sicherheitssystem des Controllers. Dies ist ein integriertes Sicherheitssystem des Controllers. So liegt beispielsweise bei der Bremse das logische Signal bei 0, wenn die Spannung 1 V beträgt. Tritt ein Kabelbruch ein, wird die Spannung am Controller bei 0 V liegen und eine Warnung wird durch ein periodisches Tonsignal ausgegeben.
+Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführt. Bei den Steuersignalen muss auf den Spannungsbereich geachtet werden, da der Controller eine Störung meldet, wenn ein Signal außerhalb des zulässigen Bereichs liegt. Dies ist ein integriertes Sicherheitssystem des Controllers. So liegt beispielsweise bei der Bremse das logische Signal bei 0, wenn die Spannung 1 V beträgt. Tritt ein Kabelbruch ein, wird die Spannung am Controller bei 0 V liegen und eine Warnung wird durch ein periodisches Tonsignal ausgegeben.
 
 
 \begin{figure}[!ht]
@@ -97,30 +97,31 @@ Das Pin-Mapping ist in Tabelle \ref{Vector_Controller:tab:pinmapping} aufgeführ
 		\multicolumn{1}{l|}{U}    & Spule 1                 & GE             &                 \\
 		\multicolumn{1}{l|}{V}    & Spule 2                 & GN             &                 \\
 		\multicolumn{1}{l|}{W}    & Spule 3                 & BL             &                 \\ \hline
-		\multicolumn{4}{c}{\textbf{Steuerungskabel}}                                           \\ \hline
-		\multicolumn{1}{l|}{(3)}  & Motor Temperatur        & WH             &                 \\
+		\multicolumn{4}{c}{\textbf{Digitale und Analoge I/O}}                                  \\ \hline
 		\multicolumn{1}{l|}{5}    & Masse - Bremse          & SW             & 0 V             \\
 		\multicolumn{1}{l|}{6}    & Masse                   & SW             & 0 V             \\
 		\multicolumn{1}{l|}{6}    & Masse - Tempomat        & SW             & 0 V             \\
-		\multicolumn{1}{l|}{7}    & Tempomat                & Gr             & 0 V oder 5 V    \\
-		\multicolumn{1}{l|}{10}   & elektronisches Schloss  & Pink           & 0 V oder 5 V    \\
+		\multicolumn{1}{l|}{7}    & Tempomat                & GR             & 0 V oder 5 V    \\
+		\multicolumn{1}{l|}{10}   & elektronisches Schloss  & RS             & 0 V oder 5 V    \\
+		\multicolumn{1}{l|}{16}   & Bremse                  & BL\&WS         & 1 V oder 5 V    \\
+		\multicolumn{1}{l|}{17}   & Fahrtrichtung           & BR             & 0 V oder 5 V    \\
+		\multicolumn{1}{l|}{26}   & Masse                   & SW\&WS         & 0 V             \\
+		\multicolumn{1}{l|}{27}   & Geschwindigkeit         & GN\&WS         & 1 V - 4 V       \\
+		\multicolumn{1}{l|}{28}   & +5 V                    & RT\&WS         & 5 V             \\ \hline
+		\multicolumn{4}{c}{\textbf{Hallsensor Kabel}}                                          \\ \hline
+		\multicolumn{1}{l|}{(3)}  & Motor Temperatur        & WS             &                 \\
 		\multicolumn{1}{l|}{(11)} & Hall C – Sensor         & BL             &                 \\
 		\multicolumn{1}{l|}{(12)} & Hall B – Sensor         & GN             &                 \\
 		\multicolumn{1}{l|}{(13)} & Hall A – Sensor         & GE             &                 \\
 		\multicolumn{1}{l|}{(14)} & +5 V                    & RT             & 5 V             \\
-		\multicolumn{1}{l|}{16}   & Bremse                  & BL\&WS         & 1 V oder 5 V    \\
-		\multicolumn{1}{l|}{17}   & Fahrtrichtung           & BR             & 0 V oder 5 V    \\
-		\multicolumn{1}{l|}{(21)} & Masse                   & SW             & 0 V             \\
-		\multicolumn{1}{l|}{26}   & Masse                   & SW\&WS         & 0 V             \\
-		\multicolumn{1}{l|}{27}   & Gaspedal                & GN\&WS         & 1 V - 4 V       \\
-		\multicolumn{1}{l|}{28}   & Masse                   & SW             & 0 V             \\ \hline
+		\multicolumn{1}{l|}{(21)} & Masse                   & SW             & 0 V             \\ \hline
 	\end{tabular}
 \end{table}
 \pagebreak[4]
 
-\subsubsection{Funktionsweise}
+\subsubsection*{Funktionsweise}
 \label{Vector_Controller:Funktionsweise}
-Der Vektor-Controller verwendet die Motorsteuerungstechnologie der feldorientierten Regelung (Field-Oriented Control, FOC). Dabei wird die Position des Rotors im Motor mithilfe von Hall-Sensoren ermittelt. Mit der FOC-Technik ist es möglich, das Verhältnis von Drehmoment pro Ampere zu maximieren. Dafür muss der Rotorflussvektor im rechten Winkel (90 Grad) zum Statorflussvektor ausgerichtet sein \cite{Golden_Motor:Vector_Controller}.
+Der Vector-Controller verwendet die Motorsteuerungstechnologie der feldorientierten Regelung (Field-Oriented Control, FOC). Dabei wird die Position des Rotors im Motor mithilfe von Hall-Sensoren ermittelt. Mit der FOC-Technik ist es möglich, das Verhältnis von Drehmoment pro Ampere zu maximieren. Dafür muss der RotorflussVector im rechten Winkel (90 Grad) zum StatorflussVector ausgerichtet sein \cite{Golden_Motor:Vector_Controller}.
 
 
 \newpage
@@ -130,7 +131,7 @@ Der Vektor-Controller verwendet die Motorsteuerungstechnologie der feldorientier
 \label{section:speedgoat}
 
 
-Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steuerung_goat} dargestellt, ist ein echtzeitfähiges System, welches ovn der Firma Speedgoat hergestellt und vertrieben wirden. Es wird hauptsächlich in der Entwicklung und beim Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt, bei denen die Echtzeitfähigkeit eine zentrale Rolle spielt.\\ \ \\
+Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steuerung_goat} dargestellt, ist ein echtzeitfähiges System, welches von der Firma Speedgoat hergestellt und vertrieben wird. Es wird hauptsächlich in der Entwicklung und beim Testen von komplexen Steuerungs- und Regelungssystemen eingesetzt, bei denen die Echtzeitfähigkeit eine zentrale Rolle spielt.\\ \ \\
 
 
 \pagebreak[1]
@@ -143,7 +144,7 @@ Der Baseline Real-Time Target Machine, wie in Abbildung \ref{speedgoat:img:steue
 \end{figure}
 \pagebreak[1]
 
-Speedgoat-Systeme integrieren sich nahtlos mit Simulink, einer Software von MathWorks, die häufig zur Modellierung und Simulation dynamischer Systeme verwendet wird. Durch eine große Auswahl an I/O-Modulen lassen sich verschiedene Sensoren und Aktuatoren problemlos an die Systeme anschließen.
+Speedgoat-Systeme integrieren sich nahtlos in Simulink, einer Software von MathWorks, die häufig zur Modellierung und Simulation dynamischer Systeme verwendet wird. Durch eine große Auswahl an I/O-Modulen lassen sich verschiedene Sensoren und Aktuatoren problemlos an die Systeme anschließen.
 Echtzeitsysteme von Speedgoat sind Computer, die in der Lage sind, Aufgaben innerhalb festgelegter Zeitintervalle auszuführen. Diese Systeme sind entscheidend für Anwendungen, bei denen die zeitliche Genauigkeit von großer Bedeutung ist, wie beispielsweise bei der Steuerung von Motoren, der Regelung von Prozessen oder der Simulation von physikalischen Systemen.
 
 
@@ -158,7 +159,7 @@ Echtzeitsysteme von Speedgoat sind Computer, die in der Lage sind, Aufgaben inne
 \pagebreak[1]
 In Abbildung \ref{speedgoat:img:Modulanschlüsse} sind die Anschlüsse der I/O-Module des Speedgoat-Systems dargestellt. Die Zuordnung der Module zu den entsprechenden Anschlüssen ist in Tabelle \ref{speedgoat:tab:Module} ersichtlich.
 
-Das Modul IO397-50k-50k kann über ein Sensor-Aktor-Kabel von Phoenix Contact extern angeschlossen werden, wie in Abbildung \ref{IO397_50k:img:Module} dargestellt.
+Das Modul IO397-50k kann über ein Sensor-Aktor-Kabel von Phoenix Contact extern angeschlossen werden, wie in Abbildung \ref{IO397_50k:img:Module} dargestellt.
 Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers angeschlossen.
 \pagebreak[1]
 \begin{table}[!ht]
@@ -186,7 +187,7 @@ Zusätzlich wird das Modul IO691 mittels eines 9-Pin D-Sub-Steckers angeschlosse
 \subsection{I/O-Modul – IO397-50k}
 \label{section:IO397_50k}
 
-Das in Abbildung \ref{IO397_50k:img:Module} dargestellte IO397-50k I/O-Modul verfügt über zahlreiche analoge und digitale Ein- sowie Ausgänge. Die Anschlüsse werden auf Modul A, das die analogen Schnittstellen bereitstellt, und Modul B, welches die digitalen Schnittstellen umfasst, verteilt. Die Anschlussbelegung werden in den Tabellen \ref{IO397_50k:tab:Board_A} und \ref{IO397_50k:tab:Board_B} dargestellt. Die Spannungen der Ein- und Ausgänge können softwaregesteuert angepasst werden \cite{speedgoat:IO397_50k}.
+Das in Abbildung \ref{IO397_50k:img:Module} dargestellte IO397-50k I/O-Modul verfügt über zahlreiche analoge und digitale Ein- und Ausgänge. Die Anschlüsse werden auf Modul A, das die analogen Schnittstellen bereitstellt, und Modul B, welches die digitalen Schnittstellen umfasst, verteilt. Die Anschlussbelegung wird in den Tabellen \ref{IO397_50k:tab:Board_A} und \ref{IO397_50k:tab:Board_B} dargestellt. Die Spannungen der Ein- und Ausgänge können softwaregesteuert angepasst werden \cite{speedgoat:IO397_50k}.
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -271,14 +272,13 @@ Terminal Board B hingegen bietet eine flexible Konfiguration für digitale Ein- 
 \subsubsection{IO397-50k – Konfigurieren}
 \label{Simulink:IO397_50k_Konfigurieren}
 
-In dem Driver Block, wie in Abbildung \ref{IO397_50k_Konfigurieren:img:Driver_Block} gezeigt, können am dem Pull-Widerstand des I/O-Moduls verschiedene Spannungen eingestellt werden. Zur Auswahl stehen:
+In dem Driver Block, wie in Abbildung \ref{IO397_50k_Konfigurieren:img:Driver_Block} gezeigt, können an dem Pull-Widerstand des I/O-Moduls verschiedene Spannungen eingestellt werden. Zur Auswahl stehen:\\
 \begin{itemize}
 	\item Pull-up 3,3 V
 	\item Weak Pull-up 5,0 V
 	\item Pull-down
 	\item Floating
 \end{itemize}
-welche im Folgenden erklärt werden.
 
 \pagebreak[1]
 \begin{figure}[!ht]
@@ -290,7 +290,7 @@ welche im Folgenden erklärt werden.
 \end{figure}
 \pagebreak[1]
 
-Pull-Widerstände werden verwendet, um klare digitale Schaltzustände zu gewährleisten. Es gibt drei verschiedene Zustände: \frqq High\flqq\ entspricht \frqq logisch 1\flqq\, Low entspricht \frqq logisch 0\flqq\. \frqq Floating\flqq\ hat die Bedeutung, dass der Widerstand nicht an \frqq GND\flqq\ oder an einer Spannung angeschlossen ist. Somit ist der Widerstand hochohmig. Die Zustände zu den Einstellungen sind in der Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} aufgeführt.
+Pull-Widerstände werden verwendet, um klare digitale Schaltzustände zu gewährleisten. Es gibt drei verschiedene Zustände: \frqq High\flqq\ entspricht \frqq logisch 1\flqq, Low entspricht \frqq logisch 0\flqq, \frqq Floating\flqq\ hat die Bedeutung, dass der Widerstand nicht an \frqq GND\flqq\ oder an einer Spannung angeschlossen ist. Somit ist der Widerstand hochohmig. Die Zustände zu den Einstellungen sind in der Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} aufgeführt.
 In Abbildung \ref{IO397_50k_Konfigurieren:img:TTL_IO_Interface} ist im rot markierten Bereich der Pull-Widerstand mit 4,7 k$\Omega$ an einen 47-$\Omega$-Widerstand am I/O-Anschluss angeschlossen. Der Pull-Widerstand kann, wie bereits erwähnt, konfiguriert werden. Dabei wird intern am Pull-Widerstand entweder eine Spannung von 3,3 V, 5 V, GND oder kein Kontakt, also Floating (hochohmig), geschaltet.
 
 \pagebreak[1]
@@ -309,7 +309,7 @@ Bei der Einstellung auf 3,3 V oder 5 V fungiert der Widerstand als Pull-up-Wider
 
 
 
-In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktionszeiten der digitalen Ausgänge verglichen werden. Bei der Einstellung \frqq Weak Pull-up 5,0 V\flqq\ bedeutet \frqq weak\flqq, dass der Ausgang eine langsamere Anstiegszeit hat. In Abbildung \ref{IO397_50k_Konfigurieren:img:Pull_Widerstande} sind die Reaktionszeiten dargestellt.
+In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktionszeiten der digitalen Ausgänge verglichen werden. Bei der Einstellung \frqq Weak Pull-up 5,0 V\flqq\ bedeutet \frqq weak\flqq, dass das Ausgangssignal eine längere Anstiegszeit hat. In Abbildung \ref{IO397_50k_Konfigurieren:img:Pull_Widerstande} sind die Reaktionszeiten dargestellt.
 
 
 \pagebreak[1]
@@ -319,7 +319,7 @@ In Tabelle \ref{IO397_50k_Konfigurieren:tab:Reaktionszeit} können die Reaktions
 	\label{IO397_50k_Konfigurieren:tab:Reaktionszeit}
 	\begin{tabular}{lccc}
 		\hline
-		\multicolumn{1}{c}{\multirow{2}{*}{\textbf{Einstellung}}} & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Logischer zustand}}} & \multicolumn{2}{c}{\textbf{Reaktionszeit der Ausgänge}}           \\ \cline{3-4}
+		\multicolumn{1}{c}{\multirow{2}{*}{\textbf{Einstellung}}} & \multicolumn{1}{c}{\multirow{2}{*}{\textbf{Logischer Zustand}}} & \multicolumn{2}{c}{\textbf{Reaktionszeit der Ausgänge}}           \\ \cline{3-4}
 		\multicolumn{1}{c}{}                                      & \multicolumn{1}{c}{}                                            & Anstieg                                                 & Abfall  \\ \hline
 		\multicolumn{1}{l|}{Pull-up 3,3V}                         & I/O = 1                                                         & Schnell                                                 & Schnell \\
 		\multicolumn{1}{l|}{weak pull-up 5,0V}                    & I/O = 1                                                         & Langsam                                                 & Schnell \\
@@ -397,7 +397,7 @@ Das IO691 I/O-Modul bietet eine intelligente CAN-Schnittstelle mit zwei Kanälen
 \pagebreak[1]
 
 
-\subsubsection{IO691 Module Konfigurieren}
+\subsubsection{IO691 Module konfigurieren}
 \label{Simulink:IO691_Konfigurieren}
 
 Im \frqq Driver Block\flqq, siehe Abbildung \ref{IO691_Konfigurieren:img:Driver_Block}, können die \frqq CAN Channels\flqq\ 1 und 2 konfiguriert werden. Wie bereits in Abschnitt \ref{section:IO691} erwähnt, lässt sich der Protokollmodus jedes Kanals separat einstellen, wobei zwischen \frqq CAN HS\flqq, \frqq CAN FD\flqq\ und \frqq Disable\flqq\ gewählt werden kann. Dabei entspricht \frqq CAN HS\flqq\ der Norm ISO 11898-2 und \frqq CAN FD\flqq\ der Norm ISO 11898-1 \cite[4]{speedgoat:IO691}.
@@ -405,7 +405,7 @@ Im \frqq Driver Block\flqq, siehe Abbildung \ref{IO691_Konfigurieren:img:Driver_
 \pagebreak[1]
 \begin{figure}[!ht]
 	\begin{center}
-		\includegraphics[width=0.7\textwidth]{img/4_simulink/IO691.png}
+		\includegraphics[width=0.5\textwidth]{img/4_simulink/IO691.png}
 		\caption{Simulink – Driver Block – I/O Module 691 \cite{speedgoat:IO691}}
 		\label{IO691_Konfigurieren:img:Driver_Block}
 	\end{center}
@@ -443,7 +443,7 @@ termCAN.Pause       = 0.05
 \end{lstlisting}
 \pagebreak[1]
 
-Die Baudrate kann in zwei Kategorien unterteilt werden: \frqq Nominal Baud Rate\flqq\ und \frqq Data Baud Rate\flqq. Wenn im \frqq CAN Channels\flqq-Menü der Modus \frqq CAN FD\flqq\ ausgewählt wird, können beide Baudraten konfiguriert werden. Im Modus \frqq CAN HS\flqq\ ist die Einstellung der \frqq Nominal Baud Rate\flqq\ möglich. \\
+Die Baudrate kann in zwei Kategorien unterteilt werden: \frqq Nominal Baud Rate\flqq\ und \frqq Data Baud Rate\flqq. Wenn im \frqq CAN Channels\flqq-Menü der Modus \frqq CAN FD\flqq\ ausgewählt wird, können beide Baudraten konfiguriert werden. Im Modus \frqq CAN HS\flqq\ ist die Einstellung der \frqq Nominal Baud Rate\flqq\ ausschließlich möglich. \\
 Es können entweder die voreingestellten Baudraten verwendet oder eigene Werte über ein Array [BRP, SJW, TSEG1, TSEG2] konfiguriert werden, deren Elemente im Folgenden kurz erläutert werden, siehe Tabelle \ref{IO691_Konfigurieren:tab:Baudraten}.
 
 \pagebreak[1]
@@ -464,15 +464,15 @@ Es können entweder die voreingestellten Baudraten verwendet oder eigene Werte �
 
 
 
-Die sogenannte \frqq CAN Nominal Bit Time\flqq, wie in Abbildung \ref{IO691_Konfigurieren:img:Baudrate} dargestellt, besteht aus vier Segmenten: dem \frqq Sync Segment\flqq, dem \frqq Propagation Segment\flqq, dem \frqq\ Phase Buffer Segment 1\flqq\ und dem \frqq Phase Buffer Segment 2\flqq.
+Die sogenannte \frqq CAN Nominal Bit Time\flqq, wie in Abbildung \ref{IO691_Konfigurieren:img:Baudrate} dargestellt, besteht aus vier Segmenten: dem \frqq Sync Segment\flqq, dem \frqq Propagation Segment\flqq, dem \frqq Phase Buffer Segment 1\flqq\ und dem \frqq Phase Buffer Segment 2\flqq.
 Das \frqq Sync Segment\flqq\ dient zur Synchronisation der Knoten auf dem Bus und hat eine Länge von genau einem Zeitquantum.
 Im \frqq Propagation Segment\flqq\ werden die physikalischen Verzögerungen im Busnetzwerk ausgeglichen \cite[1]{microchip:CANModule}.\\
 Im \frqq Phase Buffer Segment 1\flqq\ werden positive Phasenfehler kompensiert, und das Segment kann während der Resynchronisation verlängert werden. Im \frqq Phase Buffer Segment 2\flqq\ hingegen werden negative Phasenfehler kompensiert, und das Segment kann während der Resynchronisation verkürzt werden.\\ \ \\
 
 
 
-Der \frqq BRP\flqq\ ist ein Parameter, der das Zeitquant $t_q$ festlegt siehe Gleichung \ref{eq:tq}.
-Der \frqq SJW\flqq\ ist ein Parameter, der die Länge von \frqq TSEG1\flqq\ verlängern und die Länge von \frqq TSEG2\flqq\ verkürzen kann, um die Synchronisation zwischen den Knoten zu gewährleisten, dabei darf \frqq SJW\flqq\ kleiner gleich \frqq TSEG2\flqq\ sein \cite{speedgoat:IO691:CAN_Message}.
+\frqq BRP\flqq\ ist ein Parameter, der das Zeitquant $t_q$ festlegt, siehe Gleichung \ref{eq:tq}.
+Der \frqq SJW\flqq\ ist ein Parameter, der die Länge von \frqq TSEG1\flqq\ verlängern und die Länge von \frqq TSEG2\flqq\ verkürzen kann, um die Synchronisation zwischen den Knoten zu gewährleisten, dabei darf \frqq SJW\flqq\ kleiner oder gleich groß \frqq TSEG2\flqq\ sein \cite{speedgoat:IO691:CAN_Message}.
 
 Der Sample Point (SP) ist der Punkt innerhalb eines CAN-Bits, an dem die tatsächliche Datenabtastung stattfindet. Dieser Punkt kann durch das Verhältnis zwischen \frqq TSEG1\flqq\ und \frqq TSEG2\flqq\ angepasst werden.
 
@@ -486,7 +486,7 @@ Der Sample Point (SP) ist der Punkt innerhalb eines CAN-Bits, an dem die tatsäc
 \end{figure}
 \pagebreak[1]
 
-Mit den weiteren Gleichungen können die Zeiten innerhalb des \frqq CAN Nominal Bit Time\flqq\ ermittelt werden.
+Mit den weiteren Gleichungen können die Zeiten innerhalb der \frqq CAN Nominal Bit Time\flqq\ ermittelt werden.
 \begin{align}
 	\label{eq:tq}
 	t_{q}   & = \frac{BRP}{CAN_{Clk}} \\
