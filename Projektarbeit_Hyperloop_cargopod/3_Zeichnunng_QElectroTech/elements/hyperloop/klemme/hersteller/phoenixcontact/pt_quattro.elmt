@@ -1,0 +1,52 @@
+<definition hotspot_y="20" width="40" version="0.90" type="element" link_type="terminal" hotspot_x="19" height="40">
+    <uuid uuid="{0522770c-0beb-41b9-acf9-a0334a9d1526}"/>
+    <names>
+        <name lang="de">pt_quattro</name>
+        <name lang="en">pt_quattro</name>
+    </names>
+    <kindInformations>
+        <kindInformation name="type">sectional</kindInformation>
+        <kindInformation name="function">generic</kindInformation>
+    </kindInformations>
+    <elementInformations>
+        <elementInformation name="quantity" show="1"></elementInformation>
+        <elementInformation name="plant" show="1"></elementInformation>
+        <elementInformation name="description" show="1"></elementInformation>
+        <elementInformation name="designation" show="1"></elementInformation>
+        <elementInformation name="manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="unity" show="1"></elementInformation>
+        <elementInformation name="supplier" show="1"></elementInformation>
+        <elementInformation name="label" show="1"></elementInformation>
+        <elementInformation name="comment" show="1"></elementInformation>
+        <elementInformation name="machine_manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="manufacturer" show="1"></elementInformation>
+    </elementInformations>
+    <informations></informations>
+    <description>
+        <line y2="-3" length2="1.5" antialias="false" end1="none" y1="-10" style="line-style:normal;line-weight:normal;filling:none;color:black" x1="10" length1="1.5" x2="10" end2="none"/>
+        <line y2="10" length2="1.5" antialias="false" end1="none" y1="3" style="line-style:normal;line-weight:normal;filling:none;color:black" x1="10" length1="1.5" x2="10" end2="none"/>
+        <line y2="10" length2="1.5" antialias="false" end1="none" y1="3" style="line-style:normal;line-weight:normal;filling:none;color:black" x1="-10" length1="1.5" x2="-10" end2="none"/>
+        <text rotation="0" y="-11" color="#000000" text="c" font="Sans Serif,3,-1,5,50,0,0,0,0,0" x="11"/>
+        <text rotation="0" y="13" color="#000000" text="d" font="Sans Serif,3,-1,5,50,0,0,0,0,0" x="11"/>
+        <text rotation="0" y="13" color="#000000" text="b" font="Sans Serif,3,-1,5,50,0,0,0,0,0" x="-9"/>
+        <dynamic_text uuid="{925c4caf-44bf-48c9-b980-844f27751856}" z="4" keep_visual_rotation="true" Valignment="AlignTop" rotation="0" Halignment="AlignLeft" y="-19" frame="false" text_width="-1" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" x="-26" text_from="ElementInfo">
+            <text></text>
+            <info_name>formula</info_name>
+        </dynamic_text>
+        <text rotation="0" y="-11" color="#000000" text="a" font="Sans Serif,3,-1,5,50,0,0,0,0,0" x="-9"/>
+        <dynamic_text uuid="{443e6427-b6bf-491e-8c4a-7d5853f915a0}" z="10" keep_visual_rotation="true" Valignment="AlignTop" rotation="0" Halignment="AlignLeft" y="-14" frame="false" text_width="-1" font="Sans Serif,6,-1,5,0,0,0,0,0,0,normal" x="-27" text_from="UserText">
+            <text>_</text>
+        </dynamic_text>
+        <dynamic_text uuid="{c4117732-97e9-42d8-bcdf-25bb1e6566da}" z="12" keep_visual_rotation="true" Valignment="AlignTop" rotation="0" Halignment="AlignLeft" y="-15" frame="false" text_width="-1" font="Sans Serif,7,-1,5,0,0,0,0,0,0,normal" x="13" text_from="ElementInfo">
+            <text></text>
+        </dynamic_text>
+        <circle antialias="false" y="-3" style="line-style:normal;line-weight:normal;filling:none;color:black" diameter="6" x="7"/>
+        <circle antialias="false" y="-3" style="line-style:normal;line-weight:normal;filling:none;color:black" diameter="6" x="-13"/>
+        <line y2="-3" length2="1.5" antialias="false" end1="none" y1="-10" style="line-style:normal;line-weight:normal;filling:none;color:black" x1="-10" length1="1.5" x2="-10" end2="none"/>
+        <line y2="0" length2="1.5" antialias="false" end1="none" y1="0" style="line-style:normal;line-weight:normal;filling:none;color:black" x1="-7" length1="1.5" x2="7" end2="none"/>
+        <terminal uuid="{3fe811a7-a2b8-41f3-8a16-61e596599465}" name="c" orientation="n" type="Generic" y="-15" x="10"/>
+        <terminal uuid="{be9b95bf-d070-4d2b-879e-f0e156a88fc8}" name="b" orientation="s" type="Generic" y="15" x="-10"/>
+        <terminal uuid="{e96177e2-2bd8-41fd-9b3d-85d1375b5a0e}" name="a" orientation="n" type="Generic" y="-15" x="-10"/>
+        <terminal uuid="{f2eeb1cb-8b85-4adf-9103-d6f32a1dbadf}" name="d" orientation="s" type="Generic" y="15" x="10"/>
+    </description>
+</definition>

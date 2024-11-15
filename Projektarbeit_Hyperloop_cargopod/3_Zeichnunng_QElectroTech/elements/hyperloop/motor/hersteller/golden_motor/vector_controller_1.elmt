@@ -1,0 +1,82 @@
+<definition width="660" type="element" hotspot_y="109" version="0.90" link_type="simple" height="120" hotspot_x="5">
+    <uuid uuid="{9d9e2dd9-f130-4df5-8feb-5a7436cc7d9e}"/>
+    <names>
+        <name lang="en">vector_controller_1</name>
+        <name lang="de">vector_controller_1</name>
+    </names>
+    <elementInformations>
+        <elementInformation name="unity" show="1"></elementInformation>
+        <elementInformation name="plant" show="1"></elementInformation>
+        <elementInformation name="quantity" show="1"></elementInformation>
+        <elementInformation name="designation" show="1"></elementInformation>
+        <elementInformation name="manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="comment" show="1"></elementInformation>
+        <elementInformation name="supplier" show="1"></elementInformation>
+        <elementInformation name="label" show="1"></elementInformation>
+        <elementInformation name="description" show="1"></elementInformation>
+        <elementInformation name="manufacturer" show="1"></elementInformation>
+        <elementInformation name="machine_manufacturer_reference" show="1"></elementInformation>
+    </elementInformations>
+    <informations></informations>
+    <description>
+        <text text="Part A" y="-46" font="Sans Serif,9,-1,5,50,0,0,0,0,0" rotation="0" x="154" color="#000000"/>
+        <rect rx="0" width="55" y="-59" style="line-style:normal;line-weight:normal;filling:none;color:black" x="143" height="20" antialias="false" ry="0"/>
+        <text text="W" y="-85" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" x="337" color="#000000"/>
+        <text text="V" y="-84" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="288" color="#000000"/>
+        <rect rx="0" width="650" y="-100" style="line-style:normal;line-weight:normal;filling:none;color:black" x="0" height="100" antialias="false" ry="0"/>
+        <text text="U" y="-84.1097" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="237.219" color="#000000"/>
+        <text text="B-" y="-82" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="16" color="#000000"/>
+        <rect rx="0" width="135" y="-100.11" style="line-style:normal;line-weight:normal;filling:none;color:black" x="220.219" height="20" antialias="false" ry="0"/>
+        <text text="USB-Port" y="-85" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="155" color="#000000"/>
+        <text text="VECTOR 500 Series Brushless" y="-39" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="10" color="#000000"/>
+        <text text="Crusise&#xa;    GR" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="306" color="#000000"/>
+        <text text="B+" y="-82" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="58" color="#000000"/>
+        <text text="Hall_A&#xa;    YE" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="607" color="#000000"/>
+        <text text="Hall_B&#xa;  GN" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="560" color="#000000"/>
+        <text text="Hall_C&#xa;   BU" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="509" color="#000000"/>
+        <text text="Electric_Lock&#xa;         OR" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="447" color="#000000"/>
+        <text text="GND" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="211" color="#000000"/>
+        <text text="CANH" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="60" color="#000000"/>
+        <text text="Motor_temp&#xa;       WH" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="100" color="#000000"/>
+        <text text="Empty" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="358" color="#000000"/>
+        <text text="GND" y="-12" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="261" color="#000000"/>
+        <text text="Empty" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="408" color="#000000"/>
+        <text text="GND" y="-12" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="162" color="#000000"/>
+        <text text="CANL" y="-13" font="Sans Serif,6,-1,5,50,0,0,0,0,0" rotation="0" x="10" color="#000000"/>
+        <text text="Sine Wave Controller" y="-49" font="Sans Serif,10,-1,5,50,0,0,0,0,0" rotation="0" x="10" color="#000000"/>
+        <rect rx="0" width="30" y="-90" style="line-style:normal;line-weight:normal;filling:none;color:black" x="80" height="10" antialias="false" ry="0"/>
+        <line length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" y2="-85" length1="1.5" x1="70" y1="-100" end1="none" antialias="false" end2="none" x2="70"/>
+        <line length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" y2="-85" length1="1.5" x1="70" y1="-85" end1="none" antialias="false" end2="none" x2="117"/>
+        <circle y="-88" diameter="6" style="line-style:normal;line-weight:normal;filling:none;color:black" x="117" antialias="false"/>
+        <dynamic_text text_width="-1" Valignment="AlignTop" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" y="-100" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" text_from="CompositeText" rotation="0" z="38" x="-50" frame="false" keep_visual_rotation="true" Halignment="AlignLeft">
+            <text></text>
+            <info_name>formula</info_name>
+            <composite_text>%{label}</composite_text>
+        </dynamic_text>
+        <dynamic_text text_width="-1" Valignment="AlignTop" uuid="{29f85f2e-ac8d-4195-a3f4-1ae7dd8a091f}" y="-86" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" text_from="UserText" rotation="0" z="46" x="78" frame="false" keep_visual_rotation="false" Halignment="AlignLeft">
+            <text>400A</text>
+        </dynamic_text>
+        <dynamic_text text_width="-1" Valignment="AlignTop" uuid="{3ff90367-598b-46bf-8de2-d4d3deb9c467}" y="-70" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" text_from="CompositeText" rotation="0" z="47" x="-40" frame="false" keep_visual_rotation="false" Halignment="AlignLeft">
+            <text></text>
+        </dynamic_text>
+        <terminal uuid="{3ed0a768-4b2c-45cb-9945-93bacdbe6a9a}" y="5" orientation="s" type="Inner" name="13_hall_b" x="570"/>
+        <terminal uuid="{d363dffa-400a-4610-a973-0bca18c44a63}" y="5" orientation="s" type="Inner" name="09_empty" x="370"/>
+        <terminal uuid="{98525777-592c-413c-94d2-90c74143bd31}" y="5" orientation="s" type="Inner" name="07_gnd" x="270"/>
+        <terminal uuid="{6e7ffe59-4538-405c-b80e-fcb8c464dab3}" y="-105" orientation="n" type="Generic" name="16_W" x="340"/>
+        <terminal uuid="{04d50e80-0275-4e4f-9c31-32c99009520d}" y="5" orientation="s" type="Inner" name="06_gnd" x="220"/>
+        <terminal uuid="{4e0bea16-edb9-44a5-b7ba-69204e2ed68f}" y="-105" orientation="n" type="Inner" name="15_b+" x="70"/>
+        <terminal uuid="{af61c71a-a77a-4de9-96e6-82d919c1f7ec}" y="5" orientation="s" type="Inner" name="11_electric_lock" x="470"/>
+        <terminal uuid="{e929f4c2-b727-420a-9809-5a4ba4e3d88e}" y="-105" orientation="n" type="Inner" name="16_v" x="290"/>
+        <terminal uuid="{736e2935-37f7-4b18-ac6d-685a10054234}" y="5" orientation="s" type="Inner" name="04_gnd" x="170"/>
+        <terminal uuid="{6448af30-3538-4f4c-9c6c-96e00edf81b1}" y="5" orientation="s" type="Inner" name="13_hall_a" x="620"/>
+        <terminal uuid="{dea8b509-7b56-4b58-911a-ff9098b377ef}" y="5" orientation="s" type="Inner" name="01_canl" x="20"/>
+        <terminal uuid="{1acb49af-0519-43ae-b5c8-82dcc2d36912}" y="5" orientation="s" type="Inner" name="03_motor_temp" x="120"/>
+        <terminal uuid="{58bd6d98-01a4-4583-b1dd-3d00e9773af6}" y="5" orientation="s" type="Inner" name="02_canh" x="70"/>
+        <terminal uuid="{35ca827b-115e-47a5-b6b7-6116329484d7}" y="-105" orientation="n" type="Inner" name="16_usb" x="170"/>
+        <terminal uuid="{e5b0f2c5-041a-4f98-9572-b695f3ffd15d}" y="-105" orientation="n" type="Inner" name="15_u" x="240"/>
+        <terminal uuid="{9c4fd2db-5a17-4814-98c8-c3dc76c21acd}" y="5" orientation="s" type="Inner" name="08_crusise" x="320"/>
+        <terminal uuid="{66ff0cf9-0d52-44d6-ac20-847f0e76b0c7}" y="5" orientation="s" type="Inner" name="12_hall_c" x="520"/>
+        <terminal uuid="{95731e34-4a56-4ae4-b0ae-a786fafd9b11}" y="5" orientation="s" type="Inner" name="10_empty" x="420"/>
+        <terminal uuid="{0af327a5-8bc4-43ae-9c8e-2a36a47c2a61}" y="-105" orientation="n" type="Inner" name="14_b-" x="20"/>
+    </description>
+</definition>

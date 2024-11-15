@@ -1,0 +1,57 @@
+<definition link_type="master" height="50" version="0.90" hotspot_x="10" width="20" type="element" hotspot_y="24">
+    <uuid uuid="{2255e8d1-ac8f-46b2-a75d-f074553fff63}"/>
+    <names>
+        <name lang="nl">Noodstop drukknop (NC)</name>
+        <name lang="pt">Paragem de emergência (NC)</name>
+        <name lang="it">Arresto d'emergenza</name>
+        <name lang="ru">Аварийный стоп</name>
+        <name lang="ar">زرّ توقف طارئ (NC)</name>
+        <name lang="de">Pilzdrucktaster Öffner</name>
+        <name lang="cs">Nouzové zastavení 1p</name>
+        <name lang="en">Emergency stop (NC)</name>
+        <name lang="fr">Arrêt d'urgence (NF)</name>
+        <name lang="es">Parada de emergencia (NC)</name>
+        <name lang="pl">Łącznik przyciskowy (przycisk bezpieczeństwa)</name>
+    </names>
+    <kindInformations>
+        <kindInformation name="type">commutator</kindInformation>
+    </kindInformations>
+    <elementInformations>
+        <elementInformation name="label" show="1"></elementInformation>
+        <elementInformation name="manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="machine_manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="manufacturer" show="1"></elementInformation>
+        <elementInformation name="unity" show="1"></elementInformation>
+        <elementInformation name="comment" show="1"></elementInformation>
+        <elementInformation name="supplier" show="1"></elementInformation>
+        <elementInformation name="quantity" show="1"></elementInformation>
+        <elementInformation name="plant" show="1"></elementInformation>
+        <elementInformation name="designation" show="1"></elementInformation>
+        <elementInformation name="description" show="1"></elementInformation>
+    </elementInformations>
+    <informations>Author: The QElectroTech team
+License: see http://qelectrotech.org/wiki/doc/elements_license</informations>
+    <description>
+        <polygon antialias="true" x1="5" x2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" y3="20" closed="false" y1="-10" y2="10" x3="0"/>
+        <line end2="none" antialias="true" x1="-4" x2="-1" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-2" end1="none" y2="0"/>
+        <arc angle="-180" antialias="true" style="line-style:normal;line-weight:normal;filling:none;color:black" start="-90" y="-5" height="10" width="8" x="-11"/>
+        <line end2="none" antialias="false" x1="-4" x2="-4" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-2" end1="none" y2="0"/>
+        <line end2="none" antialias="false" x1="0" x2="6" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-9" end1="none" y2="-9"/>
+        <line end2="none" antialias="false" x1="0" x2="0" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-20" end1="none" y2="-9"/>
+        <dynamic_text text_width="-1" text_from="ElementInfo" font="Sans Serif,9,-1,5,50,0,0,0,0,0" Valignment="AlignTop" rotation="0" keep_visual_rotation="true" z="8" y="-15" Halignment="AlignLeft" uuid="{c703c729-03a4-402b-a03a-857a56439457}" x="-31" frame="false">
+            <text></text>
+            <info_name>label</info_name>
+        </dynamic_text>
+        <line end2="none" antialias="false" x1="-7" x2="-7" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-5" end1="none" y2="5"/>
+        <line end2="none" antialias="false" x1="-1" x2="2" length2="1.5" style="line-style:dashed;line-weight:normal;filling:none;color:black" length1="1.5" y1="0" end1="none" y2="0"/>
+        <line end2="none" antialias="false" x1="-4" x2="-7" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="0" end1="none" y2="0"/>
+        <dynamic_text text_width="-1" text_from="UserText" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" Valignment="AlignVCenter" rotation="0" keep_visual_rotation="false" z="13" y="-29" Halignment="AlignLeft" uuid="{399e44a3-a1c1-4242-92f5-f706239a0dd3}" x="-1" frame="false">
+            <text>_</text>
+        </dynamic_text>
+        <dynamic_text text_width="-1" text_from="UserText" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" Valignment="AlignVCenter" rotation="0" keep_visual_rotation="false" z="13" y="7" Halignment="AlignLeft" uuid="{399e44a3-a1c1-4242-92f5-f706239a0dd3}" x="0" frame="false">
+            <text>_</text>
+        </dynamic_text>
+        <terminal name="" y="-20" orientation="n" uuid="{a28af424-fa64-4e14-a846-3daae28641db}" x="0" type="Generic"/>
+        <terminal name="" y="20" orientation="s" uuid="{15b09e60-eedb-4d2f-98b9-de21bf7872c5}" x="0" type="Generic"/>
+    </description>
+</definition>

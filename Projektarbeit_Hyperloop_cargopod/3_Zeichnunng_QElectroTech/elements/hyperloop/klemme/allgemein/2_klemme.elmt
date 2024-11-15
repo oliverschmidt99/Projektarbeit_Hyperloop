@@ -1,0 +1,43 @@
+<definition type="element" height="40" hotspot_x="8" hotspot_y="20" link_type="terminal" width="20" version="0.90">
+    <uuid uuid="{930671ef-83fa-405d-9564-bd59995e1a70}"/>
+    <names>
+        <name lang="de">2_klemme</name>
+    </names>
+    <kindInformations>
+        <kindInformation name="type">generic</kindInformation>
+        <kindInformation name="function">generic</kindInformation>
+    </kindInformations>
+    <elementInformations>
+        <elementInformation name="manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="comment" show="1"></elementInformation>
+        <elementInformation name="description" show="1"></elementInformation>
+        <elementInformation name="unity" show="1"></elementInformation>
+        <elementInformation name="plant" show="1"></elementInformation>
+        <elementInformation name="machine_manufacturer_reference" show="1"></elementInformation>
+        <elementInformation name="supplier" show="1"></elementInformation>
+        <elementInformation name="quantity" show="1"></elementInformation>
+        <elementInformation name="manufacturer" show="1"></elementInformation>
+        <elementInformation name="label" show="1"></elementInformation>
+        <elementInformation name="designation" show="1"></elementInformation>
+    </elementInformations>
+    <informations></informations>
+    <description>
+        <circle style="line-style:normal;line-weight:normal;filling:none;color:black" x="-3" diameter="6" y="-3" antialias="false"/>
+        <line length1="1.5" x2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" y1="-13" end2="none" x1="0" end1="none" length2="1.5" antialias="false" y2="-3"/>
+        <line length1="1.5" x2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" y1="14" end2="none" x1="0" end1="none" length2="1.5" antialias="false" y2="3"/>
+        <text font="Sans Serif,4,-1,5,50,0,0,0,0,0" rotation="0" x="3" text="c" color="#000000" y="-10"/>
+        <text font="Sans Serif,4,-1,5,50,0,0,0,0,0" rotation="0" x="3" text="d" color="#000000" y="13"/>
+        <dynamic_text Halignment="AlignLeft" font="Sans Serif,6,-1,5,0,0,0,0,0,0,normal" text_width="-1" z="7" rotation="0" text_from="UserText" x="2" keep_visual_rotation="false" uuid="{be99a913-77e7-4387-80a0-06cfc0a1f8d6}" Valignment="AlignTop" frame="false" y="-11">
+            <text>nr</text>
+            <info_name>formula</info_name>
+            <color>#0000ff</color>
+        </dynamic_text>
+        <dynamic_text Halignment="AlignLeft" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" text_width="-1" z="38" rotation="270" text_from="CompositeText" x="-29" keep_visual_rotation="true" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" Valignment="AlignTop" frame="false" y="4">
+            <text></text>
+            <info_name>formula</info_name>
+            <composite_text>%{label}</composite_text>
+        </dynamic_text>
+        <terminal orientation="n" type="Generic" name="" x="0" uuid="{ce7bc247-df15-4161-ada9-85db1ea05966}" y="-14"/>
+        <terminal orientation="s" type="Generic" name="" x="0" uuid="{2716262a-d29d-43a0-962c-b18c267ffef6}" y="14"/>
+    </description>
+</definition>

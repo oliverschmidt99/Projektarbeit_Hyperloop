@@ -1,0 +1,95 @@
+<definition hotspot_y="109" link_type="simple" hotspot_x="6" width="870" version="0.90" type="element" height="120">
+    <uuid uuid="{8e85e982-c18b-4254-bc6b-20d691953e54}"/>
+    <names>
+        <name lang="de">Baseline Real-Time Target Machine</name>
+        <name lang="en">Baseline Real-Time Target Machine</name>
+    </names>
+    <elementInformations/>
+    <informations></informations>
+    <description>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="440" y="-100" rx="0"/>
+        <circle diameter="12" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" x="204" y="-15"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="310" text="USB_3_Blue" y="-90"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="230" y="-100" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="160" y="-100" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="370" y="-100" rx="0"/>
+        <circle diameter="12" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" x="294" y="-15"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="510" y="-100" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="790" y="-100" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="580" y="-100" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="650" y="-100" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="720" y="-100" rx="0"/>
+        <circle diameter="12" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" x="113" y="-15"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="300" y="-100" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="20" y="-100" rx="0"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="206" text="A" y="-5"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="296" text="A" y="-5"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="115" text="A" y="-5"/>
+        <circle diameter="12" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" x="244" y="-15"/>
+        <circle diameter="12" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" x="153" y="-15"/>
+        <circle diameter="12" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" x="334" y="-15"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="155" text="B" y="-5"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="246" text="B" y="-5"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="336" text="B" y="-5"/>
+        <rect ry="0" style="line-style:normal;line-weight:normal;filling:none;color:black" width="60" antialias="false" height="20" x="290" y="-20" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:normal;filling:none;color:black" width="60" antialias="false" height="20" x="110" y="-20" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:normal;filling:none;color:black" width="60" antialias="false" height="20" x="200" y="-20" rx="0"/>
+        <rect ry="0" style="line-style:normal;line-weight:thin;filling:none;color:black" width="60" antialias="false" height="15" x="90" y="-100" rx="0"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="250" text="USB_2" y="-90"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="530" text="ETH 1" y="-90"/>
+        <rect ry="0" style="line-style:normal;line-weight:normal;filling:none;color:black" width="860" antialias="false" height="100" x="0" y="-100" rx="0"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="180" text="USB_1" y="-90"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="110" text="Ignition" y="-90"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="670" text="Serial 1" y="-90"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="740" text="Serial 2" y="-90"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="600" text="ETH 2" y="-90"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="450" text="Host Link" y="-90"/>
+        <dynamic_text z="38" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" frame="false" Valignment="AlignTop" rotation="0" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" Halignment="AlignLeft" text_from="CompositeText" text_width="-1" x="-35" keep_visual_rotation="true" y="-100">
+            <text></text>
+            <info_name>formula</info_name>
+            <composite_text>%{label}</composite_text>
+        </dynamic_text>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="800" text="DisplayPort" y="-90"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="380" text="Keyboard" y="-90"/>
+        <text font="Sans Serif,6,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="30" text="Power input" y="-90"/>
+        <dynamic_text z="41" font="Sans Serif,6,-1,5,0,0,0,0,0,0,normal" frame="false" Valignment="AlignTop" rotation="0" uuid="{3a2a7a14-2582-4bc8-8085-36f3402c46ca}" Halignment="AlignLeft" text_from="UserText" text_width="-1" x="205" keep_visual_rotation="false" y="-40">
+            <text>I/O module 3</text>
+        </dynamic_text>
+        <dynamic_text z="41" font="Sans Serif,6,-1,5,0,0,0,0,0,0,normal" frame="false" Valignment="AlignTop" rotation="0" uuid="{3a2a7a14-2582-4bc8-8085-36f3402c46ca}" Halignment="AlignLeft" text_from="UserText" text_width="-1" x="25" keep_visual_rotation="false" y="-40">
+            <text>I/O module 1</text>
+        </dynamic_text>
+        <dynamic_text z="41" font="Sans Serif,6,-1,5,0,0,0,0,0,0,normal" frame="false" Valignment="AlignTop" rotation="0" uuid="{3a2a7a14-2582-4bc8-8085-36f3402c46ca}" Halignment="AlignLeft" text_from="UserText" text_width="-1" x="115" keep_visual_rotation="false" y="-40">
+            <text>I/O module 2</text>
+        </dynamic_text>
+        <dynamic_text z="41" font="Sans Serif,6,-1,5,0,0,0,0,0,0,normal" frame="false" Valignment="AlignTop" rotation="0" uuid="{3a2a7a14-2582-4bc8-8085-36f3402c46ca}" Halignment="AlignLeft" text_from="UserText" text_width="-1" x="295" keep_visual_rotation="false" y="-40">
+            <text>I/O module 4</text>
+        </dynamic_text>
+        <circle diameter="12" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" x="24" y="-15"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="26" text="A" y="-5"/>
+        <circle diameter="12" style="line-style:normal;line-weight:normal;filling:none;color:black" antialias="false" x="64" y="-15"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="66" text="B" y="-5"/>
+        <text font="Sans Serif,9,-1,5,50,0,0,0,0,0" color="#000000" rotation="0" x="13" text="Baseline Real-Time Target Machine" y="-51"/>
+        <rect ry="0" style="line-style:normal;line-weight:normal;filling:none;color:black" width="60" antialias="false" height="20" x="20" y="-20" rx="0"/>
+        <terminal orientation="n" name="" uuid="{f93fba31-eb60-43a9-8160-d24e5cb3c21f}" type="Generic" x="50" y="-105"/>
+        <terminal orientation="s" name="" uuid="{ff538d5d-2706-4fb9-889d-fbcd244d4e08}" type="Generic" x="70" y="5"/>
+        <terminal orientation="s" name="" uuid="{883f6d94-3c34-43e2-9f61-7c399f596963}" type="Generic" x="250" y="5"/>
+        <terminal orientation="s" name="" uuid="{0e32ff47-182a-4f5f-bc17-f4ce85f0db8a}" type="Generic" x="300" y="5"/>
+        <terminal orientation="n" name="" uuid="{194b4024-b194-4766-9716-c806283ae03a}" type="Generic" x="330" y="-105"/>
+        <terminal orientation="n" name="" uuid="{bf765886-9bba-47d2-baec-15d2c60827e9}" type="Generic" x="540" y="-105"/>
+        <terminal orientation="s" name="" uuid="{e72cb0d7-c458-4aca-add5-9b14f00f28b1}" type="Generic" x="210" y="5"/>
+        <terminal orientation="n" name="" uuid="{0cd05ca4-de8d-4c1c-a190-26b7637fe6f8}" type="Generic" x="400" y="-105"/>
+        <terminal orientation="n" name="" uuid="{19f67b24-a448-4cc7-94d8-497f9c04c4e7}" type="Generic" x="260" y="-105"/>
+        <terminal orientation="n" name="" uuid="{51d0424b-7c3a-4638-9736-5acceb32a438}" type="Generic" x="470" y="-105"/>
+        <terminal orientation="n" name="" uuid="{e12b2cd9-1d49-4cd4-b4df-1651226b2c48}" type="Generic" x="610" y="-105"/>
+        <terminal orientation="s" name="" uuid="{ac28626f-766d-4815-8e4e-33d22ca41c1a}" type="Generic" x="340" y="5"/>
+        <terminal orientation="n" name="" uuid="{7cf76650-d761-4fd6-b156-03c7c2daa8c3}" type="Generic" x="820" y="-105"/>
+        <terminal orientation="s" name="" uuid="{05015f4c-ac14-4cf6-9711-11512fb250df}" type="Generic" x="120" y="5"/>
+        <terminal orientation="n" name="" uuid="{00edd987-f88f-4972-81d8-e766c8c7154f}" type="Generic" x="120" y="-105"/>
+        <terminal orientation="s" name="" uuid="{9c6a240a-8de5-4937-a857-5bcba764a309}" type="Generic" x="30" y="5"/>
+        <terminal orientation="n" name="" uuid="{bdc73c9b-0322-4451-969c-df58e94ef07c}" type="Generic" x="680" y="-105"/>
+        <terminal orientation="n" name="" uuid="{1388e930-defe-4954-b48b-0901dcb52be5}" type="Generic" x="190" y="-105"/>
+        <terminal orientation="n" name="" uuid="{6613e2e5-5137-43a9-b416-ca9859fd17a6}" type="Generic" x="750" y="-105"/>
+        <terminal orientation="s" name="" uuid="{f1be0d8b-2f0a-4d19-bbc1-647939107b5e}" type="Generic" x="160" y="5"/>
+        <terminal orientation="n" name="" uuid="{080e8561-c194-4046-ab8c-3a10cf286b6f}" type="Generic" x="0" y="-50"/>
+    </description>
+</definition>

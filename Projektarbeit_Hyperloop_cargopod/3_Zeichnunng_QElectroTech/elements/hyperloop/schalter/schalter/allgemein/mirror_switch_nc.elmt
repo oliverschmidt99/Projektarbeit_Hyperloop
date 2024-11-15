@@ -1,0 +1,41 @@
+<definition link_type="slave" height="50" version="0.90" hotspot_x="7" width="20" type="element" hotspot_y="24">
+    <uuid uuid="{9511e36b-3ca2-478b-91e2-a5fc3ba9f375}"/>
+    <names>
+        <name lang="nl">Normaal gesloten (NC)</name>
+        <name lang="it">Contatto NC</name>
+        <name lang="de">Öffner</name>
+        <name lang="cs">Zrcadlový kontakt NC</name>
+        <name lang="en">Mirror contact NC</name>
+        <name lang="fr">Contact miroir NC</name>
+        <name lang="es">Contacto NC</name>
+        <name lang="pl">Zestyk lustrzany rozwierny</name>
+    </names>
+    <kindInformations>
+        <kindInformation name="type">simple</kindInformation>
+        <kindInformation name="state">NC</kindInformation>
+        <kindInformation name="number">1</kindInformation>
+    </kindInformations>
+    <informations>autor: pawel32640
+
+norma: EN 60947-4-1
+załącznik: F
+
+licencja: zobacz  http://qelectrotech.org/wiki/doc/elements_license</informations>
+    <description>
+        <polygon antialias="true" x1="0" x2="0" style="line-style:normal;line-weight:normal;filling:none;color:black" y3="-10" closed="false" y1="20" y2="10" x3="6"/>
+        <line end2="none" antialias="false" x1="0" x2="7" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-9" end1="none" y2="-9"/>
+        <dynamic_text text_width="-1" text_from="UserText" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" Valignment="AlignVCenter" rotation="0" keep_visual_rotation="false" z="4" y="-27" Halignment="AlignLeft" uuid="{30c135ba-dfb4-40b9-85a3-d33b388efa34}" x="-3" frame="false">
+            <text>.1</text>
+        </dynamic_text>
+        <dynamic_text text_width="-1" text_from="UserText" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" Valignment="AlignVCenter" rotation="0" keep_visual_rotation="false" z="4" y="8" Halignment="AlignRight" uuid="{30c135ba-dfb4-40b9-85a3-d33b388efa34}" x="-3" frame="false">
+            <text>.2</text>
+        </dynamic_text>
+        <line end2="none" antialias="false" x1="0" x2="0" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-20" end1="none" y2="-9"/>
+        <dynamic_text text_width="-1" text_from="ElementInfo" font="Sans Serif,9,-1,5,50,0,0,0,0,0" Valignment="AlignVCenter" rotation="0" keep_visual_rotation="false" z="6" y="-14" Halignment="AlignRight" uuid="{9fb457d4-1ce8-4a58-a94d-38795d1971b5}" x="-17" frame="false">
+            <text></text>
+            <info_name>label</info_name>
+        </dynamic_text>
+        <terminal name="" y="20" orientation="s" uuid="{872fea55-f06c-48d9-ae8e-94d76294fbac}" x="0" type="Generic"/>
+        <terminal name="" y="-20" orientation="n" uuid="{92b1bdae-a46f-4b7e-9d93-b6843c432260}" x="0" type="Generic"/>
+    </description>
+</definition>

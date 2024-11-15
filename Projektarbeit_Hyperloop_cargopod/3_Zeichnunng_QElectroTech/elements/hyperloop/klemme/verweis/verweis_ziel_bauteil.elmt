@@ -1,0 +1,17 @@
+<definition type="element" height="20" hotspot_x="4" hotspot_y="9" link_type="previous_report" width="10" version="0.90">
+    <uuid uuid="{d01e55c5-e995-428f-927f-61c612d47af1}"/>
+    <names>
+        <name lang="de">verweis_ziel_bauteil</name>
+    </names>
+    <informations></informations>
+    <description>
+        <line length1="1.5" x2="0" style="line-style:normal;line-weight:normal;filling:none;color:green" y1="-5" end2="none" x1="0" end1="none" length2="1.5" antialias="false" y2="5"/>
+        <dynamic_text Halignment="AlignLeft" font="Sans Serif,5,-1,5,0,0,0,0,0,0,normal" text_width="-1" z="38" rotation="0" text_from="ElementInfo" x="-10" keep_visual_rotation="true" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" Valignment="AlignTop" frame="false" y="-21">
+            <text></text>
+            <info_name>label</info_name>
+            <composite_text>%{label}</composite_text>
+            <color>#00aa00</color>
+        </dynamic_text>
+        <terminal orientation="s" type="Generic" name="" x="0" uuid="{e0d70285-a648-4cc5-ba5c-08212ef09da3}" y="5"/>
+    </description>
+</definition>

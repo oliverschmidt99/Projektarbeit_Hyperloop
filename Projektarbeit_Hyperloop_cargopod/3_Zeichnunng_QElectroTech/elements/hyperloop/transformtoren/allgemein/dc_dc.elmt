@@ -1,0 +1,31 @@
+<definition link_type="simple" height="90" version="0.90" hotspot_x="9" width="100" type="element" hotspot_y="85">
+    <uuid uuid="{ee8f6d54-f771-4e3a-a11a-79ac10f64241}"/>
+    <names>
+        <name lang="de">dc_dc_1</name>
+    </names>
+    <elementInformations/>
+    <informations></informations>
+    <description>
+        <rect antialias="false" style="line-style:normal;line-weight:normal;filling:none;color:black" ry="0" y="-80" height="80" rx="0" width="80" x="0"/>
+        <text text="-" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" y="-8.11986" color="#000000" x="1.37877"/>
+        <text text="+" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" y="-67.1308" color="#000000" x="73.9083"/>
+        <text text="-" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" y="-7.86917" color="#000000" x="75.3056"/>
+        <line end2="none" antialias="false" x1="80" x2="0" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-80" end1="none" y2="0"/>
+        <text text="DC" font="Sans Serif,9,-1,5,50,0,0,0,0,0" rotation="0" y="-60" color="#000000" x="10"/>
+        <text text="DC" font="Sans Serif,9,-1,5,50,0,0,0,0,0" rotation="0" y="-10" color="#000000" x="55"/>
+        <line end2="none" antialias="false" x1="0" x2="-4" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-70" end1="none" y2="-70"/>
+        <line end2="none" antialias="false" x1="0" x2="-4" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-11" end1="none" y2="-11"/>
+        <line end2="none" antialias="false" x1="80" x2="84" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-10" end1="none" y2="-10"/>
+        <line end2="none" antialias="false" x1="80" x2="84" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-70" end1="none" y2="-70"/>
+        <text text="+" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" y="-62.3678" color="#000000" x="2.61849"/>
+        <dynamic_text text_width="-1" text_from="CompositeText" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" Valignment="AlignTop" rotation="0" keep_visual_rotation="true" z="38" y="-110" Halignment="AlignLeft" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" x="0" frame="false">
+            <text></text>
+            <info_name>formula</info_name>
+            <composite_text>%{label}</composite_text>
+        </dynamic_text>
+        <terminal name="" y="-11" orientation="w" uuid="{ad627c1f-4ef8-43b5-a006-cc71218ce909}" x="-5" type="Generic"/>
+        <terminal name="" y="-70" orientation="e" uuid="{e17b18c5-b969-4f0b-85eb-30558179ed2f}" x="85" type="Generic"/>
+        <terminal name="" y="-70" orientation="w" uuid="{1f1f7c80-f3e0-40a4-a80a-00103bc0f8ec}" x="-5" type="Generic"/>
+        <terminal name="" y="-10" orientation="e" uuid="{eb346553-85a7-4aa5-ad9b-fc1807d415fd}" x="85" type="Generic"/>
+    </description>
+</definition>

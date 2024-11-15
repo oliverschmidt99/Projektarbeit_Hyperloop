@@ -1,0 +1,39 @@
+<definition link_type="simple" height="100" version="0.90" hotspot_x="5" width="90" type="element" hotspot_y="89">
+    <uuid uuid="{d67efedf-e35e-44ed-98db-87953d9e2769}"/>
+    <names>
+        <name lang="de">dc_dc_2</name>
+    </names>
+    <elementInformations/>
+    <informations></informations>
+    <description>
+        <rect antialias="false" style="line-style:normal;line-weight:normal;filling:none;color:black" ry="0" y="-80" height="80" rx="0" width="80" x="0"/>
+        <text text="-" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" y="-74" color="#000000" x="8.89307"/>
+        <text text="+" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" y="-73.4512" color="#000000" x="67.8884"/>
+        <text text="-" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" y="-2" color="#000000" x="9"/>
+        <line end2="none" antialias="false" x1="80" x2="0" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-80" end1="none" y2="0"/>
+        <text text="+" font="Sans Serif,5,-1,5,50,0,0,0,0,0" rotation="0" y="-1.4512" color="#000000" x="67.9953"/>
+        <text text="DC" font="Sans Serif,9,-1,5,50,0,0,0,0,0" rotation="0" y="-60" color="#000000" x="10"/>
+        <text text="DC" font="Sans Serif,9,-1,5,50,0,0,0,0,0" rotation="0" y="-10" color="#000000" x="55"/>
+        <line end2="none" antialias="false" x1="70" x2="70" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-80" end1="none" y2="-84"/>
+        <line end2="none" antialias="false" x1="10" x2="10" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="-81" end1="none" y2="-85"/>
+        <line end2="none" antialias="false" x1="70" x2="70" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="5" end1="none" y2="1"/>
+        <line end2="none" antialias="false" x1="10" x2="10" length2="1.5" style="line-style:normal;line-weight:normal;filling:none;color:black" length1="1.5" y1="5" end1="none" y2="1"/>
+        <dynamic_text text_width="-1" text_from="CompositeText" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" Valignment="AlignTop" rotation="0" keep_visual_rotation="true" z="38" y="-85" Halignment="AlignLeft" uuid="{d9c0f898-567a-457c-81b0-b93f38c8d108}" x="-15" frame="false">
+            <text></text>
+            <info_name>formula</info_name>
+            <composite_text>%{label}</composite_text>
+        </dynamic_text>
+        <dynamic_text text_width="-1" text_from="UserText" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" Valignment="AlignTop" rotation="0" keep_visual_rotation="false" z="39" y="-40" Halignment="AlignLeft" uuid="{990d7482-0562-44fc-bde4-31efc96a2337}" x="50" frame="false">
+            <text>U2</text>
+            <info_name>auxiliary2</info_name>
+        </dynamic_text>
+        <dynamic_text text_width="-1" text_from="UserText" font="Sans Serif,9,-1,5,0,0,0,0,0,0,normal" Valignment="AlignTop" rotation="0" keep_visual_rotation="false" z="39" y="-65" Halignment="AlignLeft" uuid="{990d7482-0562-44fc-bde4-31efc96a2337}" x="5" frame="false">
+            <text>U1</text>
+            <info_name>auxiliary1</info_name>
+        </dynamic_text>
+        <terminal name="" y="5" orientation="s" uuid="{fa0f81f8-73c7-4517-9cb2-893ddcd96a30}" x="10" type="Generic"/>
+        <terminal name="" y="5" orientation="s" uuid="{7d61fa41-5c7f-4c05-bd77-1dafd539ad85}" x="70" type="Generic"/>
+        <terminal name="" y="-85" orientation="n" uuid="{f0689b3e-9b42-4521-baf9-4b29fded10b3}" x="10" type="Generic"/>
+        <terminal name="" y="-85" orientation="n" uuid="{15cb48fb-4355-4193-9f1b-d9e72e93a0b5}" x="70" type="Generic"/>
+    </description>
+</definition>
